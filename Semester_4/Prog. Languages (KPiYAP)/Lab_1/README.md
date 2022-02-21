@@ -1,6 +1,6 @@
 1 laboratory 
 
-Say "Hello, world!" from assmebler
+Say "Hello, world!" from assembler
 
 1.1 — .EXE
 
