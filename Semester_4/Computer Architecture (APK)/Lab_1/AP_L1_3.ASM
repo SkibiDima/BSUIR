@@ -6,7 +6,7 @@
 Error_Write db "Write error!",0Dh,0Ah,'$'
 Error_Read db "Read error!",0Dh,0Ah,'$'
 Information db "Byte sent: $"
-Data_Byte db 'A'
+Data_Byte db 'O'
 Data_Byte2 db ?
            
 .code
