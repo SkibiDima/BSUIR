@@ -1,13 +1,13 @@
-package com.StringInvertor;
+package com.strinv;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StringInvertorApplicationTests {
+class StringInversionApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
