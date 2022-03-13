@@ -13,14 +13,14 @@ jmp start
 
 Init_COM1 proc
    xor ax,ax        ; clear ax
-   mov al,10100011b ; baud 2400, stop-bit 1, 7 bit word
+   mov al,00100111b ; baud 150, stop-bit 1, 7 bit word
    mov dx,0         ; port-transmitter number
    int 14h 	    ; read
    ret
 Init_COM1 endp
 
 IsWrite_COM1 proc   ; verification
-   mov al,'A'       ; set symbol
+   mov al,'2'       ; set symbol
    mov ah,1         ;
    mov dx,0         ; port-transmitter number
    int 14h
@@ -38,6 +38,7 @@ NoWRite proc
 NoWRite endp
 
 IsRead_COM2 proc
+
    mov dx,1         ; port-recivier number
    int 14h
    test al,80h      ; 10000000b mean signal is detected
@@ -69,7 +70,7 @@ Exit endp
 start:
    call Init_COM1
    call IsWrite_COM1
-   mov al,'O'
+   mov al,'2'
    call IsRead_COM2
    call Output
 

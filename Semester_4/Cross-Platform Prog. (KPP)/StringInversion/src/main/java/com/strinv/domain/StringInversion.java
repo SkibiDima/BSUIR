@@ -2,11 +2,11 @@ package com.strinv.domain;
 
 public class StringInversion {
 
-    private final String req_string;
+    private final String string;
 
-    public StringInversion(String string){
-        this.req_string = string;
+    public StringInversion(String ent_string){
+        this.string = new StringBuilder(ent_string).reverse().toString();
     }
 
-    public String getReq_string(){return req_string;}
+    public String getString(){return string;}
 }

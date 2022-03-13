@@ -6,7 +6,7 @@
 Error_Write db "Write error!",0Dh,0Ah,'$'
 Error_Read db "Read error!",0Dh,0Ah,'$'
 Information db "Byte sent: $"
-Data_Byte db 'O'
+Data_Byte db '3'
 Data_Byte2 db ?
            
 .code
@@ -17,13 +17,15 @@ Init_COM1 proc
     mov dx,3FBh ; LCR number
     out dx,al	; set setting
 
-; set frequency
+; set frequency 9600 baud
     mov dx,3F8h ; COM1 number
     mov al,00h  ;
     out dx,al	; set
-    mov al,0Ch	;
+    mov al,0Ch	; 
     mov dx,3F9h	; setting data
     out dx,al	; transfer frequency
+
+
 
 ; set in Modem Control Register required bytes
 ; 0 - DTR, 1 - RTS, 3 - OUT2
@@ -32,7 +34,7 @@ Init_COM1 proc
     out dx,al
 
     mov dx,3F9h ; 3FB 7b=1, 3F9 calls interrupts
-    mov al,00h  ; 0b, 1b = 0, no interrupts
+    mov al,00h  ; 0b & 1b = 0, no interrupts
     out dx,al   ; set
     ret
 Init_COM1 endp
@@ -66,7 +68,7 @@ NoRead proc
    mov ah,09h
    mov dx,offset Error_Read
    int 21h
-   ret 
+   ret
 NoRead endp
 
 Send_Byte proc
