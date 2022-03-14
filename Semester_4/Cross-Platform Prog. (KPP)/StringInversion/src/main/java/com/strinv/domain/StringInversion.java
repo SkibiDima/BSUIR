@@ -5,7 +5,7 @@ public class StringInversion {
     private final String string;
 
     public StringInversion(String ent_string){
-        this.string = new StringBuilder(ent_string).reverse().toString();
+        this.string = ent_string;
     }
 
     public String getString(){return string;}

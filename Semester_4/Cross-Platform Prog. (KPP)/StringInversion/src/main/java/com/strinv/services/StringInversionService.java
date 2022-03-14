@@ -13,10 +13,11 @@ public class StringInversionService {
         appLogger.setLog(Level.INFO, "Got string");
 
         if(string.equals("")) {
-            appLogger.setLog(Level.INFO, "Illegal arguments in StringInversion");
-            throw new IllegalArgumentException("Illegal arguments in StringInversion");
+            appLogger.setLog(Level.INFO, "Illegal arguments in StringInversion: empty");
+            throw new IllegalArgumentException("Illegal arguments in StringInversion: empty");
         }
 
+        string = new StringBuilder(string).reverse().toString();
         StringInversion result = new StringInversion(string);
         appLogger.setLog(Level.INFO, "Inverted");
         return result;
