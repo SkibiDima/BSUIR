@@ -16,15 +16,15 @@ public class ExceptionAdvice {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(NumberFormatException.class)
+    /*@ExceptionHandler(NumberFormatException.class)
     public ResponseEntity<String> handleException(@NotNull NullPointerException e) {
         appLogger.setLog(Level.WARN, "WARN in number format");
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-    }
+    }*/
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(@NotNull Exception e) {
-        appLogger.setLog(Level.WARN, "WARN in ExceptionAdvice");
+        appLogger.setLog(Level.ERROR, "WARN in ExceptionAdvice");
         return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
