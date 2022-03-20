@@ -2,15 +2,10 @@
 
 	MODEL small
 
-MACRO Print_str str
-
-	lea 		dx, [str]
-	mov 		ah, 09h
-	int		21h	
-ENDM Print_str 		
-
 	DATASEG
-	str_init	db 401 dup("$")
+
+	max_str 	EQU 200
+	str_init	db 201 dup("$")
 	sub_str_rep 	db 201 dup("$")
 	sub_str_new 	db 201 dup("$")
 
@@ -25,58 +20,151 @@ ENDM Print_str
 
 	str_0DAh 	db 0Dh, 0Ah, '$'
 
-	max_str 	EQU 200
+	str_init_len	db 0
+	str_rep_len 	db 0
+	str_new_len	db 0
 
-	flag dw 0	
+	flag 		dw 0	
 
-	STACK 256
+	STACK		256
 
 	CODESEG
 
-PROC Input_str 
+
+	;=====================================
+	;MACROSES
+
+MACRO Print_str str
+
+	lea 		dx, [str]
+	mov 		ah, 09h
+	int		21h	
+ENDM Print_str 
+
+MACRO Input_str counter
 
 	mov 		cx, max_str	
 
-@@inp_loop:	
+@@Inp_loop:	
 	mov		ah, 01h
 	int 		21h
 
 	cmp		al, 0Dh
-	je		@@quit
+	je		@@Quit
 
 	mov     	[bx], al
         inc   		bx
-	LOOP		@@inp_loop
+	inc 		counter
+	LOOP		@@Inp_loop
 
 	Print_str	msg_ach_200
 	Print_str	str_0DAh 
-@@quit:
-	ret
-ENDP Input_str 
+@@Quit:
+	
+ENDM Input_str
 
-PROC Clear_str
+MACRO Clear_str
 
 	push 		ax
 	mov 		cx, max_str
 	mov 		al, '$'
 
-@@rep_loop:
+@@Clear_loop:
 	mov 		[bx], al	
 	inc 		bx
 	cmp 		al, [bx]
-	je 		@@quit
-	LOOP @@rep_loop
-@@quit:
+	je 		@@Q
+	LOOP 		@@Clear_loop
+@@Q:
 	pop 		ax
-	ret
-ENDP Clear_str
-
-
-PROC Find_substr
+ENDM Clear_str
 
 	
+	;MACROSES
+	;=====================================
+	;FUNCTIONS 
+
+PROC Replace_substr
+
+Rep_loop:
+	push 		si
+	push 		di
+	push 		cx
+
+	mov 		[flag], 1
+
+	mov 		bx, si
+	
+	xor 		cx, cx
+	mov 		cl, [str_rep_len]
+
+	repe 		cmpsb
+	je 		Found
+	jne 		Not_found
+
+Found:
+
+	call 		Delete_substr
+	mov 		ax, bx
+	call 		Insert_substr
+	mov 		dl, [str_new_len]
+	add 		[str_init_len], dl        
+	mov 		[flag], dx
+
+Not_found:
+	pop 		cx
+	pop 		di
+	pop 		si
+	
+	add 		si, [flag]
+	
+	LOOP 		Rep_loop
+
 	ret
-ENDP Find_substr
+ENDP Replace_substr	
+	
+PROC Delete_substr
+
+	push		si
+	push 		di
+	
+	mov 		cl, [str_init_len]
+	mov 		di, bx
+
+	repe 		movsb
+
+	pop 		di
+	pop 		si
+	
+	ret
+ENDP Delete_substr
+
+PROC Insert_substr
+	lea 		cx, [str_init]	     ; str {-->1...$}
+	add 		cl, [str_init_len]   ; + len
+	mov 		si, cx               ; str {1..9-->$} 
+	dec		si             	     ; str {1..-->9$}
+	mov		bx, si         	     ; save last symbol in bx
+	add 		bl, [str_new_len]    ; now there is the last symbol of new string in bx
+	mov 		di, bx               ; new last symbol is reciever             
+
+	mov 		dx, ax               ; ax is a place to insert
+	sub 		cx, dx               ; after last symbol -= place to insert
+	std            			     ; moving backward
+	repe		movsb
+
+	lea 		si, [sub_str_new]    ; source is sbstr 1st symbol
+	mov 		di, ax               ; reciever is a place to insert
+	xor		cx, cx               ; set cx to zero
+	mov 		cl, [str_new_len]    ; sbstr length to cx
+	cld             		     ; moving forward
+	repe 		movsb            
+
+	ret
+ENDP Insert_substr
+
+	;FUNCTIONS
+	;=====================================
 
 Start:
 	mov 		ax, @data
@@ -87,61 +175,59 @@ Start:
 	
 	Print_str 	msg_input_init
 	lea 		bx, [str_init]	
-	call 		Input_str 
+	Input_str 	[str_init_len]
 	
 	;IS REPLACE STRING LONGER THAN INITIAL STRING?
 	;IF YES -- CLEAR AND REWRITE REPLACE STRING
 Rep_long_check:
 
+	mov 		[str_rep_len], 0
 	Print_str	msg_input_rep
 	lea 		bx, [sub_str_rep]
-	call 		Input_str 
-	
-	std				; go from the end "...$$"
-	lea 		si, [str_init + max_str]
-	lea 		di, [sub_str_rep + max_str]	
-	mov 		cx, max_str
-	repe		cmpsb
-	jne		Check_$_init	; strings are not equal somewhere
-	jmp		End_check
+	Input_str 	[str_rep_len]
 
-Check_$_init:
-		
-	mov 		al, '$'
-	
-	mov 		bx, di
-	cmp 		al, [di]	; is rep_str shorter?
-	je 		End_check	; if = $, shorter, it's OK
-
-	mov 		bx, si
-	cmp 		al, [si]	; is int_str shorter?
-	jne 		End_check	; if != $, longer, it's OK	
+	push 		ax
+	mov 		al, [str_init_len]
+	cmp		al, [str_rep_len]
+	pop 		ax	
+	jz 		End_check 		; init = rep
+	jnb		End_check		; init > rep
 
 	Print_str 	msg_too_long
 	lea 		bx, [sub_str_rep]
-	call 		Clear_str
+	Clear_str
 	jmp 		Rep_long_check
 
 End_check:
 	
 	Print_str	msg_input_new 
 	lea 		bx, [sub_str_new] 
-	call 		Input_str
+	Input_str	[str_new_len]	
+ 
+	;GET STRINGS
 	;=====================================
 	
+
 	;=====================================
 	;REPLACE		 
+	 
 	
-	
-	
-;	inc 		cl
-;	cld 
-	
-;	lea 		si, [str_init]
-;	lea 		di, [sub_str_rep]
-;	call 		Find_substr
+	xor 		cx, cx
+	mov 		cl, [str_init_len]
+	sub 		cl, [str_rep_len]
+	jb 		Exit
+	inc 		cl
+	cld
 
+	lea 		si, [str_init]
+	lea 		di, [sub_str_rep]
+	call 		Replace_substr
 
+	;REPLACE
+	;=====================================
+
+	Print_str	msg_result	
+	Print_str	str_init
 Exit:	
 	mov 		ax, 4C00h
 	int 		21h
