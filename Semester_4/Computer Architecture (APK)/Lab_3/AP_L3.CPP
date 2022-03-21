@@ -13,8 +13,11 @@ struct VIDEO{
 
 char color = 0x71;
 
+
+
 void print(){
 
+	
 	char temp;  
 	int i, val;
 	VIDEO far* screen = (VIDEO far *)MK_FP(0xB800, 0);   
@@ -29,7 +32,7 @@ void print(){
 	}
 	screen++;                                            
 
-	val = inp(0xA1);              // get mask Slave registor                       
+	val = inp(0xA1);              // get mask Slave register                       
 	for (i = 0; i < 8; i++){
 		temp = val % 2;									 
 		val = val >> 1;									 
@@ -109,22 +112,22 @@ void interrupt(*oldint77) (...);		// IRQ 15 - reserved interrupt
 
 
 void interrupt  newint08(...) { print(); oldint8(); }                     
-void interrupt  newint09(...) { /*changeColor()*/; print(); oldint9(); }	  
-void interrupt  newint0A(...) { /*changeColor()*/; print(); oldint10(); }	  
-void interrupt  newint0B(...) { /*changeColor()*/; print(); oldint11(); }	  
-void interrupt  newint0C(...) { /*changeColor()*/; print(); oldint12(); }	  
-void interrupt  newint0D(...) { /*changeColor()*/; print(); oldint13(); }	  
-void interrupt  newint0E(...) { /*changeColor()*/; print(); oldint14(); }	  
-void interrupt  newint0F(...) { /*changeColor()*/; print(); oldint15(); }	  
+void interrupt  newint09(...) { print(); oldint9(); }	  
+void interrupt  newint0A(...) { print(); oldint10(); }	  
+void interrupt  newint0B(...) { print(); oldint11(); }	  
+void interrupt  newint0C(...) { print(); oldint12(); }	  
+void interrupt  newint0D(...) { print(); oldint13(); }	  
+void interrupt  newint0E(...) { print(); oldint14(); }	  
+void interrupt  newint0F(...) { print(); oldint15(); }	  
 								/*			   */										
-void interrupt  newintC0(...) { /*changeColor()*/; print(); oldint70(); }	  
-void interrupt  newintC1(...) { /*changeColor()*/; print(); oldint71(); }	  
-void interrupt  newintC2(...) { /*changeColor()*/; print(); oldint72(); }	  
-void interrupt  newintC3(...) { /*changeColor()*/; print(); oldint73(); }	  
-void interrupt  newintC4(...) { /*changeColor()*/; print(); oldint74(); }	  
-void interrupt  newintC5(...) { /*changeColor()*/; print(); oldint75(); }	  
-void interrupt  newintC6(...) { /*changeColor()*/; print(); oldint76(); }	  
-void interrupt  newintC7(...) { /*changeColor()*/; print(); oldint77(); }	  
+void interrupt  newintC0(...) { print(); oldint70(); }	  
+void interrupt  newintC1(...) { print(); oldint71(); }	  
+void interrupt  newintC2(...) { print(); oldint72(); }	  
+void interrupt  newintC3(...) { print(); oldint73(); }	  
+void interrupt  newintC4(...) { print(); oldint74(); }	  
+void interrupt  newintC5(...) { print(); oldint75(); }	  
+void interrupt  newintC6(...) { print(); oldint76(); }	  
+void interrupt  newintC7(...) { print(); oldint77(); }	  
 
 void initialize()
 {
@@ -148,14 +151,14 @@ void initialize()
 	oldint77 = getvect(0x77); 
 
 	//set new handlers for IRQ 0-7
-	setvect(0x80, newint08);  
-	setvect(0x81, newint09);  
-	setvect(0x82, newint0A);  
-	setvect(0x83, newint0B);  
-	setvect(0x84, newint0C);  
-	setvect(0x85, newint0D);  
-	setvect(0x86, newint0E);  
-	setvect(0x87, newint0F);  
+	setvect(0xA0, newint08);  
+	setvect(0xA1, newint09);  
+	setvect(0xA2, newint0A);  
+	setvect(0xA3, newint0B);  
+	setvect(0xA4, newint0C);  
+	setvect(0xA5, newint0D);  
+	setvect(0xA6, newint0E);  
+	setvect(0xA7, newint0F);  
 
 	//set new handlers for IRQ8-15	
 	setvect(0x08, newintC0); 
@@ -171,11 +174,11 @@ void initialize()
 	
 	// interrupt initializtion for Master
 	outp(0x20, 0x11);	//ICW1 - initialize master
-	outp(0x21, 0x80);   //ICW2 - base vector for master
+	outp(0x21, 0xA0);       //ICW2 - base vector for master
 	outp(0x21, 0x04);	//ICW3 - the port bit of Slave (in binary format)
 	outp(0x21, 0x01);	//ICW4 - default
 
-    // interrupt initialization for Slave
+	// interrupt initialization for Slave
 	outp(0xA0, 0x11);  //ICW1 - initialize Slave	
 	outp(0xA1, 0x08);  //ICW2 - base vector for slave
 	outp(0xA1, 0x02);  //ICW3 - the port number of connected port on Master 
@@ -184,8 +187,14 @@ void initialize()
 	_enable(); // STI
 }
 
-int main()
-{
+
+
+
+
+
+
+int main(){
+
 	unsigned far *fp;                          
 	initialize();                              
 	system("cls");                              
