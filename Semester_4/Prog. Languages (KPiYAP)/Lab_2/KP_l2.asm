@@ -41,10 +41,10 @@ MACRO Print_str str
 	int		21h	
 ENDM Print_str 
 
-MACRO Input_str counter
+MACRO Input_str 
 
 	mov 		cx, max_str	
-
+	xor 		dx, dx
 @@Inp_loop:	
 	mov		ah, 01h
 	int 		21h
@@ -54,7 +54,7 @@ MACRO Input_str counter
 
 	mov     	[bx], al
         inc   		bx
-	inc 		counter
+	inc 		dl
 	LOOP		@@Inp_loop
 
 	Print_str	msg_ach_200
@@ -109,7 +109,7 @@ Found:
 	call 		Insert_substr
 	mov 		dl, [str_new_len]
 	add 		[str_init_len], dl        
-	mov 		[flag], dx
+	mov 		[flag], 0
 
 Not_found:
 	pop 		cx
@@ -172,10 +172,11 @@ Start:
 	
 	;=====================================
 	;GET STRINGS		          
-	
+
 	Print_str 	msg_input_init
 	lea 		bx, [str_init]	
-	Input_str 	[str_init_len]
+	Input_str 	
+	mov 		[str_init_len], dl
 	
 	;IS REPLACE STRING LONGER THAN INITIAL STRING?
 	;IF YES -- CLEAR AND REWRITE REPLACE STRING
@@ -184,8 +185,9 @@ Rep_long_check:
 	mov 		[str_rep_len], 0
 	Print_str	msg_input_rep
 	lea 		bx, [sub_str_rep]
-	Input_str 	[str_rep_len]
-
+	Input_str 	
+	mov 		[str_rep_len], dl
+	
 	push 		ax
 	mov 		al, [str_init_len]
 	cmp		al, [str_rep_len]
@@ -202,7 +204,8 @@ End_check:
 	
 	Print_str	msg_input_new 
 	lea 		bx, [sub_str_new] 
-	Input_str	[str_new_len]	
+	Input_str		
+	mov 		[str_new_len], dl
  
 	;GET STRINGS
 	;=====================================
