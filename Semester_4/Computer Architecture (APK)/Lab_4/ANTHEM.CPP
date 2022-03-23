@@ -12,32 +12,56 @@ int fa[]  = {349, 698};
 int sol[] = {392, 784};
 int la[]  = {440, 880};
 int si[]  = {494, 988};
-unsigned int bd = 1500; //base note length
+unsigned int bd = 3200; //base note length
 unsigned int bs = 20; //base sleep between notes
 unsigned int notes[][3] = { 
-{ sol[0], bd/4, bs}, 
-{ du[1],  bd/2, bs}, 
-{ sol[0], bd/4, bs},
-{ la[0], bd/8, bs},
-{ si[0], bd/2, bs},
-{ mi[0], bd/4, bs},
-{ mi[0], bd/4, bs},
-{ la[0], bd/2, bs},
-{ sol[0], bd/4, bs},
-{ fa[0], bd/8, bs},
-{ sol[0], bd/2, bs},
-{ du[0], bd/4, bs},
-{ du[0], bd/8, bs},
-{ re[0], bd/2, bs},
-{ re[0], bd/4, bs},
-{ mi[0], bd/8, bs},
-{ fa[0], bd/2, bs},
-{ fa[0], bd/4, bs},
-{ sol[0], bd/8, bs},
-{ la[0], bd/2, bs},
+{ sol[0], bd/8, bs}, 
+{ du[1],  bd/4, bs}, 
+{ sol[0], (bd/8)*1.5, bs},
+{ la[0], bd/16, bs},
 { si[0], bd/4, bs},
-{ du[1], bd/8, bs},
-{ re[1], bd/2, bs},
+{ mi[0], bd/8, bs},
+{ mi[0], bd/8, bs},
+{ la[0], bd/4, bs},
+{ sol[0], (bd/8)*1.5, bs},
+{ fa[0], bd/16, bs},
+{ sol[0], bd/4, bs},
+{ du[0], (bd/8)*1.5, bs},
+{ du[0], bd/16, bs},
+{ re[0], bd/4, bs},
+{ re[0], (bd/8)*1.5, bs},
+{ mi[0], bd/16, bs},
+{ fa[0], bd/4, bs},
+{ fa[0], bd/8, bs},
+{ sol[0], bd/16, bs},
+{ la[0], bd/4, bs},
+{ si[0], (bd/8)*1.5, bs},
+{ du[1], bd/16, bs},
+{ re[1], (bd/4)*1.5, bs*1.5},
+
+{ sol[0], bd/8, bs},
+{ mi[1], bd/4, bs},
+{ re[1], (bd/8)*1.5, bs*1.5},
+{ du[1], bd/16, bs},
+{ re[1], bd/4, bs},
+{ si[0], bd/8, bs},
+{ sol[0], bd/8, bs},
+{ du[1], bd/4, bs},
+{ si[0], (bd/8)*1.5, bs},
+{ la[0], bd/16, bs},
+{ si[0], bd/4, bs},
+{ mi[0],  bd/8, bs},
+{ mi[0],  bd/8, bs},
+{ la[0], bd/4, bs},
+{ sol[0], (bd/8)*1.5, bs},
+{ fa[0], bd/16, bs},
+{ sol[0],  bd/4, bs},
+{ du[0], (bd/8)*1.5, bs},
+{ du[0], bd/16, bs},
+{ du[1], bd/4, bs},
+{ si[0], (bd/8)*1.5, bs},
+{ la[0], bd/16, bs},
+{ sol[0], bd/2, bs}
 };		         
 
 void PlaySound();
@@ -75,7 +99,7 @@ void TurnSpeaker(int isActive) {
 
 //функция воспроизведения песни
 void PlaySound() {
-	for (int i = 0; i < 23; i++) {
+	for (int i = 0; i < 46; i++) {
 		SetCount(notes[i][0]);
 		TurnSpeaker(1); //включаем громкоговоритель
 		delay(notes[i][1]); //устанавливаем длительность мс
