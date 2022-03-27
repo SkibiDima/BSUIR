@@ -9,5 +9,4 @@ public class StringInversionApplication {
     public static void main(String[] args) {
         SpringApplication.run(StringInversionApplication.class, args);
     }
-
 }

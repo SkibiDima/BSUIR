@@ -1,6 +1,6 @@
 package com.strinv.exceptions;
 
-import com.strinv.appLogger;
+import com.strinv.logger.appLogger;
 import org.apache.logging.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ public class ExceptionAdvice {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(@NotNull Exception e) {
-        appLogger.setLog(Level.ERROR, "WARN in ExceptionAdvice");
+        appLogger.setLog(Level.ERROR, "ERROR in ExceptionAdvice");
         return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

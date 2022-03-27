@@ -1,4 +1,4 @@
-package com.strinv;
+package com.strinv.logger;
 
 import com.strinv.services.StringInversionService;
 import org.apache.logging.log4j.Logger;
