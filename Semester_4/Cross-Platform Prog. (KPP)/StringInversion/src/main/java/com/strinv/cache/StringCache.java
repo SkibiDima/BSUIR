@@ -2,7 +2,6 @@ package com.strinv.cache;
 
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.strinv.domain.StringInversion;
@@ -28,8 +27,10 @@ public class StringCache {
     }
 
     public /*@Nullable*/ StringInversion find(/*@NotNull*/ String key) {
-        if (stringsMap.containsKey(key))
+        if (stringsMap.containsKey(key)) {
+            //appLogger.setLog(Level.INFO, "String " + key + " found in map");
             return stringsMap.get(key);
+        }
 
         appLogger.setLog(Level.INFO, "String " + key + " not found in map");
         return null;
