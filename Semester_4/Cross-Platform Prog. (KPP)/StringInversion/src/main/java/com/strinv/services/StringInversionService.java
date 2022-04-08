@@ -1,14 +1,19 @@
 package com.strinv.services;
 
-import com.strinv.appLogger;
+import com.strinv.logger.appLogger;
+import com.strinv.cache.StringCache;
 import com.strinv.domain.StringInversion;
+import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class StringInversionService {
 
-    public StringInversion inversion(String string){
+    private StringCache stringsMap;
+
+    public StringInversion inversion(/*@NotNull*/ String string){
 
         appLogger.setLog(Level.INFO, "Got string");
 
@@ -17,8 +22,14 @@ public class StringInversionService {
             throw new IllegalArgumentException("Illegal arguments in StringInversion: empty");
         }
 
-        string = new StringBuilder(string).reverse().toString();
         StringInversion result = new StringInversion(string);
+        if(stringsMap.isCached(string)){
+            return stringsMap.find(string);
+        }
+
+        result.setString(new StringBuilder(string).reverse().toString());
+        stringsMap.add(result, string);
+
         appLogger.setLog(Level.INFO, "Inverted");
         return result;
     }
