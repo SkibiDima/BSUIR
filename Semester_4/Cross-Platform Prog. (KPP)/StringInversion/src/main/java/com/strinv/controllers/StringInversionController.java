@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class StringInversionController {
 
     private final StringInversionService service;
+    CounterController calls = new CounterController();
 
     @GetMapping("/inversion")
     public StringInversion getController(@RequestParam(value = "ent_string") String ent_string){
+
+        calls.incrementCalls();
 
         StringInversion result = service.inversion(ent_string);
         //StringInversion result = new StringInversionService().inversion(ent_string);
