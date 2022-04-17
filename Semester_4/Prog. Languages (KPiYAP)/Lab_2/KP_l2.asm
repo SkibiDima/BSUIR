@@ -1,239 +1,191 @@
-	IDEAL
+	.model small
+	.stack 100h
+	.data
 
-	MODEL small
+	msg1 db "Input string:", 0dh, 0ah, '$' 
+	msg2 db 0dh, 0ah, "Enter the substring you want to delete:", 0dh, 0ah, '$'
+	msg3 db 0dh, 0ah, "Result: $" 
+	msg4 db 0dh, 0ah, "Enter new substring: $"
+	error_message db "Buffer overlflow",0Dh,0Ah,'$'
+	string db 40805 dup("$")
+	sbstrToRemove db 202 dup("$")
+	sbstrToInsert db 202 dup("$")
+	capacity EQU 200
+	string_size dw 0
+	sbstrToRemove_size dw 0
+	sbstrToInsert_size dw 0
+	flag dw 0
 
-	DATASEG
+	.code
 
-	max_str 	EQU 200
-	str_init	db 201 dup("$")
-	sub_str_rep 	db 201 dup("$")
-	sub_str_new 	db 201 dup("$")
+ReplaceSubstring proc
 
-	msg_input_init	db "Input string:", 0Dh, 0Ah, '$'
-	msg_input_rep 	db 0Dh, 0Ah, "Input substring to replace:", 0Dh, 0Ah, '$'
-	msg_input_new 	db 0Dh, 0Ah, "Input new substring:", 0Dh, 0Ah, '$'
-	msg_result	db 0Dh, 0Ah, "Result:", 0Dh, 0Ah, '$'
-	
-	msg_too_long	db 0Dh, 0Ah, "Substring is too long for this purpose!", 0Dh, 0Ah, '$'
+	Cycle:
+	mov flag, 1
+	push si
+	push di
+	push cx
 
-	msg_ach_200 	db 0Dh, 0Ah, "Maximum is 200, string stopped", 0Dh, 0Ah, '$'	
+	mov bx, si
 
-	str_0DAh 	db 0Dh, 0Ah, '$'
+	xor cx, cx
+	mov cx, sbstrToRemove_size
 
-	str_init_len	db 0
-	str_rep_len 	db 0
-	str_new_len	db 0
+	repe cmpsb
+	je FOUND
+	jne NOT_FOUND
 
-	flag 		dw 0	
+	FOUND:
+	call DeleteSubstring
+	mov ax, bx
+	call InsertSubstring
+	mov dx, sbstrToInsert_size
+	add string_size, dx      
+	mov flag, dx
 
-	STACK		256
+	NOT_FOUND:
+	pop cx
+	pop di
+	pop si
+	add si, flag
 
-	CODESEG
-
-
-	;=====================================
-	;MACROSES
-
-MACRO Print_str str
-
-	lea 		dx, [str]
-	mov 		ah, 09h
-	int		21h	
-ENDM Print_str 
-
-MACRO Input_str 
-
-	mov 		cx, max_str	
-	xor 		dx, dx
-@@Inp_loop:	
-	mov		ah, 01h
-	int 		21h
-
-	cmp		al, 0Dh
-	je		@@Quit
-
-	mov     	[bx], al
-        inc   		bx
-	inc 		dl
-	LOOP		@@Inp_loop
-
-	Print_str	msg_ach_200
-	Print_str	str_0DAh 
-@@Quit:
-	
-ENDM Input_str
-
-MACRO Clear_str
-
-	push 		ax
-	mov 		cx, max_str
-	mov 		al, '$'
-
-@@Clear_loop:
-	mov 		[bx], al	
-	inc 		bx
-	cmp 		al, [bx]
-	je 		@@Q
-	LOOP 		@@Clear_loop
-@@Q:
-	pop 		ax
-ENDM Clear_str
-
-	
-	;MACROSES
-	;=====================================
-	;FUNCTIONS 
-
-PROC Replace_substr
-
-Rep_loop:
-	push 		si
-	push 		di
-	push 		cx
-
-	mov 		[flag], 1
-
-	mov 		bx, si
-	
-	xor 		cx, cx
-	mov 		cl, [str_rep_len]
-
-	repe 		cmpsb
-	je 		Found
-	jne 		Not_found
-
-Found:
-
-	call 		Delete_substr
-	mov 		ax, bx
-	call 		Insert_substr
-	mov 		dl, [str_new_len]
-	add 		[str_init_len], dl        
-	mov 		[flag], 0
-
-Not_found:
-	pop 		cx
-	pop 		di
-	pop 		si
-	
-	add 		si, [flag]
-	
-	LOOP 		Rep_loop
+	Loop Cycle
 
 	ret
-ENDP Replace_substr	
-	
-PROC Delete_substr
+endp ReplaceSubstring  
 
-	push		si
-	push 		di
-	
-	mov 		cl, [str_init_len]
-	mov 		di, bx
+DeleteSubstring proc
 
-	repe 		movsb
+	push si
+	push di
+	mov cx, string_size
+	mov di, bx
 
-	pop 		di
-	pop 		si
-	
+	repe movsb
+
+	pop di
+	pop si
+
+	ret                
+endp DeleteSubstring
+
+InsertSubstring proc
+
+	lea cx, string   ; string[2] 1st symbol address,string[1] is string lenght
+	add cx, string_size   ; add string length to get to next symbol after the last
+	mov si, cx          ; last symbol as a source 
+	dec si              ; at the last symbol
+	mov bx, si          ; save last symbol in bx
+	add bx, sbstrToInsert_size ; now there is the last symbol of new string in bx
+	mov di, bx          ; new last symbol is reciever            
+
+	mov dx, ax          ; ax is a place to insert
+	sub cx, dx          ; after last symbol -= place to insert
+	std                 ; moving backward
+	repe movsb
+
+	lea si, sbstrToInsert ; source is sbstr 1st symbol
+	mov di, ax          ; reciever is a place to insert
+	xor cx, cx          ; set cx to zero
+	mov cx, sbstrToInsert_size ; sbstr length to cx
+	cld                 ; moving forward
+	repe movsb            
+
+ret
+endp InsertSubstring                
+
+
+	; I/O procedures
+	;GETSTR
+gets proc   
+
+	mov cx,capacity-1    ; количество итераций для ввода
+    
+start_input_string:     
+    
+	mov ah,01h              ; 01h - считать символ с клавиатуры
+	int 21h                 ; символ автоматически помещ. в регистр al
+	cmp al,36				;сравнение символа с '$'
+	je end_input_string
+	cmp al,13               ; сравнение символа с "enter"
+	je end_input_string     ; если ZF = 1, то есть если истина
+
+	mov [bx], al            ; помещаем введенный символ по адресу bx 
+	inc bx                  ; увеличиваем значение расп. по адресу в bx на 1
+	inc dx                  ; увеличиваем действительный размер строки
+    
+	loop start_input_string
+    
+end_input_string:
+
 	ret
-ENDP Delete_substr
+endp gets
 
-PROC Insert_substr
-	lea 		cx, [str_init]	     ; str {-->1...$}
-	add 		cl, [str_init_len]   ; + len
-	mov 		si, cx               ; str {1..9-->$} 
-	dec		si             	     ; str {1..-->9$}
-	mov		bx, si         	     ; save last symbol in bx
-	add 		bl, [str_new_len]    ; now there is the last symbol of new string in bx
-	mov 		di, bx               ; new last symbol is reciever             
 
-	mov 		dx, ax               ; ax is a place to insert
-	sub 		cx, dx               ; after last symbol -= place to insert
-	std            			     ; moving backward
-	repe		movsb
-
-	lea 		si, [sub_str_new]    ; source is sbstr 1st symbol
-	mov 		di, ax               ; reciever is a place to insert
-	xor		cx, cx               ; set cx to zero
-	mov 		cl, [str_new_len]    ; sbstr length to cx
-	cld             		     ; moving forward
-	repe 		movsb            
-
+puts proc
+	mov ah, 9 
+	int 21h
 	ret
-ENDP Insert_substr
+endp puts
 
-	;FUNCTIONS
-	;=====================================
+start:
+	mov ax, @data
+	mov ds, ax
+	mov es, ax     
 
-Start:
-	mov 		ax, @data
-	mov 		ds, ax
-	
-	;=====================================
-	;GET STRINGS		          
+	lea dx, msg1
+	call puts
+	mov dx,string_size
+	lea bx,string
+	call gets
+	mov string_size,dx
 
-	Print_str 	msg_input_init
-	lea 		bx, [str_init]	
-	Input_str 	
-	mov 		[str_init_len], dl
-	
-	;IS REPLACE STRING LONGER THAN INITIAL STRING?
-	;IF YES -- CLEAR AND REWRITE REPLACE STRING
-Rep_long_check:
+	lea dx, msg2
+	call puts
+	mov dx, sbstrToRemove_size
+	lea bx, sbstrToRemove
+	call gets
+	mov sbstrToRemove_size,dx        
 
-	mov 		[str_rep_len], 0
-	Print_str	msg_input_rep
-	lea 		bx, [sub_str_rep]
-	Input_str 	
-	mov 		[str_rep_len], dl
-	
-	push 		ax
-	mov 		al, [str_init_len]
-	cmp		al, [str_rep_len]
-	pop 		ax	
-	jz 		End_check 		; init = rep
-	jnb		End_check		; init > rep
+	lea dx, msg4
+	call puts
+	mov dx,sbstrToInsert_size
+	lea bx, sbstrToInsert
+	call gets
+	mov sbstrToInsert_size,dx
 
-	Print_str 	msg_too_long
-	lea 		bx, [sub_str_rep]
-	Clear_str
-	jmp 		Rep_long_check
+	xor ax,ax
+	mov ax,string_size
+	mul sbstrToInsert_size
+	cmp ax, 30000
+	ja end_err
 
-End_check:
-	
-	Print_str	msg_input_new 
-	lea 		bx, [sub_str_new] 
-	Input_str		
-	mov 		[str_new_len], dl
- 
-	;GET STRINGS
-	;=====================================
-	
-
-	;=====================================
-	;REPLACE		 
-	 
-	
-	xor 		cx, cx
-	mov 		cl, [str_init_len]
-	sub 		cl, [str_rep_len]
-	jb 		Exit
-	inc 		cl
+	xor cx, cx
+	mov cx, string_size
+	sub cx, sbstrToRemove_size
+	jb endjb
+	inc cx
 	cld
 
-	lea 		si, [str_init]
-	lea 		di, [sub_str_rep]
-	call 		Replace_substr
+	lea si, string
+	lea di, sbstrToRemove
 
-	;REPLACE
-	;=====================================
+	call ReplaceSubstring
 
-	Print_str	msg_result	
-	Print_str	str_init
-Exit:	
-	mov 		ax, 4C00h
-	int 		21h
+endjb:   
+	lea dx, msg3
+	call puts
+	lea dx, string
+	call puts
 
-END Start
-	ENDS
+	mov ah, 4ch
+	int 21h
+
+end_err:
+	lea dx, error_message
+	call puts
+	mov ah, 4ch
+	int 21h
+
+	ret
+end start
