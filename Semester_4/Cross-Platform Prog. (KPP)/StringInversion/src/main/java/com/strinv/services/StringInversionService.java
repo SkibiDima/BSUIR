@@ -7,30 +7,57 @@ import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 @AllArgsConstructor
 @Service
 public class StringInversionService {
 
     private StringCache stringsMap;
 
-    public StringInversion inversion(/*@NotNull*/ String string){
+//    public StringInversion inversion(String string){
+//
+//
+//        appLogger.setLog(Level.INFO, "Got string");
+//        if(string.equals("")) {
+//            appLogger.setLog(Level.INFO, "Illegal arguments in StringInversion: empty");
+//            throw new IllegalArgumentException("Illegal arguments in StringInversion: empty");
+//        }
+//
+//        if(stringsMap.isCached(string)) {
+//            appLogger.setLog(Level.INFO, "Inverted");
+//            return stringsMap.find(string);
+//        } else {
+//            StringInversion result = new StringInversion(new StringBuilder(string).reverse().toString());
+//            stringsMap.add(result, string);
+//            appLogger.setLog(Level.INFO, "Inverted");
+//            return result;
+//        }
+//    }
+
+    public ArrayList<StringInversion> inversionStream(Stream<String> stringStream){
+
+        return stringStream.map(this::inversion).collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public StringInversion inversion(String string){
 
         appLogger.setLog(Level.INFO, "Got string");
-
         if(string.equals("")) {
             appLogger.setLog(Level.INFO, "Illegal arguments in StringInversion: empty");
             throw new IllegalArgumentException("Illegal arguments in StringInversion: empty");
         }
 
-        StringInversion result = new StringInversion(string);
-        if(stringsMap.isCached(string)){
+        if(stringsMap.isCached(string)) {
+            appLogger.setLog(Level.INFO, "Inverted");
             return stringsMap.find(string);
+        } else {
+            StringInversion result = new StringInversion(new StringBuilder(string).reverse().toString());
+            stringsMap.add(result, string);
+            appLogger.setLog(Level.INFO, "Inverted");
+            return result;
         }
-
-        result.setString(new StringBuilder(string).reverse().toString());
-        stringsMap.add(result, string);
-
-        appLogger.setLog(Level.INFO, "Inverted");
-        return result;
     }
 }

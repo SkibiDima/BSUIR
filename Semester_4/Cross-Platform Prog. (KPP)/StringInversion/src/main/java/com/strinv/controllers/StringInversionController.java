@@ -5,9 +5,9 @@ import com.strinv.domain.StringInversion;
 import com.strinv.services.StringInversionService;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @AllArgsConstructor
 @RestController
@@ -22,7 +22,16 @@ public class StringInversionController {
         calls.incrementCalls();
 
         StringInversion result = service.inversion(ent_string);
-        //StringInversion result = new StringInversionService().inversion(ent_string);
+        appLogger.setLog(Level.INFO, "Successful mapping");
+        return result;
+    }
+
+    @PostMapping("/inversionStream")
+    public ArrayList<StringInversion> getControllerStream(@RequestBody ArrayList<String> ent_stream){
+
+        calls.incrementCalls();
+
+        ArrayList<StringInversion> result = service.inversionStream(ent_stream.stream());
         appLogger.setLog(Level.INFO, "Successful mapping");
         return result;
     }
