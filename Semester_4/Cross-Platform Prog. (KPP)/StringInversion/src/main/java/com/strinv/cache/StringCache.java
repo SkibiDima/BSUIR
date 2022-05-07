@@ -13,9 +13,9 @@ import java.util.HashMap;
 @Component
 public class StringCache {
 
-    private /*final*/ HashMap<String, StringInversion> stringsMap ;//= new HashMap<>();
+    private  HashMap<String, StringInversion> stringsMap ;
 
-    public void add(/*@NotNull */StringInversion params, /*@NotNull*/ String key) {
+    public void add(StringInversion params,  String key) {
         if (!stringsMap.containsKey(key)) {
             stringsMap.put(key, params);
             appLogger.setLog(Level.INFO, "String " + params + " @" + key + " added to map");
@@ -26,9 +26,9 @@ public class StringCache {
         return stringsMap.containsKey(key);
     }
 
-    public /*@Nullable*/ StringInversion find(/*@NotNull*/ String key) {
+    public  StringInversion find(String key) {
         if (stringsMap.containsKey(key)) {
-            //appLogger.setLog(Level.INFO, "String " + key + " found in map");
+            appLogger.setLog(Level.INFO, "String " + key + " found in map");
             return stringsMap.get(key);
         }
 
