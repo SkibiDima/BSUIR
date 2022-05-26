@@ -9,9 +9,9 @@ startDX               dw  0
 tempDX                dw  0
 flagTemp              dw  0
 flagStart             dw  0
-Flag             dw  0
-zero			   db  0
-one                db  1
+Flag                  dw  0
+zero 		      db  0
+one                   db  1
 
 maxCMDSize equ 127
 cmd_size              db  ?
@@ -19,7 +19,7 @@ cmd_text              db  maxCMDSize + 2 dup(0)
 sourcePath            db  129 dup (0) 
 tempSourcePath        db  128 dup (0)
 
-destinationPath       db  "output.txt",0
+destinationPath       db "KP_L5OUT.txt",0
 extension             db "txt"       
 point2                db '.'
 buf                   db  0                      
@@ -33,12 +33,10 @@ endl                  equ 0
 enteredString         db 200 dup("$")
 enteredStringSize     dw 0
 
-startProcessing       db  "Processing started",             '$'                      
-startText             db  "Program is started",             '$'
-badCMDArgsMessage     db  "Bad command-line arguments.",    '$'
+enterMessage	      db  "Enter your word: ",		    '$'
+badCMDArgsMessage     db  "Bad command-line arguments",     '$'
 badSourceText         db  "Open error",                     '$'    
 fileNotFoundText      db  "File not found",                 '$'
-endText               db  0Dh,0Ah,"Program is ended",       '$'
 errorReadSourceText   db  "Error reading from source file", '$'
 
 .code
@@ -205,9 +203,7 @@ main:
 	lea di, cmd_text
 	lea si, tempSourcePath
 	inc si
-	rep movsb
-	                        
-	println startText       
+	rep movsb 
                             
 	call parseCMD          
 	cmp ax, 0               
@@ -215,20 +211,20 @@ main:
                             
 	call openFiles          
 	cmp ax, 0               
-	jne endMain				
-    
+	jne endMain	
+			
+    	println enterMessage
+
         scanf enteredString        
         xor ax, ax                  
         mov al, [enteredString+1]
         mov enteredStringSize, ax
     
         cmp enteredStringSize, 0   
-        je endMain
-        println startProcessing                        
+        je endMain                        
 	call processingFile       
                             
-endMain:                    
-	println endText            
+endMain:                               
                             
 	mov ah, 4Ch                
 	int 21h                     
