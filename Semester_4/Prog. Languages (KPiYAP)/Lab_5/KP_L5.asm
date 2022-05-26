@@ -13,7 +13,7 @@ Flag                  dw  0
 zero 		      db  0
 one                   db  1
 
-maxCMDSize equ 127
+maxCMDSize	      equ 127
 cmd_size              db  ?
 cmd_text              db  maxCMDSize + 2 dup(0)
 sourcePath            db  129 dup (0) 
@@ -61,10 +61,10 @@ println MACRO info
 	lea dx, info            
 	int 21h                
                            
-	mov dl, 0Ah             
+	mov dl, 0Ah            
 	mov ah, 02h            
 	int 21h                 
-                           
+                        ; just \n    
 	mov dl, 0Dh            
 	mov ah, 02h            
 	int 21h                
@@ -84,8 +84,8 @@ strcpy MACRO destination, source, count
     lea si, source
     lea di, destination
     
-    rep movsb
-    
+    rep movsb		; copy byte-to-byte 
+    			; to es:di from ds:si	
     pop si
     pop di
     pop cx
@@ -130,9 +130,9 @@ fseekCurrent MACRO settingPos
 	push cx                     
 	push dx
 	
-	mov ah, 42h                 
-	mov al, 1                 
-	mov cx, 0                   
+	mov ah, 42h                 ; move pointer
+	mov al, 1                   ; 1 -- from current pos
+	mov cx, 0                   ; cx:dx -- distantion
 	mov dx, settingPos	       
 	int 21h                     
                              
@@ -146,9 +146,9 @@ fseek MACRO fseekPos
 	push cx                     
 	push dx
 	
-	mov ah, 42h               
-	mov al, 0 			        
-	mov cx, 0                   
+	mov ah, 42h               ; move pointer
+	mov al, 0 		  ; 0 -- from start       
+	mov cx, 0                 ; cx:dx -- distantion 
 	mov dx, fseekPos            
 	int 21h                     
                                 
@@ -187,14 +187,14 @@ main:
 	mov es, ax              
                             
 	xor ch, ch              
-	mov cl, ds:[80h]	
+	mov cl, ds:[80h]	; command line	
 	mov bl, cl
 	mov cmd_size, cl 		
 	dec bl                
 	mov si, 81h            
-	lea di, tempSourcePath        
+	lea di, tempSourcePath       
 	
-	rep movsb              
+	rep movsb              ; copy file source
 	
 	mov ds, ax             
 	mov cmd_size, bl        
@@ -203,7 +203,7 @@ main:
 	lea di, cmd_text
 	lea si, tempSourcePath
 	inc si
-	rep movsb 
+	rep movsb 		; copy to send in parser
                             
 	call parseCMD          
 	cmp ax, 0               
@@ -284,7 +284,7 @@ openFiles PROC
 	push dx                                
 	push si                                     
                                  
-	mov ah, 3Dh			        
+	mov ah, 3Dh	; open existing file		        
 	mov al, 02h			      
 	lea dx, sourcePath          
 	int 21h                     
@@ -293,14 +293,14 @@ openFiles PROC
                               
 	mov sourceID, ax	        
      
-    mov ah, 3Ch                 
-    xor cx, cx
+    mov ah, 3Ch          ; create file       
+    xor cx, cx		 ; read_only
     lea dx, destinationPath
     int 21h 
     
     jb badOpenSource
     
-    mov ah, 3Dh
+    mov ah, 3Dh		 ; open existing file
     mov al, 02h
     lea dx, destinationPath
     int 21h
@@ -354,9 +354,9 @@ for2:
     cmp [buf], 0               
     je endFileGG
 	
-    cmp [buf], returnSymbol    
+    cmp [buf], returnSymbol    ; 0A?
     je  endString
-    cmp [buf], newLineSymbol
+    cmp [buf], newLineSymbol   ; 0D?
     je  endString
     cmp [buf], endl
     je  endString
@@ -370,18 +370,18 @@ for2:
     mov al, buf
     mov bl, [si]
     
-    cmp al, bl                 
+    cmp al, bl         ; current bytes are equal?
     je doSomething
     
-	b:
+b:
 	lea si, enteredString       
     add si, 2
 	
     jmp for2
     
 endString:
-	cmp Flag, 1
-	jne stringUdov
+	cmp Flag, 1	
+	jne stringUdov ; if contains word
 	call incrementStartPos       
     jmp for1                    
      
@@ -432,7 +432,7 @@ while1:
     cmp [buf], endl
     je  endAll
     
-    mov ah, 40h
+    mov ah, 40h	; write in file
     mov cx, 1
     lea dx, buf
     int 21h
@@ -454,7 +454,7 @@ readSymbolFromFile proc
     push bx
     push dx
     
-    mov ah, 3Fh                   
+    mov ah, 3Fh                   ; read from file
 	mov bx, sourceID              
 	mov cx, 1                      
 	lea dx, buf                     
