@@ -1,7 +1,8 @@
-.486
+
 .model small
 .stack 1000
 .data
+.486
     old_2fh     dd 0
     old         dd 0  
     isSet       db ?
