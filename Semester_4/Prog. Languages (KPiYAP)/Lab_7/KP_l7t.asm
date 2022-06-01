@@ -7,13 +7,8 @@ block dw 0
 overlay_offset dw ?
 overlay_seg dw ?
 code_seg dw ?
-exspr_line db 127 dup (0)						;Buffer for cmd line args
-exspr_size dw 0
-buffer	   db 0
-
-newLineSymbol   equ 0Dh
-returnSymbol    equ 0Ah                           
-endl            equ 0
+cmd_line db 127 dup (0)						;Buffer for cmd line args
+cmd_size dw 0
 
 c_plus equ '+'
 c_minus equ '-'
@@ -28,9 +23,6 @@ result dw 0
 current_op db 0
 prev_op dw 5
 
-sourcePath  db  "KP_L7M.txt", 0
-sourceID    dw 0
-maxString equ 127
 number db 10 dup (?)
 num_size dw 0
 
@@ -41,7 +33,8 @@ d_ov db "d_ov.exe", 0
 
 e_number_is_too_large db "Provided number is too large", 10, 13
 e_check_args_str db "Bad arguments provided", 10, 13, "$"
-e_exspr_line_example_str db "Example: [1+2*3+2/2]", 10, 13, "$"
+e_cmd_line_example_str db "Example: lab7.exe [1+2*3+2/2]", 10, 13, "$"
+e_not_enough_cmdl_len_str db "ERROR: Not enough command line arguments.", 10, 13, "$"
 e_overflow db "ERROR: Arithmetic overflow", 10, 13, "$"
 e_zero_division db "ERROR: Zero division", 10, 13, "$"
 e_lost_division db "ERROR Division forms reminder", 10, 13, "$"
@@ -119,104 +112,70 @@ make_str_from_integer proc
     ret      
 endp      
 
-read_file_string proc 						
+parse_cmd proc 							;Reads input file path from cmd, and then call proc, that reads substrs
 	mov ax, @data
-    	mov es,ax
-	mov ds, ax
+    mov es,ax
     
-    	;exspr_line
+    xor cx,cx
+    mov cl, ds:[80h] 
+	cmp cl, 1
+	ja cmdl_parse_continue
+	mov ds, ax
+	print_str e_not_enough_cmdl_len_str 	;If commandline_args str is too short
+	print_str e_cmd_line_example_str
+	jmp bend
+	cmdl_parse_continue:
+	mov es:cmd_size, cx
+	dec es:cmd_size
+	mov di, offset cmd_line
+	mov si, 82h  
+	rep movsb  							;Read all cmd to cmd_line str
 
-	mov ah, 3Dh		;open file
-	mov al, 02h
-	lea dx, sourcePath
-	int 21h
-
-	mov sourceID, ax
-	mov exspr_size, 0
-length_count:
-	mov ah, 3Fh
-	mov bx, sourceID
-	mov cx, 1
-	lea dx, buffer
-	int 21h
-
-	cmp [buffer], newLineSymbol
-    	je  endCount
-   	cmp [buffer], returnSymbol
-    	je  endCount
-   	cmp [buffer], endl
-    	je  endCount
-	 
-	inc exspr_size
-	jmp length_count
-endCount:
-	mov ah, 42h
-	mov bx, sourceID
-	mov cx, 0
-	mov dx, 0
-	mov al, 0
-	int 21h
-
-	mov ah, 3Fh
-	mov bx, sourceID
-	mov cx, exspr_size
-	lea dx, exspr_line
-	int 21h
-
-	print_str exspr_line
-	mov cx, exspr_size
-	mov di, 0
-atoi:
-	mov ah, exspr_line[di]
-	sub ah, '0'
-	mov exspr_line[di], ah
-	inc di
-	loop atoi
-	print_str exspr_line
-
+	mov ds, ax  
+	
 	params_end:
 	ret
-read_file_string endp
+parse_cmd endp
 
 check_args proc 
 	push ax
 	push cx
 	push di
 	mov di, 0
-	mov cx, exspr_size
+	mov cx, cmd_size
 	dec cx
 
 	check_args_loop:
-		cmp exspr_line[di], c_plus			;If '+'
+		cmp cmd_line[di], c_plus			;If '+'
 		je check_args_loop_end
-		cmp exspr_line[di], c_minus			;If '-'
+		cmp cmd_line[di], c_minus			;If '-'
 		je check_args_loop_end
-		cmp exspr_line[di], c_div			;If '/'
+		cmp cmd_line[di], c_div				;If '/'
 		je check_args_loop_end
-		cmp exspr_line[di], c_mult			;if '*'
+		cmp cmd_line[di], c_mult			;if '*'
 		je check_args_loop_end
-		cmp exspr_line[di], byte ptr 0dh
+		cmp cmd_line[di], byte ptr 0dh
 		je check_args_end
 
-		cmp exspr_line[di], '0'
+		cmp cmd_line[di], '0'
 		jb check_args_error
-		cmp exspr_line[di], '9'
+		cmp cmd_line[di], '9'
 		ja check_args_error
 
 		check_args_loop_end:
 		inc di
 	loop check_args_loop
 
-	cmp exspr_line[di], '0'
+	cmp cmd_line[di], '0'
 	jb check_args_error
-	cmp exspr_line[di], '9'
+	cmp cmd_line[di], '9'
 	ja check_args_error
 
 	jmp check_args_end
 
 	check_args_error:
 	print_str e_check_args_str
-	print_str e_exspr_line_example_str
+	print_str e_cmd_line_example_str
 	jmp bend
 
 	check_args_end:
@@ -288,7 +247,7 @@ convert PROC
 
     convert_error: 
     print_str e_check_args_str
-    print_str e_exspr_line_example_str
+    print_str e_cmd_line_example_str
     jmp bend
     convert_error_too_big:
     jmp number_is_too_large_error
@@ -309,7 +268,7 @@ create_gap proc 					;di - start, cx - gap size
 create_gap endp 
 
 process_high_priority_operations proc 
-	mov di, offset exspr_line
+	mov di, offset cmd_line
 	phpo_continue:
 		call get_num
 		mov al, [di]
@@ -388,15 +347,15 @@ process_high_priority_operations proc
 	mov result, 0
 	mov dx ,0
 	mov is_neg_first, 0               
-	mov di, offset exspr_line
-	add di, exspr_size 
+	mov di, offset cmd_line
+	add di, cmd_size 
 	dec di
 	plpo_read_int:
 		cmp is_end, 1
 		jne plpo_not_end
 		jmp plpo_end
 		plpo_not_end: 
-		cmp di, offset exspr_line
+		cmp di, offset cmd_line
 		jne not_cmd_begin
 		jmp plpo_last_num
 		not_cmd_begin:
@@ -409,7 +368,7 @@ process_high_priority_operations proc
 		je pop_stack_to_answer
 
 		plpo_read_int_loop:
-			cmp di, offset exspr_line
+			cmp di, offset cmd_line
 			jne plpo_not_last
 			jmp plpo_last_num
 			plpo_not_last:
@@ -524,7 +483,7 @@ process_high_priority_operations endp
 
 skip_gap proc 
 	skip_gap_loop:
-		cmp di, offset exspr_line
+		cmp di, offset cmd_line
 		je skip_gap_in_end
 		cmp [di], byte ptr '#'
 		jne skip_gap_dec
@@ -705,13 +664,8 @@ check_flags proc
 check_flags endp
 
 start:
-	mov ax, @data
-	mov ds, ax 
-	mov es, ax 
-
-	call read_file_string
+	call parse_cmd
 	call check_args
-
 	mov ax, @data
 	mov ds, ax 
 	mov es, ax 
@@ -724,7 +678,7 @@ bend: ;[Before end]
 		int 21h               
 bad_args_error:
     print_str e_check_args_str
-    print_str e_exspr_line_example_str
+    print_str e_cmd_line_example_str
     jmp bend
 number_is_too_large_error:
 	print_str e_number_is_too_large
