@@ -311,13 +311,16 @@ process_high_priority_operations proc
 
 			cmp current_op, byte ptr '/'
 			je phpo_process_div 
+			jmp_error:
 			jmp phpo_error
 
 		phpo_process_mult:
 			mov dx, offset m_ov
 			call over
 			jmp phpo_processed
-		phpo_process_div:      
+		phpo_process_div:  
+			cmp bx, 0
+			je jmp_error 
 			mov dx, offset d_ov
 			call over
 			jmp phpo_processed
