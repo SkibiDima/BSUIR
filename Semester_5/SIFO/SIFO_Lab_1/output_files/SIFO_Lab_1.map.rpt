@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SIFO_Lab_1
-Wed Sep  7 20:42:09 2022
+Thu Sep  8 21:56:26 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -40,27 +40,30 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep  7 20:42:09 2022       ;
-; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
-; Revision Name                   ; SIFO_Lab_1                                  ;
-; Top-level Entity Name           ; SIFO_Lab_1                                  ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 13                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++-----------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Thu Sep  8 21:56:26 2022       ;
+; Quartus Prime Version             ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                     ; SIFO_Lab_1                                  ;
+; Top-level Entity Name             ; SIFO_Lab_1                                  ;
+; Family                            ; Arria II GX                                 ;
+; Logic utilization                 ; N/A                                         ;
+;     Combinational ALUTs           ; 8                                           ;
+;     Memory ALUTs                  ; 0                                           ;
+;     Dedicated logic registers     ; 0                                           ;
+; Total registers                   ; 0                                           ;
+; Total pins                        ; 13                                          ;
+; Total virtual pins                ; 0                                           ;
+; Total block memory bits           ; 0                                           ;
+; DSP block 18-bit elements         ; 0                                           ;
+; Total GXB Receiver Channel PCS    ; 0                                           ;
+; Total GXB Receiver Channel PMA    ; 0                                           ;
+; Total GXB Transmitter Channel PCS ; 0                                           ;
+; Total GXB Transmitter Channel PMA ; 0                                           ;
+; Total PLLs                        ; 0                                           ;
+; Total DLLs                        ; 0                                           ;
++-----------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -68,9 +71,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; EP2AGX45DF29I3     ;                    ;
 ; Top-level entity name                                                           ; SIFO_Lab_1         ; SIFO_Lab_1         ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Family name                                                                     ; Arria II GX        ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -117,6 +121,8 @@ https://fpgasoftware.intel.com/eula.
 ; Strict RAM Replacement                                                          ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
 ; Auto Resource Sharing                                                           ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
 ; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
@@ -145,8 +151,6 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
@@ -166,49 +170,70 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path               ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------+---------+
-; SIFO_Lab_1.bdf                   ; yes             ; User Block Diagram/Schematic File  ; D:/FPGA/Projects/SIFO_Lab_1/SIFO_Lab_1.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; SIFO_Lab_1.bdf                   ; yes             ; User Block Diagram/Schematic File  ; D:/BSUIR/Semester_5/SIFO/SIFO_Lab_1/SIFO_Lab_1.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 4        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 8        ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 8        ;
-;     -- 4 input functions                    ; 0        ;
-;     -- <=3 input functions                  ; 0        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 13       ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; A0~input ;
-; Maximum fan-out                             ; 8        ;
-; Total fan-out                               ; 61       ;
-; Average fan-out                             ; 1.79     ;
-+---------------------------------------------+----------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++-----------------------------------------------+----------+
+; Resource                                      ; Usage    ;
++-----------------------------------------------+----------+
+; Estimated ALUTs Used                          ; 8        ;
+;     -- Combinational ALUTs                    ; 8        ;
+;     -- Memory ALUTs                           ; 0        ;
+;     -- LUT_REGs                               ; 0        ;
+; Dedicated logic registers                     ; 0        ;
+;                                               ;          ;
+; Estimated ALUTs Unavailable                   ; 0        ;
+;     -- Due to unpartnered combinational logic ; 0        ;
+;     -- Due to Memory ALUTs                    ; 0        ;
+;                                               ;          ;
+; Total combinational functions                 ; 8        ;
+; Combinational ALUT usage by number of inputs  ;          ;
+;     -- 7 input functions                      ; 0        ;
+;     -- 6 input functions                      ; 0        ;
+;     -- 5 input functions                      ; 8        ;
+;     -- 4 input functions                      ; 0        ;
+;     -- <=3 input functions                    ; 0        ;
+;                                               ;          ;
+; Combinational ALUTs by mode                   ;          ;
+;     -- normal mode                            ; 8        ;
+;     -- extended LUT mode                      ; 0        ;
+;     -- arithmetic mode                        ; 0        ;
+;     -- shared arithmetic mode                 ; 0        ;
+;                                               ;          ;
+; Estimated ALUT/register pairs used            ; 8        ;
+;                                               ;          ;
+; Total registers                               ; 0        ;
+;     -- Dedicated logic registers              ; 0        ;
+;     -- I/O registers                          ; 0        ;
+;     -- LUT_REGs                               ; 0        ;
+;                                               ;          ;
+;                                               ;          ;
+; I/O pins                                      ; 13       ;
+;                                               ;          ;
+; DSP block 18-bit elements                     ; 0        ;
+;                                               ;          ;
+; Maximum fan-out node                          ; A0~input ;
+; Maximum fan-out                               ; 8        ;
+; Total fan-out                                 ; 61       ;
+; Average fan-out                               ; 1.79     ;
++-----------------------------------------------+----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |SIFO_Lab_1                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 13   ; 0            ; |SIFO_Lab_1         ; SIFO_Lab_1  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; |SIFO_Lab_1                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 13   ; 0            ; |SIFO_Lab_1         ; SIFO_Lab_1  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -232,10 +257,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 8                           ;
+; boundary_port         ; 13                          ;
+; stratixiv_lcell_comb  ; 8                           ;
 ;     normal            ; 8                           ;
 ;         5 data inputs ; 8                           ;
-; boundary_port         ; 13                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
 ; Average LUT depth     ; 1.00                        ;
@@ -257,9 +282,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Sep  7 20:41:56 2022
+    Info: Processing started: Thu Sep  8 21:56:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file sifo_lab_1.bdf
     Info (12023): Found entity 1: SIFO_Lab_1
@@ -271,10 +295,10 @@ Info (21057): Implemented 21 device resources after synthesis - the final resour
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Wed Sep  7 20:42:09 2022
-    Info: Elapsed time: 00:00:13
+    Info: Processing ended: Thu Sep  8 21:56:26 2022
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:16
 
 

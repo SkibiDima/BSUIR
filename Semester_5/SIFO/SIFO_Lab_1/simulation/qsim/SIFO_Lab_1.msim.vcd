@@ -3,7 +3,7 @@ $comment
 		vcd file SIFO_Lab_1.msim.vcd -direction
 $end
 $date
-	Wed Sep  7 21:16:14 2022
+	Thu Sep  8 21:56:39 2022
 $end
 $version
 	Questa Intel Starter FPGA Edition Version 2021.2

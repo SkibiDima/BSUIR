@@ -1,20 +1,22 @@
-Fitter Status : Successful - Wed Sep  7 20:42:54 2022
+Fitter Status : Successful - Thu Sep  8 21:48:40 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : SIFO_Lab_1
 Top-level Entity Name : SIFO_Lab_1
-Family : Cyclone V
-Device : 5CGXFC7C7F23C8
+Family : Arria II GX
+Device : EP2AGX45DF29I3
 Timing Models : Final
-Logic utilization (in ALMs) : 5 / 56,480 ( < 1 % )
+Logic utilization : < 1 %
+    Combinational ALUTs : 8 / 36,100 ( < 1 % )
+    Memory ALUTs : 0 / 18,050 ( 0 % )
+    Dedicated logic registers : 0 / 36,100 ( 0 % )
 Total registers : 0
-Total pins : 13 / 268 ( 5 % )
+Total pins : 13 / 404 ( 3 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 7,024,640 ( 0 % )
-Total RAM Blocks : 0 / 686 ( 0 % )
-Total DSP Blocks : 0 / 156 ( 0 % )
-Total HSSI RX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
-Total HSSI TX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
-Total PLLs : 0 / 13 ( 0 % )
-Total DLLs : 0 / 4 ( 0 % )
+Total block memory bits : 0 / 2,939,904 ( 0 % )
+DSP block 18-bit elements : 0 / 232 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 8 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 8 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

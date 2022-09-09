@@ -26,9 +26,9 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Sep  7 21:16:11 2022
+    Info: Processing started: Thu Sep  8 21:56:36 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (119006): Selected device EP2AGX45DF29I3 for design "SIFO_Lab_1"
 
 Completed successfully. 
 
@@ -55,13 +55,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Sep  7 21:16:12 2022
+    Info: Processing started: Thu Sep  8 21:56:36 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (119006): Selected device EP2AGX45DF29I3 for design "SIFO_Lab_1"
 Info (204019): Generated file SIFO_Lab_1.vo in folder "D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4736 megabytes
-    Info: Processing ended: Wed Sep  7 21:16:13 2022
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4745 megabytes
+    Info: Processing ended: Thu Sep  8 21:56:37 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -69,7 +69,7 @@ Completed successfully.
 
 **** Generating the ModelSim .do script ****
 
-D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1.do generated.
+D:/BSUIR/Semester_5/SIFO/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1.do generated.
 
 Completed successfully. 
 
@@ -90,7 +90,8 @@ Reading pref.tcl
 
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 21:16:14 on Sep 07,2022
+# Start time: 21:56:38 on Sep 08,2022
+
 # vlog -work work SIFO_Lab_1.vo 
 
 # -- Compiling module SIFO_Lab_1
@@ -100,13 +101,13 @@ Reading pref.tcl
 # Top level modules:
 # 	SIFO_Lab_1
 
-# End time: 21:16:14 on Sep 07,2022, Elapsed time: 0:00:00
+# End time: 21:56:38 on Sep 08,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 21:16:14 on Sep 07,2022
+# Start time: 21:56:38 on Sep 08,2022
 
 # vlog -work work Waveform.vwf.vt 
 
@@ -117,13 +118,13 @@ Reading pref.tcl
 # Top level modules:
 # 	SIFO_Lab_1_vlg_vec_tst
 
-# End time: 21:16:14 on Sep 07,2022, Elapsed time: 0:00:00
+# End time: 21:56:38 on Sep 08,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_1_vlg_vec_tst 
-# Start time: 21:16:14 on Sep 07,2022
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 21:56:38 on Sep 08,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 win64 Apr 14 2021
 # //
@@ -158,20 +159,20 @@ Reading pref.tcl
 # ** Note: $finish    : Waveform.vwf.vt(67)
 #    Time: 1 us  Iteration: 0  Instance: /SIFO_Lab_1_vlg_vec_tst
 
-# End time: 21:16:14 on Sep 07,2022, Elapsed time: 0:00:00
+# End time: 21:56:39 on Sep 08,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf...
+Reading D:/BSUIR/Semester_5/SIFO/SIFO_Lab_1/Waveform.vwf...
 
-Reading D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1.msim.vcd...
+Reading D:/BSUIR/Semester_5/SIFO/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1_20220907211614.sim.vwf
+Writing the resulting VWF to D:/BSUIR/Semester_5/SIFO/SIFO_Lab_1/simulation/qsim/SIFO_Lab_1_20220908215639.sim.vwf
 
 Finished VCD to VWF conversion.
 
