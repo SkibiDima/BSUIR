@@ -1,5 +1,5 @@
 Flow report for SIFO_Lab_1
-Wed Sep  7 21:16:13 2022
+Fri Sep  9 10:41:32 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep  7 21:16:13 2022       ;
+; Flow Status                     ; Successful - Fri Sep  9 10:41:32 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; SIFO_Lab_1                                  ;
 ; Top-level Entity Name           ; SIFO_Lab_1                                  ;
@@ -110,32 +110,42 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
-; Total                ; 00:01:20     ; --                      ; --                  ; 00:03:34                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 901 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 901 MB              ; 00:00:01                           ;
+; Total                ; 00:01:25     ; --                      ; --                  ; 00:03:39                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++----------------------+------------------+-------------+-------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name     ; OS Version  ; Processor type ;
++----------------------+------------------+-------------+-------------+----------------+
+; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Fitter               ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Assembler            ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Timing Analyzer      ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
++----------------------+------------------+-------------+-------------+----------------+
 
 
 ------------
@@ -157,6 +167,11 @@ quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_setting
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=../SIFO_Lab_1/Waveform.vwf --testbench_file=../SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=../SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=../SIFO_Lab_1/Waveform.vwf --testbench_file=../SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=../SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
 
 
 
