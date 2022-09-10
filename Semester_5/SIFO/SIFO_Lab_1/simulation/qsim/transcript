@@ -2,28 +2,46 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+<<<<<<< HEAD
 # Start time: 21:56:38 on Sep 08,2022
+=======
+# Start time: 10:41:33 on Sep 09,2022
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 # vlog -work work SIFO_Lab_1.vo 
 # -- Compiling module SIFO_Lab_1
 # 
 # Top level modules:
 # 	SIFO_Lab_1
+<<<<<<< HEAD
 # End time: 21:56:38 on Sep 08,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 # Start time: 21:56:38 on Sep 08,2022
+=======
+# End time: 10:41:34 on Sep 09,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 10:41:34 on Sep 09,2022
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 # vlog -work work Waveform.vwf.vt 
 # -- Compiling module SIFO_Lab_1_vlg_vec_tst
 # 
 # Top level modules:
 # 	SIFO_Lab_1_vlg_vec_tst
+<<<<<<< HEAD
 # End time: 21:56:38 on Sep 08,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_1_vlg_vec_tst 
 # Start time: 21:56:38 on Sep 08,2022
+=======
+# End time: 10:41:34 on Sep 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_1_vlg_vec_tst 
+# Start time: 10:41:34 on Sep 09,2022
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
 # //  Questa Intel Starter FPGA Edition-64
-# //  Version 2021.2 win64 Apr 14 2021
+# //  Version 2021.2 linux_x86_64 Apr 14 2021
 # //
 # //  Copyright 1991-2021 Mentor Graphics Corporation
 # //  All Rights Reserved.
@@ -52,5 +70,9 @@
 # after#26
 # ** Note: $finish    : Waveform.vwf.vt(67)
 #    Time: 1 us  Iteration: 0  Instance: /SIFO_Lab_1_vlg_vec_tst
+<<<<<<< HEAD
 # End time: 21:56:39 on Sep 08,2022, Elapsed time: 0:00:01
+=======
+# End time: 10:41:34 on Sep 09,2022, Elapsed time: 0:00:00
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 # Errors: 0, Warnings: 0

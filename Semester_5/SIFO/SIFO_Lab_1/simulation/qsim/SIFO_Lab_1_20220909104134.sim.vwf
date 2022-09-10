@@ -1,50 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source="../SIFO_Lab_1/Waveform.vwf" --testbench_file="../SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source="D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf" --testbench_file="D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="../SIFO_Lab_1/simulation/qsim/" SIFO_Lab_1 -c SIFO_Lab_1</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/" SIFO_Lab_1 -c SIFO_Lab_1</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vlog -work work SIFO_Lab_1.vo
-vlog -work work Waveform.vwf.vt
-vsim -voptargs="+acc" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_1_vlg_vec_tst
-vcd file -direction SIFO_Lab_1.msim.vcd
-vcd add -internal SIFO_Lab_1_vlg_vec_tst/*
-vcd add -internal SIFO_Lab_1_vlg_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vlog -work work SIFO_Lab_1.vo
-vlog -work work Waveform.vwf.vt
-vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_1_vlg_vec_tst
-vcd file -direction SIFO_Lab_1.msim.vcd
-vcd add -internal SIFO_Lab_1_vlg_vec_tst/*
-vcd add -internal SIFO_Lab_1_vlg_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-
-</modelsim_script_timing>
-<hdl_lang>verilog</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -227,7 +180,15 @@ TRANSITION_LIST("A0")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 5;
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
 			LEVEL 0 FOR 100.0;
 			LEVEL 1 FOR 100.0;
 		}
@@ -241,11 +202,13 @@ TRANSITION_LIST("A1")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 2;
+			REPEAT = 1;
 			LEVEL 0 FOR 200.0;
 			LEVEL 1 FOR 200.0;
+			LEVEL 0 FOR 200.0;
+			LEVEL 1 FOR 200.0;
+			LEVEL 0 FOR 200.0;
 		}
-		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -259,8 +222,8 @@ TRANSITION_LIST("A2")
 			REPEAT = 1;
 			LEVEL 0 FOR 400.0;
 			LEVEL 1 FOR 400.0;
+			LEVEL 0 FOR 200.0;
 		}
-		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -271,7 +234,25 @@ TRANSITION_LIST("C")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 10;
+			REPEAT = 1;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
 			LEVEL 0 FOR 50.0;
 			LEVEL 1 FOR 50.0;
 		}
@@ -285,11 +266,21 @@ TRANSITION_LIST("X")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 6;
+			REPEAT = 1;
 			LEVEL 0 FOR 80.0;
 			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -298,7 +289,15 @@ TRANSITION_LIST("Y0")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 780.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 100.0;
+		}
 	}
 }
 
@@ -307,7 +306,15 @@ TRANSITION_LIST("Y1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 150.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 790.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -316,7 +323,13 @@ TRANSITION_LIST("Y2")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 250.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 700.0;
+		}
 	}
 }
 
@@ -325,7 +338,11 @@ TRANSITION_LIST("Y3")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -334,7 +351,13 @@ TRANSITION_LIST("Y4")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 450.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 520.0;
+		}
 	}
 }
 
@@ -343,7 +366,13 @@ TRANSITION_LIST("Y5")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 560.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -352,7 +381,11 @@ TRANSITION_LIST("Y6")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -361,7 +394,13 @@ TRANSITION_LIST("Y7")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 750.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 200.0;
+		}
 	}
 }
 

@@ -1,5 +1,9 @@
 Flow report for SIFO_Lab_1
+<<<<<<< HEAD
 Thu Sep  8 21:56:37 2022
+=======
+Fri Sep  9 10:41:32 2022
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -38,6 +42,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 
+<<<<<<< HEAD
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +-----------------------------------+---------------------------------------------+
@@ -64,6 +69,31 @@ https://fpgasoftware.intel.com/eula.
 ; Total PLLs                        ; 0                                           ;
 ; Total DLLs                        ; 0                                           ;
 +-----------------------------------+---------------------------------------------+
+=======
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Fri Sep  9 10:41:32 2022       ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                   ; SIFO_Lab_1                                  ;
+; Top-level Entity Name           ; SIFO_Lab_1                                  ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CGXFC7C7F23C8                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 5 / 56,480 ( < 1 % )                        ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 13 / 268 ( 5 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 
 
 +-----------------------------------------+
@@ -98,6 +128,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4867 MB             ; 00:00:16                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4733 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4745 MB             ; 00:00:01                           ;
@@ -114,6 +145,60 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
+=======
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4867 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:44     ; 1.0                     ; 7419 MB             ; 00:02:55                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4884 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 5234 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4735 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4736 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 901 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 897 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 901 MB              ; 00:00:01                           ;
+; Total                ; 00:01:25     ; --                      ; --                  ; 00:03:39                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++----------------------+------------------+-------------+-------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name     ; OS Version  ; Processor type ;
++----------------------+------------------+-------------+-------------+----------------+
+; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Fitter               ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Assembler            ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; Timing Analyzer      ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10  ; 10.0        ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer   ; fedora           ; Fedora Core ; Fedora Core ; x86_64         ;
++----------------------+------------------+-------------+-------------+----------------+
+>>>>>>> 60e53637ec03785e374123475694d14f26e20e49
 
 
 ------------
@@ -122,6 +207,11 @@ https://fpgasoftware.intel.com/eula.
 quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=D:/FPGA/Projects/SIFO_Lab_1/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=../SIFO_Lab_1/Waveform.vwf --testbench_file=../SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=../SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_1 -c SIFO_Lab_1 --vector_source=../SIFO_Lab_1/Waveform.vwf --testbench_file=../SIFO_Lab_1/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=../SIFO_Lab_1/simulation/qsim/ SIFO_Lab_1 -c SIFO_Lab_1
 
 
 
