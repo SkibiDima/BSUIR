@@ -1,0 +1,12 @@
+module register8(data, clk, q);
+	
+	input [7:0] data;
+	input clk;
+	output reg [7:0] q;
+	
+	always @(posedge clk)
+	begin
+		q <= data;
+	end
+	
+endmodule

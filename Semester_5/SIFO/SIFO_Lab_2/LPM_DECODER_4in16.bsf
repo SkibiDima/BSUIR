@@ -1,0 +1,62 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 192 368)
+	(text "LPM_DECODER_4in16" (rect 2 0 162 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 288 25 300)(font "Arial" ))
+	(port
+		(pt 0 144)
+		(input)
+		(text "data[3..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "data[3..0]" (rect 20 137 73 151)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "enable" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "enable" (rect 20 153 57 167)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 128 144)
+		(output)
+		(text "eq[15..0]" (rect 0 0 49 14)(font "Arial" (font_size 8)))
+		(text "eq[15..0]" (rect 88 136 137 150)(font "Arial" (font_size 8)))
+		(line (pt 128 144)(pt 112 144)(color 128 0 255)(line_width 5))
+	)
+	(drawing
+		(line (pt 16 16)(pt 16 288))
+		(line (pt 16 16)(pt 112 16))
+		(line (pt 16 288)(pt 112 288))
+		(line (pt 112 16)(pt 112 288))
+		(line (pt 0 0)(pt 130 0))
+		(line (pt 128 1)(pt 128 307))
+		(line (pt 0 306)(pt 130 306))
+		(line (pt 0 0)(pt 0 306))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+	)
+)

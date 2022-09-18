@@ -2,52 +2,44 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clkin_50'
-Slack : 17.789
+Type  : Setup 'CLK_50hz'
+Slack : -3.231
+TNS   : -19.287
+
+Type  : Setup 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
+Slack : -1.744
+TNS   : -1.744
+
+Type  : Hold 'CLK_50hz'
+Slack : -6.249
+TNS   : -41.096
+
+Type  : Hold 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
+Slack : 1.108
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'clkin_50'
-Slack : 1.015
+Type  : Recovery 'CLK_50hz'
+Slack : -11.831
+TNS   : -94.648
+
+Type  : Recovery 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
+Slack : -6.062
+TNS   : -6.062
+
+Type  : Removal 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
+Slack : 1.530
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkin_50'
-Slack : 9.299
+Type  : Removal 'CLK_50hz'
+Slack : 2.719
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'clkin_50'
-Slack : 17.790
-TNS   : 0.000
+Type  : Minimum Pulse Width 'CLK_50hz'
+Slack : -2.289
+TNS   : -2.289
 
-Type  : Slow 1100mV 0C Model Hold 'clkin_50'
-Slack : 1.046
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkin_50'
-Slack : 9.265
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'clkin_50'
-Slack : 18.912
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'clkin_50'
-Slack : 0.362
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkin_50'
-Slack : 9.289
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'clkin_50'
-Slack : 18.960
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'clkin_50'
-Slack : 0.332
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkin_50'
-Slack : 9.266
-TNS   : 0.000
+Type  : Minimum Pulse Width 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
+Slack : -0.307
+TNS   : -0.778
 
 ------------------------------------------------------------

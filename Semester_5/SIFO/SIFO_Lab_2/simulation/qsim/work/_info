@@ -19,6 +19,54 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -26,60 +74,220 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dD:/FPGA/Projects/SIFO_Lab_2/simulation/qsim
+Z1 dD:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim
 T_opt
-Z2 !s110 1662750345
-V=7??1=X?9O[z?iDQ3JTSF0
-04 22 4 work SIFO_Lab_2_vlg_vec_tst fast 0
-=1-244bfe48369c-631b8e89-2af-1438
-!s124 OEM10U2 
-o-quiet -auto_acc_if_foreign -work work -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
-Z3 tCvgOpt 0
+Z2 !s110 1663524852
+Vz1Pk5DaCY^8Md?Jed60MT2
+04 25 4 work Block_3_16sig_vlg_vec_tst fast 0
+=1-244bfe48369c-63275ff4-21d-395c
+Z3 !s124 OEM10U2 
+Z4 o-quiet -auto_acc_if_foreign -work work -L maxii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z5 tCvgOpt 0
 n@_opt
-OL;O;2021.2;73
-vSIFO_Lab_2
-R2
-!i10b 1
-!s100 ZTf5I=IRE;264P2JeI?O12
-IUWVzNGJ7=b<o9N;[e3PY12
+Z6 OL;O;2021.2;73
 R1
-w1662750344
-8SIFO_Lab_2.vo
-FSIFO_Lab_2.vo
-!i122 52
-L0 32 305
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.2;73
-r1
-!s85 0
-31
-Z6 !s108 1662750345.000000
-!s107 SIFO_Lab_2.vo|
-!s90 -work|work|SIFO_Lab_2.vo|
-!i113 0
-Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+T_opt1
+!s110 1663524944
+VDekB;:E8iCFKo[G4:L4E:0
+04 21 4 work Block_dop_vlg_vec_tst fast 0
+=1-244bfe48369c-63276050-49-7244
 R3
-n@s@i@f@o_@lab_2
-vSIFO_Lab_2_vlg_vec_tst
-R2
-!i10b 1
-!s100 I[cSIOc3]kz1R6Y_d2_`e1
-I3eJcSoe0NNM6OLGlJ8GOX3
-R1
-w1662750343
-8Waveform.vwf.vt
-FWaveform.vwf.vt
-!i122 53
-L0 30 32
 R4
 R5
+n@_opt1
+R6
+T_opt2
+Z7 !s110 1663524314
+V:IE:2:GTB>i[5U5hdTOHK3
+04 21 4 work Block_2_D_vlg_vec_tst fast 0
+=1-244bfe48369c-63275dda-1e8-54e0
+R3
+R4
+R5
+n@_opt2
+R6
+R1
+vBlock_1_mn
+Z8 !s110 1663524224
+!i10b 1
+!s100 jiC^7;n^d`L>N[[4B^NoV0
+I5fCQEcMcA2Z^dSP:M27Jf2
+R1
+w1663524223
+Z9 8SIFO_Lab_2.vo
+Z10 FSIFO_Lab_2.vo
+!i122 163
+L0 32 351
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2021.2;73
 r1
 !s85 0
 31
-R6
-!s107 Waveform.vwf.vt|
-!s90 -work|work|Waveform.vwf.vt|
+Z13 !s108 1663524224.000000
+Z14 !s107 SIFO_Lab_2.vo|
+Z15 !s90 -work|work|SIFO_Lab_2.vo|
 !i113 0
+Z16 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+n@block_1_mn
+vBlock_1_mn_vlg_vec_tst
+R8
+!i10b 1
+!s100 ILh^5Y7NY0Vc2020]IXNQ2
+I_[Hf^`Oi@FdJWdF86D_@U0
+R1
+w1663524222
+8B1Waveform.vwf.vt
+FB1Waveform.vwf.vt
+!i122 164
+L0 30 40
+R11
+R12
+r1
+!s85 0
+31
+R13
+!s107 B1Waveform.vwf.vt|
+!s90 -work|work|B1Waveform.vwf.vt|
+!i113 0
+R16
+R5
+n@block_1_mn_vlg_vec_tst
+vBlock_2_D
 R7
-R3
-n@s@i@f@o_@lab_2_vlg_vec_tst
+!i10b 1
+!s100 JI<?5mhO?C>6LNK1NAkGV2
+IePa`JgA@ciTf6G8jlV_4g0
+R1
+w1663524313
+R9
+R10
+!i122 165
+L0 32 696
+R11
+R12
+r1
+!s85 0
+31
+Z17 !s108 1663524314.000000
+R14
+R15
+!i113 0
+R16
+R5
+n@block_2_@d
+vBlock_2_D_vlg_vec_tst
+R7
+!i10b 1
+!s100 ZdgWJKICZ:6<fAc]U6mm:2
+IIaBG<lNfPoiP33@JAgdAc0
+R1
+w1663524312
+8B2Waveform.vwf.vt
+FB2Waveform.vwf.vt
+!i122 166
+Z18 L0 30 28
+R11
+R12
+r1
+!s85 0
+31
+R17
+!s107 B2Waveform.vwf.vt|
+!s90 -work|work|B2Waveform.vwf.vt|
+!i113 0
+R16
+R5
+n@block_2_@d_vlg_vec_tst
+vBlock_3_16sig
+R2
+!i10b 1
+!s100 6QGc`kHD?2`CokiiFz54Q3
+I^Nml9MibAln`fCzBVMGRX1
+R1
+w1663524851
+R9
+R10
+!i122 167
+L0 32 1081
+R11
+R12
+r1
+!s85 0
+31
+Z19 !s108 1663524852.000000
+R14
+R15
+!i113 0
+R16
+R5
+n@block_3_16sig
+vBlock_3_16sig_vlg_vec_tst
+R2
+!i10b 1
+!s100 5NXa?_Y4JII6UlB>XdNJ31
+Ik>aW;AHkLT1NQ:VAh1;iU2
+R1
+w1663524850
+8B3Waveform.vwf.vt
+FB3Waveform.vwf.vt
+!i122 168
+R18
+R11
+R12
+r1
+!s85 0
+31
+R19
+!s107 B3Waveform.vwf.vt|
+!s90 -work|work|B3Waveform.vwf.vt|
+!i113 0
+R16
+R5
+n@block_3_16sig_vlg_vec_tst
+vBlock_dop
+Z20 !s110 1663524943
+!i10b 1
+!s100 IiDio3]i6zL6hc92@VU`e1
+IZC6EkmDZRU0bQP5adM0R63
+R1
+Z21 w1663524942
+R9
+R10
+!i122 169
+L0 32 1988
+R11
+R12
+r1
+!s85 0
+31
+Z22 !s108 1663524943.000000
+R14
+R15
+!i113 0
+R16
+R5
+n@block_dop
+vBlock_dop_vlg_vec_tst
+R20
+!i10b 1
+!s100 =Qa2mfXTe3]?V^zm3S:QQ1
+IaW3`SjFCl?NKF^;WS;iA33
+R1
+R21
+8BdopWaveform.vwf.vt
+FBdopWaveform.vwf.vt
+!i122 170
+L0 30 134
+R11
+R12
+r1
+!s85 0
+31
+R22
+!s107 BdopWaveform.vwf.vt|
+!s90 -work|work|BdopWaveform.vwf.vt|
+!i113 0
+R16
+R5
+n@block_dop_vlg_vec_tst

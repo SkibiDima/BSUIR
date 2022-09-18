@@ -7,7 +7,7 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source="D:/FPGA/Projects/SIFO_Lab_2/Waveform.vwf" --testbench_file="D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source="D:/FPGA/Projects/SIFO_Lab_2.1/BdopWaveform.vwf" --testbench_file="D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/BdopWaveform.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,9 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Sep  9 22:05:42 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=D:/FPGA/Projects/SIFO_Lab_2/Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/Waveform.vwf.vt
-Info (119006): Selected device 5CGXFC7C7F23C8 for design "SIFO_Lab_2"
+    Info: Processing started: Sun Sep 18 21:15:41 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=D:/FPGA/Projects/SIFO_Lab_2.1/BdopWaveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/BdopWaveform.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -37,7 +36,7 @@ Completed successfully.
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/" SIFO_Lab_2 -c SIFO_Lab_2
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/" SIFO_Lab_2 -c SIFO_Lab_2
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -56,22 +55,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Sep  9 22:05:43 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/ SIFO_Lab_2 -c SIFO_Lab_2
-Info (119006): Selected device 5CGXFC7C7F23C8 for design "SIFO_Lab_2"
+    Info: Processing started: Sun Sep 18 21:15:42 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/ SIFO_Lab_2 -c SIFO_Lab_2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file SIFO_Lab_2.vo in folder "D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file SIFO_Lab_2.vo in folder "D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4739 megabytes
-    Info: Processing ended: Fri Sep  9 22:05:44 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4631 megabytes
+    Info: Processing ended: Sun Sep 18 21:15:42 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/SIFO_Lab_2.do generated.
+D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/SIFO_Lab_2.do generated.
 
 Completed successfully. 
 
@@ -92,40 +90,40 @@ Reading pref.tcl
 
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 22:05:45 on Sep 09,2022
+# Start time: 21:15:43 on Sep 18,2022
 # vlog -work work SIFO_Lab_2.vo 
 
-# -- Compiling module SIFO_Lab_2
+# -- Compiling module Block_dop
 
 # 
 
 # Top level modules:
-# 	SIFO_Lab_2
+# 	Block_dop
 
-# End time: 22:05:45 on Sep 09,2022, Elapsed time: 0:00:00
+# End time: 21:15:43 on Sep 18,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 22:05:45 on Sep 09,2022
+# Start time: 21:15:43 on Sep 18,2022
 
-# vlog -work work Waveform.vwf.vt 
+# vlog -work work BdopWaveform.vwf.vt 
 
-# -- Compiling module SIFO_Lab_2_vlg_vec_tst
+# -- Compiling module Block_dop_vlg_vec_tst
 
 # 
 
 # Top level modules:
-# 	SIFO_Lab_2_vlg_vec_tst
+# 	Block_dop_vlg_vec_tst
 
-# End time: 22:05:45 on Sep 09,2022, Elapsed time: 0:00:00
+# End time: 21:15:43 on Sep 18,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
-# vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SIFO_Lab_2_vlg_vec_tst 
-# Start time: 22:05:45 on Sep 09,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# vsim -voptargs=""+acc"" -c -t 1ps -L maxii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Block_dop_vlg_vec_tst 
+# Start time: 21:15:43 on Sep 18,2022
+# ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 win64 Apr 14 2021
 # //
@@ -141,33 +139,46 @@ Reading pref.tcl
 # //  18 U.S.C. Section 1905.
 # //
 
-# Loading work.SIFO_Lab_2_vlg_vec_tst(fast)
-# Loading work.SIFO_Lab_2(fast)
-# Loading cyclonev_ver.cyclonev_io_obuf(fast)
-# Loading cyclonev_ver.cyclonev_io_ibuf(fast)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast)
-# Loading altera_ver.dffeas(fast)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast__1)
+# Loading work.Block_dop_vlg_vec_tst(fast)
+# Loading work.Block_dop(fast)
+# Loading maxii_ver.maxii_io(fast)
+# Loading maxii_ver.maxii_lcell(fast)
+# Loading maxii_ver.maxii_asynch_lcell(fast)
+# Loading maxii_ver.maxii_lcell_register(fast)
+# Loading maxii_ver.maxii_lcell(fast__1)
+# Loading maxii_ver.maxii_asynch_lcell(fast__1)
+# Loading maxii_ver.maxii_lcell_register(fast__1)
+# Loading maxii_ver.maxii_lcell(fast__2)
+# Loading maxii_ver.maxii_asynch_lcell(fast__2)
+# Loading maxii_ver.maxii_lcell(fast__3)
+# Loading maxii_ver.maxii_asynch_lcell(fast__3)
+# Loading maxii_ver.maxii_lcell(fast__4)
+# Loading maxii_ver.maxii_asynch_lcell(fast__4)
+# Loading maxii_ver.maxii_lcell(fast__5)
+# Loading maxii_ver.maxii_asynch_lcell(fast__5)
+# Loading maxii_ver.maxii_lcell(fast__6)
+# Loading maxii_ver.maxii_asynch_lcell(fast__6)
+# Loading maxii_ver.maxii_io(fast__1)
 
 # after#26
 
-# ** Note: $finish    : Waveform.vwf.vt(51)
-#    Time: 1 us  Iteration: 0  Instance: /SIFO_Lab_2_vlg_vec_tst
+# ** Note: $finish    : BdopWaveform.vwf.vt(55)
+#    Time: 4 us  Iteration: 0  Instance: /Block_dop_vlg_vec_tst
 
-# End time: 22:05:46 on Sep 09,2022, Elapsed time: 0:00:01
+# End time: 21:15:44 on Sep 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/FPGA/Projects/SIFO_Lab_2/Waveform.vwf...
+Reading D:/FPGA/Projects/SIFO_Lab_2.1/BdopWaveform.vwf...
 
-Reading D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/SIFO_Lab_2.msim.vcd...
+Reading D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/SIFO_Lab_2.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/FPGA/Projects/SIFO_Lab_2/simulation/qsim/SIFO_Lab_2_20220909220546.sim.vwf
+Writing the resulting VWF to D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/SIFO_Lab_2_20220918211544.sim.vwf
 
 Finished VCD to VWF conversion.
 
