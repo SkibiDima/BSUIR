@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SIFO_Lab_2
-Sun Sep 18 21:15:42 2022
+Sat Sep 24 16:40:56 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Sep 18 21:15:42 2022 ;
+; EDA Netlist Writer Status ; Successful - Sat Sep 24 16:40:56 2022 ;
 ; Revision Name             ; SIFO_Lab_2                            ;
-; Top-level Entity Name     ; Block_dop                             ;
+; Top-level Entity Name     ; Block_2_D                             ;
 ; Family                    ; MAX II                                ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -95,13 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Sep 18 21:15:42 2022
+    Info: Processing started: Sat Sep 24 16:40:56 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/ SIFO_Lab_2 -c SIFO_Lab_2
+Info (119006): Selected device EPM2210F324I5 for design "SIFO_Lab_2"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file SIFO_Lab_2.vo in folder "D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4631 megabytes
-    Info: Processing ended: Sun Sep 18 21:15:42 2022
+    Info: Peak virtual memory: 4634 megabytes
+    Info: Processing ended: Sat Sep 24 16:40:56 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

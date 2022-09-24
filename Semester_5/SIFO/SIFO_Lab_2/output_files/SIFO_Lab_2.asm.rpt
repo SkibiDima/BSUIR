@@ -1,5 +1,5 @@
 Assembler report for SIFO_Lab_2
-Sun Sep 18 21:15:34 2022
+Sat Sep 24 16:23:50 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Sep 18 21:15:34 2022 ;
+; Assembler Status      ; Successful - Sat Sep 24 16:23:50 2022 ;
 ; Revision Name         ; SIFO_Lab_2                            ;
-; Top-level Entity Name ; Block_dop                             ;
+; Top-level Entity Name ; Block_2_D                             ;
 ; Family                ; MAX II                                ;
 ; Device                ; EPM2210F324I5                         ;
 +-----------------------+---------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------------------------------------------------------+
 ; Option         ; Setting                                                            ;
 +----------------+--------------------------------------------------------------------+
-; JTAG usercode  ; 0x00A4282B                                                         ;
-; Checksum       ; 0x00A42848                                                         ;
+; JTAG usercode  ; 0x00A493DC                                                         ;
+; Checksum       ; 0x00A493F7                                                         ;
 +----------------+--------------------------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sun Sep 18 21:15:34 2022
+    Info: Processing started: Sat Sep 24 16:23:50 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4697 megabytes
-    Info: Processing ended: Sun Sep 18 21:15:34 2022
+    Info: Peak virtual memory: 4700 megabytes
+    Info: Processing ended: Sat Sep 24 16:23:50 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

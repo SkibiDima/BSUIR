@@ -1,5 +1,5 @@
 Flow report for SIFO_Lab_2
-Sun Sep 18 21:15:42 2022
+Sat Sep 24 16:40:56 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Sun Sep 18 21:15:42 2022       ;
+; Flow Status           ; Successful - Sat Sep 24 16:40:56 2022       ;
 ; Quartus Prime Version ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name         ; SIFO_Lab_2                                  ;
-; Top-level Entity Name ; Block_dop                                   ;
+; Top-level Entity Name ; Block_2_D                                   ;
 ; Family                ; MAX II                                      ;
 ; Device                ; EPM2210F324I5                               ;
 ; Timing Models         ; Final                                       ;
-; Total logic elements  ; 42 / 2,210 ( 2 % )                          ;
-; Total pins            ; 28 / 272 ( 10 % )                           ;
+; Total logic elements  ; 15                                          ;
+; Total pins            ; 10                                          ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
 +-----------------------+---------------------------------------------+
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/18/2022 21:15:23 ;
+; Start date & time ; 09/24/2022 16:40:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SIFO_Lab_2          ;
 +-------------------+---------------------+
@@ -71,14 +71,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 10995770589194.166352492334416 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 10995770589194.166402684637120 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                   ; Questa Intel FPGA (Verilog)    ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                        ; 1 ps                           ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP                ; 100                            ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; -40                            ; --            ; --          ; --             ;
 ; MISC_FILE                             ; LPM_COUNTER1_bb.v              ; --            ; --          ; --             ;
+; MISC_FILE                             ; LPM_COMPARE1.bsf               ; --            ; --          ; --             ;
 ; MISC_FILE                             ; LPM_COMPARE1_bb.v              ; --            ; --          ; --             ;
+; MISC_FILE                             ; LPM_COMPARE4.bsf               ; --            ; --          ; --             ;
 ; MISC_FILE                             ; LPM_COMPARE4_bb.v              ; --            ; --          ; --             ;
 ; MISC_FILE                             ; LPM_DECODER_4in16.bsf          ; --            ; --          ; --             ;
 ; MISC_FILE                             ; LPM_DECODER_4in16_bb.v         ; --            ; --          ; --             ;
@@ -89,7 +91,7 @@ https://fpgasoftware.intel.com/eula.
 ; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                           ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air    ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY              ; output_files                   ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                      ; Block_dop                      ; SIFO_Lab_2    ; --          ; --             ;
+; TOP_LEVEL_ENTITY                      ; Block_2_D                      ; SIFO_Lab_2    ; --          ; --             ;
 +---------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
@@ -98,14 +100,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4738 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:02     ; 1.1                     ; 5916 MB             ; 00:00:04                           ;
-; Assembler            ; 00:00:00     ; 1.0                     ; 4696 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4692 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4637 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4631 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4631 MB             ; 00:00:00                           ;
-; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4748 MB             ; 00:00:17                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4634 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4634 MB             ; 00:00:00                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,10 +113,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
@@ -128,11 +122,7 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
-quartus_fit --read_settings_files=off --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
-quartus_asm --read_settings_files=off --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
-quartus_sta SIFO_Lab_2 -c SIFO_Lab_2
-quartus_eda --read_settings_files=off --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=D:/FPGA/Projects/SIFO_Lab_2.1/BdopWaveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/BdopWaveform.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=D:/FPGA/Projects/SIFO_Lab_2.1/B2Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/B2Waveform.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/ SIFO_Lab_2 -c SIFO_Lab_2
 
 

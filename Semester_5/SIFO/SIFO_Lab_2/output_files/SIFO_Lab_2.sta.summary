@@ -2,44 +2,44 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'CLK_50hz'
-Slack : -3.231
-TNS   : -19.287
+Type  : Setup 'CLK_IN'
+Slack : -2.987
+TNS   : -27.619
 
-Type  : Setup 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
-Slack : -1.744
-TNS   : -1.744
+Type  : Setup 'LPM_COUNTER1:COUNTER_1|lpm_counter:LPM_COUNTER_component|cntr_jlh:auto_generated|safe_q[0]'
+Slack : -1.222
+TNS   : -1.222
 
-Type  : Hold 'CLK_50hz'
-Slack : -6.249
-TNS   : -41.096
+Type  : Hold 'CLK_IN'
+Slack : -2.203
+TNS   : -5.983
 
-Type  : Hold 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
-Slack : 1.108
+Type  : Hold 'LPM_COUNTER1:COUNTER_1|lpm_counter:LPM_COUNTER_component|cntr_jlh:auto_generated|safe_q[0]'
+Slack : 1.668
 TNS   : 0.000
 
-Type  : Recovery 'CLK_50hz'
-Slack : -11.831
-TNS   : -94.648
+Type  : Recovery 'LPM_COUNTER1:COUNTER_1|lpm_counter:LPM_COUNTER_component|cntr_jlh:auto_generated|safe_q[0]'
+Slack : -7.908
+TNS   : -7.908
 
-Type  : Recovery 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
-Slack : -6.062
-TNS   : -6.062
+Type  : Recovery 'CLK_IN'
+Slack : -7.016
+TNS   : -51.820
 
-Type  : Removal 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
-Slack : 1.530
+Type  : Removal 'CLK_IN'
+Slack : 5.668
 TNS   : 0.000
 
-Type  : Removal 'CLK_50hz'
-Slack : 2.719
+Type  : Removal 'LPM_COUNTER1:COUNTER_1|lpm_counter:LPM_COUNTER_component|cntr_jlh:auto_generated|safe_q[0]'
+Slack : 7.637
 TNS   : 0.000
 
-Type  : Minimum Pulse Width 'CLK_50hz'
+Type  : Minimum Pulse Width 'CLK_IN'
 Slack : -2.289
 TNS   : -2.289
 
-Type  : Minimum Pulse Width 'LPM_COUNTER8:COUNTER|lpm_counter:LPM_COUNTER_component|cntr_b4i:auto_generated|safe_q[0]'
-Slack : -0.307
-TNS   : -0.778
+Type  : Minimum Pulse Width 'LPM_COUNTER1:COUNTER_1|lpm_counter:LPM_COUNTER_component|cntr_jlh:auto_generated|safe_q[0]'
+Slack : 0.234
+TNS   : 0.000
 
 ------------------------------------------------------------

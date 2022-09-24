@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/18/2022 21:05:12"
+// Generated on "09/24/2022 16:40:56"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Block_2_D
 // 
@@ -34,13 +34,15 @@ reg CLK_IN;
 // wires                                               
 wire CLK_D;
 wire [3:0] CLK_IN_COUNT;
+wire [3:0] q;
 
 // assign statements (if any)                          
 Block_2_D i1 (
 // port map - connection between master ports and signals/registers   
 	.CLK_D(CLK_D),
 	.CLK_IN(CLK_IN),
-	.CLK_IN_COUNT(CLK_IN_COUNT)
+	.CLK_IN_COUNT(CLK_IN_COUNT),
+	.q(q)
 );
 initial 
 begin 
@@ -48,11 +50,18 @@ begin
 end 
 
 // CLK_IN
-always
+initial
 begin
+	CLK_IN = 1'b1;
+	# 10000;
+	repeat(49)
+	begin
+		CLK_IN = 1'b0;
+		CLK_IN = #8800 1'b1;
+		# 11200;
+	end
 	CLK_IN = 1'b0;
 	CLK_IN = #8800 1'b1;
-	#11200;
 end 
 endmodule
 

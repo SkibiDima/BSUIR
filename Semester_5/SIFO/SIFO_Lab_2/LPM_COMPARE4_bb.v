@@ -53,7 +53,7 @@ endmodule
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "MAX II"
 // Retrieval info: PRIVATE: LPM_PIPELINE NUMERIC "0"
 // Retrieval info: PRIVATE: Latency NUMERIC "0"
-// Retrieval info: PRIVATE: PortBValue NUMERIC "4"
+// Retrieval info: PRIVATE: PortBValue NUMERIC "5"
 // Retrieval info: PRIVATE: Radix NUMERIC "10"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: SignedCompare NUMERIC "0"
@@ -70,12 +70,12 @@ endmodule
 // Retrieval info: USED_PORT: aeb 0 0 0 0 OUTPUT NODEFVAL "aeb"
 // Retrieval info: USED_PORT: dataa 0 0 4 0 INPUT NODEFVAL "dataa[3..0]"
 // Retrieval info: CONNECT: @dataa 0 0 4 0 dataa 0 0 4 0
-// Retrieval info: CONNECT: @datab 0 0 4 0 4 0 0 4 0
+// Retrieval info: CONNECT: @datab 0 0 4 0 5 0 0 4 0
 // Retrieval info: CONNECT: aeb 0 0 0 0 @aeb 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4.bsf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4_inst.v FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL LPM_COMPARE4_bb.v TRUE
 // Retrieval info: LIB_FILE: lpm

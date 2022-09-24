@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX II"
 set_global_assignment -name DEVICE EPM2210F324I5
-set_global_assignment -name TOP_LEVEL_ENTITY Block_dop
+set_global_assignment -name TOP_LEVEL_ENTITY Block_2_D
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:35:31  SEPTEMBER 12, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"

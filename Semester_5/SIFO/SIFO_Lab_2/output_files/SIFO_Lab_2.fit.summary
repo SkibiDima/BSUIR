@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sun Sep 18 21:15:33 2022
+Fitter Status : Successful - Sat Sep 24 16:23:49 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : SIFO_Lab_2
-Top-level Entity Name : Block_dop
+Top-level Entity Name : Block_2_D
 Family : MAX II
 Device : EPM2210F324I5
 Timing Models : Final
-Total logic elements : 42 / 2,210 ( 2 % )
-Total pins : 28 / 272 ( 10 % )
+Total logic elements : 15 / 2,210 ( < 1 % )
+Total pins : 10 / 272 ( 4 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sun Sep 18 21:15:30 2022
+Analysis & Synthesis Status : Successful - Sat Sep 24 16:40:53 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : SIFO_Lab_2
-Top-level Entity Name : Block_dop
+Top-level Entity Name : Block_2_D
 Family : MAX II
-Total logic elements : 58
-Total pins : 28
+Total logic elements : 15
+Total pins : 10
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
