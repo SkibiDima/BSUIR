@@ -84,14 +84,10 @@
 <a name="user_interface"/>
 
 ## 2.2 Интерфейс пользователя
-Окно входа в приложение.  
-[Окно входа в приложение](./Mockups/ApplicationLoginWindow.PNG)  
-Главное меню.
-[Главное меню](./Mockups/MainMenu.PNG)  
-Окно игровой сессии.
-[Окно игровой сессии](./Mockups/GameSession.PNG)
-Окно инвентаря. 
-[Окно инвентаря](./Mockups/Inventory.PNG)
+[Окно входа в приложение](./Mockups/ApplicationLoginWindow.png)  
+[Главное меню](./Mockups/MainMenu.png)  
+[Окно игровой сессии](./Mockups/GameSession.png)
+[Окно инвентаря](./Mockups/Inventory.png)
 
 <a name="user_specifications"/>
 
