@@ -1,0 +1,8 @@
+
+State Machine - |all_blocks|current_state
+Name current_state.write_st current_state.delay_st current_state.read_st current_state.start_st current_state.calm_st 
+current_state.start_st 0 0 0 0 0 
+current_state.read_st 0 0 1 1 0 
+current_state.delay_st 0 1 0 1 0 
+current_state.write_st 1 0 0 1 0 
+current_state.calm_st 0 0 0 1 1 

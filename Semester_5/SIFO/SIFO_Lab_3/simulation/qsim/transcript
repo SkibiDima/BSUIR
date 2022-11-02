@@ -1,0 +1,19 @@
+# do Test_3.do
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:58:49 on Oct 19,2022
+# vlog -work work Test_3.vo 
+# -- Compiling module HUINIYA
+# 
+# Top level modules:
+# 	HUINIYA
+# End time: 11:58:49 on Oct 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:58:49 on Oct 19,2022
+# vlog -work work ../SIFO_Lab_3/HUI.vwf.vt 
+# ** Error: (vlog-7) Failed to open design unit file "../SIFO_Lab_3/HUI.vwf.vt" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 11:58:49 on Oct 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /home/dimuki_ken/Quartus/Installed_21.1/questa_fse/linux_x86_64/vlog failed.
+# Executing ONERROR command at macro ./Test_3.do line 4

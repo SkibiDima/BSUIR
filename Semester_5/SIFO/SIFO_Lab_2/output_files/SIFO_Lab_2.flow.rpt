@@ -1,5 +1,5 @@
 Flow report for SIFO_Lab_2
-Sat Sep 24 16:40:56 2022
+Fri Sep 30 13:19:52 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -38,21 +38,21 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------+
-; Flow Summary                                                        ;
-+-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Sat Sep 24 16:40:56 2022       ;
-; Quartus Prime Version ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
-; Revision Name         ; SIFO_Lab_2                                  ;
-; Top-level Entity Name ; Block_2_D                                   ;
-; Family                ; MAX II                                      ;
-; Device                ; EPM2210F324I5                               ;
-; Timing Models         ; Final                                       ;
-; Total logic elements  ; 15                                          ;
-; Total pins            ; 10                                          ;
-; Total virtual pins    ; 0                                           ;
-; UFM blocks            ; 0 / 1 ( 0 % )                               ;
-+-----------------------+---------------------------------------------+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------+------------------------------------------------------+
+; Flow Status           ; EDA Netlist Writer Failed - Fri Sep 30 13:19:52 2022 ;
+; Quartus Prime Version ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition          ;
+; Revision Name         ; SIFO_Lab_2                                           ;
+; Top-level Entity Name ; Block_2_D                                            ;
+; Family                ; MAX II                                               ;
+; Device                ; EPM2210F324I5                                        ;
+; Timing Models         ; Final                                                ;
+; Total logic elements  ; 15                                                   ;
+; Total pins            ; 10                                                   ;
+; Total virtual pins    ; 0                                                    ;
+; UFM blocks            ; 0 / 1 ( 0 % )                                        ;
++-----------------------+------------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -103,19 +103,21 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4748 MB             ; 00:00:17                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4634 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4634 MB             ; 00:00:00                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:17                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 582 MB              ; 00:00:00                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------+---------------+---------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
++----------------------+------------------+---------------+---------------+----------------+
+; Analysis & Synthesis ; MACHINE-A61Q0VC  ; Windows 10    ; 10.0          ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10    ; 10.0          ; x86_64         ;
+; EDA Netlist Writer   ; MACHINE-A61Q0VC  ; Windows 10    ; 10.0          ; x86_64         ;
+; EDA Netlist Writer   ; zcxasusus        ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
++----------------------+------------------+---------------+---------------+----------------+
 
 
 ------------
@@ -124,6 +126,7 @@ https://fpgasoftware.intel.com/eula.
 quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=D:/FPGA/Projects/SIFO_Lab_2.1/B2Waveform.vwf --testbench_file=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/B2Waveform.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/FPGA/Projects/SIFO_Lab_2.1/simulation/qsim/ SIFO_Lab_2 -c SIFO_Lab_2
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SIFO_Lab_2 -c SIFO_Lab_2 --vector_source=/home/dimuki_ken/BSUIR/Semester_5/SIFO/SIFO_Lab_2/simulation/qsim/SIFO_Lab_2.vwf --testbench_file=/home/dimuki_ken/BSUIR/Semester_5/SIFO/SIFO_Lab_2/simulation/qsim/SIFO_Lab_2.vwf.vt
 
 
 

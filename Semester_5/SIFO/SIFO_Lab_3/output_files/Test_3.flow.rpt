@@ -1,0 +1,149 @@
+Flow report for Test_3
+Wed Nov  2 20:37:11 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Wed Nov  2 20:37:11 2022       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                      ; Test_3                                      ;
+; Top-level Entity Name              ; all_blocks                                  ;
+; Family                             ; MAX 10                                      ;
+; Device                             ; 10M08DAF484C8G                              ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 531                                         ;
+;     Total combinational functions  ; 283                                         ;
+;     Dedicated logic registers      ; 276                                         ;
+; Total registers                    ; 276                                         ;
+; Total pins                         ; 16                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 24                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/02/2022 20:37:03 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Test_3              ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                       ;
++--------------------------------------+------------------------------------------+---------------+-------------+------------------------+
+; Assignment Name                      ; Value                                    ; Default Value ; Entity Name ; Section Id             ;
++--------------------------------------+------------------------------------------+---------------+-------------+------------------------+
+; COMPILER_SIGNATURE_ID                ; 121441600540999.166741062304715          ; --            ; --          ; --                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; bidir_buffer_testbench ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; ROM_testbench          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; buffer_testbench       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; RAM_testbench          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; wire_hz_testbench      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; all_blocks_testbench   ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; all_blocks_testbench                     ; --            ; --          ; eda_simulation         ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                              ; --            ; --          ; eda_simulation         ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)              ; <None>        ; --          ; --                     ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                          ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/bidir_buffer_testbench.v ; --            ; --          ; bidir_buffer_testbench ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/ROM_testbench.v          ; --            ; --          ; ROM_testbench          ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/buffer_testbench.v       ; --            ; --          ; buffer_testbench       ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/RAM_testbench.v          ; --            ; --          ; RAM_testbench          ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/wire_hz_testbench.v      ; --            ; --          ; wire_hz_testbench      ;
+; EDA_TEST_BENCH_FILE                  ; src_testbenches/all_blocks_testbench.v   ; --            ; --          ; all_blocks_testbench   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; bidir_buffer_testbench                   ; --            ; --          ; bidir_buffer_testbench ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ROM_testbench                            ; --            ; --          ; ROM_testbench          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; buffer_testbench                         ; --            ; --          ; buffer_testbench       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAM_testbench                            ; --            ; --          ; RAM_testbench          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; wire_hz_testbench                        ; --            ; --          ; wire_hz_testbench      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; all_blocks_testbench                     ; --            ; --          ; all_blocks_testbench   ;
+; EDA_TEST_BENCH_NAME                  ; RAM_testbench                            ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; buffer_testbench                         ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; ROM_testbench                            ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; all_blocks_testbench                     ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; wire_hz_testbench                        ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; bidir_buffer_testbench                   ; --            ; --          ; eda_simulation         ;
+; EDA_TIME_SCALE                       ; 1 ps                                     ; --            ; --          ; eda_simulation         ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                       ; --            ; --          ; --                     ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                        ; --            ; --          ; --                     ;
+; NUM_PARALLEL_PROCESSORS              ; All                                      ; --            ; --          ; --                     ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)   ; --            ; all_blocks  ; Top                    ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)   ; --            ; all_blocks  ; Top                    ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)   ; --            ; all_blocks  ; Top                    ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                      ; --            ; --          ; --                     ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW    ; --            ; --          ; --                     ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                             ; --            ; --          ; --                     ;
+; TOP_LEVEL_ENTITY                     ; all_blocks                               ; Test_3        ; --          ; --                     ;
++--------------------------------------+------------------------------------------+---------------+-------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 484 MB              ; 00:00:21                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:21                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------+---------------+---------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
++----------------------+------------------+---------------+---------------+----------------+
+; Analysis & Synthesis ; zcxasusus        ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
++----------------------+------------------+---------------+---------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_3 -c Test_3
+
+
+

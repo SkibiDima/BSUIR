@@ -1,0 +1,83 @@
+$date
+	Sun Oct 30 20:27:59 2022
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module wire_hz_testbench $end
+$var parameter 32 ! DATA_WIDTH $end
+$var reg 3 " in_data [2:0] $end
+$var wire 1 # out_data [2] $end
+$var wire 1 $ out_data [1] $end
+$var wire 1 % out_data [0] $end
+$var reg 1 & out_is_active $end
+
+$scope module dut $end
+$var parameter 32 ' DATA_WIDTH $end
+$var wire 1 ( in_data [2] $end
+$var wire 1 ) in_data [1] $end
+$var wire 1 * in_data [0] $end
+$var wire 1 + out_is_active $end
+$var tri 1 # out_data [2] $end
+$var tri 1 $ out_data [1] $end
+$var tri 1 % out_data [0] $end
+$var tri 1 , temp_out [2] $end
+$var tri 1 - temp_out [1] $end
+$var tri 1 . temp_out [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+0&
+b11 !
+b11 '
+z%
+z$
+z#
+z.
+z-
+z,
+0+
+0*
+0)
+0(
+$end
+#10000
+b101 "
+1*
+1(
+#30000
+1&
+1+
+1.
+0-
+1,
+1%
+0$
+1#
+#50000
+b10 "
+0*
+1)
+0(
+0.
+1-
+0,
+0%
+1$
+0#
+#70000
+0&
+0+
+z.
+z-
+z,
+z%
+z$
+z#

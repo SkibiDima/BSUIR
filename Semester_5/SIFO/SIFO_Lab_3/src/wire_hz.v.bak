@@ -1,0 +1,15 @@
+module wire_hz 
+#(
+    parameter DATA_WIDTH = 8
+)
+(
+    input [DATA_WIDTH-1:0] in_data,
+    input out_is_active,
+    output [DATA_WIDTH-1:0] out_data
+);
+wire [DATA_WIDTH-1:0] temp_out;
+
+assign out_data = out_is_active ? in_data : 'hz;
+assign out_data = temp_out;
+
+endmodule

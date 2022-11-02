@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "out_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "out_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rom_nram",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

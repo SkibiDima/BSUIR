@@ -1,0 +1,19 @@
+`include "../src/RAM.v"
+`include "../src/ROM.v"
+`include "../src/wire_hz.v"
+`include "../src/buffer.v"
+
+module all_blocks #(
+    parameter ADDRESS_WIDTH = 5,
+    parameter DATA_WIDTH = 8,
+    parameter BUFFER_LENGTH = 5
+)(
+    input a,
+    output b
+);
+
+RAM ram_module();
+
+assign a = ~b;
+
+endmodule

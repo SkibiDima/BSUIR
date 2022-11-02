@@ -1,0 +1,162 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/simulation/modelsim
+T_opt
+Z1 !s110 1667410971
+V_VEM[KB[V]?a]F]j4`L?30
+04 20 4 work all_blocks_testbench fast 0
+=1-000ae431a4f1-6362ac1b-75a86-140c
+!s124 OEM10U10 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vall_blocks
+R1
+!i10b 1
+!s100 Qh=lQIADjLO478z3Y]XOH1
+IAYBohHUj7JPQ:<nQIo5PN1
+R0
+w1667410618
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/all_blocks.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/all_blocks.v
+!i122 1
+L0 6 218
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z5 !s108 1667410971.000000
+Z6 !s107 /home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/buffer.v|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/wire_hz.v|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/ROM.v|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/RAM.v|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/all_blocks.v|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/all_blocks_testbench.v|
+Z7 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches|/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/all_blocks_testbench.v|
+!i113 0
+Z8 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -vlog01compat -work work +incdir+/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vall_blocks_testbench
+R1
+!i10b 1
+!s100 @`5>0U]YICG:UzD<Ij_zX3
+IM^YoR4O]]5Ml_4ek5LaF32
+R0
+w1667410966
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/all_blocks_testbench.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/all_blocks_testbench.v
+!i122 1
+L0 3 119
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+R2
+vbuffer
+R1
+!i10b 1
+!s100 1A:@b:J]>ZJl=ZIa[STYD1
+IiJzGJ^6K?Y14_KBgQjOIS0
+R0
+w1666277038
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/buffer.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/buffer.v
+!i122 1
+L0 2 51
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+R2
+vRAM
+R1
+!i10b 1
+!s100 33;@S=oH[z<G7:`P>f[dn3
+I3zV[L9o7;Xb9Y<15oUzh80
+R0
+w1666280303
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/RAM.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/RAM.v
+!i122 1
+L0 1 31
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+R2
+n@r@a@m
+vROM
+R1
+!i10b 1
+!s100 KYI]GE5:74FiII5;ho64V2
+IU?ahF8UeSbXmbaR6dL?6Y3
+R0
+w1667292246
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/ROM.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/ROM.v
+!i122 1
+L0 1 26
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+R2
+n@r@o@m
+vwire_hz
+R1
+!i10b 1
+!s100 ^GfXYJIzNT4i5RRX=[i132
+IRLQKL`@mzgljOg<AnDlnk1
+R0
+w1667150872
+8/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/wire_hz.v
+F/home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src_testbenches/../src/wire_hz.v
+!i122 1
+L0 1 15
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+R2

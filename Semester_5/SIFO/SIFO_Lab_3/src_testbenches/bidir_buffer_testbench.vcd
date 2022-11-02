@@ -1,0 +1,47 @@
+$date
+	Wed Oct 26 14:21:13 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module bidir_buffer_testbench $end
+$var wire 3 ! out [2:0] $end
+$var reg 1 " a_out $end
+$var reg 3 # data [2:0] $end
+$scope module dut $end
+$var wire 1 " a_out $end
+$var wire 3 $ data [2:0] $end
+$var wire 3 % out [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz %
+b0 $
+b0 #
+0"
+bz !
+$end
+#20000
+b10 #
+b10 $
+#25000
+b10 !
+b10 %
+1"
+#35000
+bz !
+bz %
+0"
+#40000
+b11 #
+b11 $
+#45000
+b11 !
+b11 %
+1"
+#65000

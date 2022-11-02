@@ -1,0 +1,15 @@
+module bidir_buffer(
+    inout [2:0] data_a,
+    inout [2:0] data_b,
+    input a_out
+);
+
+wire [2:0] temp_a, temp_b;
+
+assign temp_a = a_out ? data_b : 'hz;
+assign temp_b= !a_out ? data_a : 'hz;
+
+assign data_a = temp_a;
+assign data_b = temp_b;
+
+endmodule

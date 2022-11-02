@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at wire_hz.v(12): extended using "x" or "z" File: /home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src/wire_hz.v Line: 12
+Warning (10273): Verilog HDL warning at all_blocks.v(33): extended using "x" or "z" File: /home/dimuki_ken/Quartus/Projects/SIFO_Lab_3/src/all_blocks.v Line: 33

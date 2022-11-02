@@ -1,0 +1,49 @@
+Time:  5, addres_counter= x, state=4, rw_counter=x, active=xx, do_shift=x, buf=  0  0  0  0  0
+Time: 15, addres_counter= x, state=4, rw_counter=x, active=xx, do_shift=x, buf=  0  0  0  0  0
+Time: 25, addres_counter= x, state=4, rw_counter=x, active=xx, do_shift=x, buf=  0  0  0  0  0
+Time: 35, addres_counter= x, state=4, rw_counter=x, active=xx, do_shift=x, buf=  0  0  0  0  0
+Time: 45, addres_counter= x, state=0, rw_counter=x, active=xx, do_shift=x, buf=  0  0  0  0  0
+Time: 55, addres_counter= 0, state=1, rw_counter=0, active=01, do_shift=1, buf=  0  0  0  0  0
+Time: 65, addres_counter= 1, state=1, rw_counter=1, active=01, do_shift=1, buf=  1  0  0  0  0
+Time: 75, addres_counter= 2, state=1, rw_counter=2, active=01, do_shift=1, buf=  2  1  0  0  0
+Time: 85, addres_counter= 3, state=1, rw_counter=3, active=01, do_shift=1, buf=  3  2  1  0  0
+Time: 95, addres_counter= 4, state=1, rw_counter=4, active=01, do_shift=1, buf=  4  3  2  1  0
+Time:105, addres_counter= 5, state=2, rw_counter=0, active=00, do_shift=0, buf=  5  4  3  2  1
+Time:115, addres_counter=16, state=2, rw_counter=0, active=10, do_shift=0, buf=  5  4  3  2  1
+Time:125, addres_counter=16, state=3, rw_counter=0, active=10, do_shift=1, buf=  5  4  3  2  1
+Time:135, addres_counter=17, state=3, rw_counter=1, active=10, do_shift=1, buf=  z  5  4  3  2
+Time:145, addres_counter=18, state=3, rw_counter=2, active=10, do_shift=1, buf=  z  z  5  4  3
+Time:155, addres_counter=19, state=3, rw_counter=3, active=10, do_shift=1, buf=  z  z  z  5  4
+Time:165, addres_counter=20, state=3, rw_counter=4, active=10, do_shift=1, buf=  z  z  z  z  5
+Time:175, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:185, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:195, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:205, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:215, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:225, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:235, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:245, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:255, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:265, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:275, addres_counter=21, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:285, addres_counter=21, state=0, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:295, addres_counter=17, state=1, rw_counter=0, active=11, do_shift=1, buf=  z  z  z  z  z
+Time:305, addres_counter=18, state=1, rw_counter=1, active=11, do_shift=1, buf=  2  z  z  z  z
+Time:315, addres_counter=19, state=1, rw_counter=2, active=11, do_shift=1, buf=  3  2  z  z  z
+Time:325, addres_counter=20, state=1, rw_counter=3, active=11, do_shift=1, buf=  4  3  2  z  z
+Time:335, addres_counter=21, state=1, rw_counter=4, active=11, do_shift=1, buf=  5  4  3  2  z
+Time:345, addres_counter=22, state=2, rw_counter=0, active=00, do_shift=0, buf=  0  5  4  3  2
+Time:355, addres_counter= 0, state=2, rw_counter=0, active=10, do_shift=0, buf=  0  5  4  3  2
+Time:365, addres_counter= 0, state=3, rw_counter=0, active=10, do_shift=1, buf=  0  5  4  3  2
+Time:375, addres_counter= 1, state=3, rw_counter=1, active=10, do_shift=1, buf=  z  0  5  4  3
+Time:385, addres_counter= 2, state=3, rw_counter=2, active=10, do_shift=1, buf=  z  z  0  5  4
+Time:395, addres_counter= 3, state=3, rw_counter=3, active=10, do_shift=1, buf=  z  z  z  0  5
+Time:405, addres_counter= 4, state=3, rw_counter=4, active=10, do_shift=1, buf=  z  z  z  z  0
+Time:415, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:425, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:435, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:445, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:455, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:465, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:475, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
+Time:485, addres_counter= 5, state=4, rw_counter=5, active=00, do_shift=0, buf=  z  z  z  z  z
