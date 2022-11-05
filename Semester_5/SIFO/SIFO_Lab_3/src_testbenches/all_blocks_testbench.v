@@ -80,14 +80,16 @@ initial begin : main
 //ROM TO RAM ENDS
 //RAM TO RAM START
 
-    #23  
-    start = 1;
+    
+    #20  
     address = 17;
+    #3
+    start = 1;
     rom_nram = 0;
     #5 start = 0;
 	 
     #10 
-    address = 0;
+    address = 1;
     
     #200  
 

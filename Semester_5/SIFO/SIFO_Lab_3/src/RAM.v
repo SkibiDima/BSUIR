@@ -17,8 +17,9 @@ reg [DATA_WIDTH-1:0] memory [DATA_DEPTH-1:0];
 integer i;
 initial begin
     for(i = 0; i < DATA_DEPTH; i = i + 1) begin
-        memory[i] = 0;
+        memory[i] = 3;
     end
+    memory[21] = 10;
 end
 
 always @(posedge clk) begin

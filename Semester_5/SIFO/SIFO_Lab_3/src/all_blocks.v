@@ -148,10 +148,10 @@ always @(posedge clk) begin
         do_shift <= 0;
         delay_counter <= delay_counter + 1'b1;
         address_counter <= address;
-        active_memory_decode <= 2'b10;
-        if(delay_counter + 1'b1 == DATA_DELAY - 1) begin
+        if(delay_counter == DATA_DELAY - 1) begin
             do_shift <= 1;
             current_state <= write_st;
+            active_memory_decode <= 2'b10;
         end
     end
     write_st: begin
