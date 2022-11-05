@@ -1,0 +1,52 @@
+//`include "../src/wire_hz.v"
+module buffer #(
+    parameter DATA_WIDTH = 8,
+    parameter BUFFER_LENGTH = 5
+)
+(
+    input clk,
+    input [DATA_WIDTH-1:0] in_data,
+    output [DATA_WIDTH-1:0] out_data,
+    input do_shift
+);
+
+reg [DATA_WIDTH-1:0] shifter [BUFFER_LENGTH-1:0];
+//wire [DATA_WIDTH-1:0] temp_data;
+
+integer i;
+initial begin
+    for(i = 0; i < BUFFER_LENGTH; i = i + 1) begin
+        shifter[i] = 0;
+    end
+end
+
+always @(posedge clk) begin
+    if(do_shift) begin
+        shifter[0] <= in_data;
+        for (i = 1; i < BUFFER_LENGTH; i = i + 1) begin
+            shifter[i] <= shifter[i-1];
+        end
+        //shifter[4:0] <= {shifter[3:0], in_data}; 
+        // [2,1,0] <= [1,0] + ['in_data']
+    end
+    /*if(write_out) begin
+        shifter[0] <= 0;
+        for (i = 1; i < BUFFER_LENGTH; i = i + 1) begin
+            shifter[i] <= shifter[i-1];
+        end
+        //shifter[BUFFER_LENGTH-1:0] <= {shifter[BUFFER_LENGTH-2:0], 0}; 
+        // [2,1,0] <= [1,0] + ['0']
+    end*/
+end
+
+assign out_data = shifter[BUFFER_LENGTH-1];
+
+/*assign temp_data = shifter[BUFFER_LENGTH-1];
+
+wire_hz wire_hz_1(
+    .in_data(temp_data),
+    .out_data(out_data),
+    .out_is_active(write_out)
+);*/
+
+endmodule

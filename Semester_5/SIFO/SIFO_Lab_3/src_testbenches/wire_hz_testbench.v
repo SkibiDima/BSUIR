@@ -1,0 +1,33 @@
+`include "../src/wire_hz.v"
+`timescale 1ns/1ps
+module wire_hz_testbench;
+
+parameter DATA_WIDTH = 3;
+
+reg [DATA_WIDTH-1:0] in_data;
+wire [DATA_WIDTH-1:0] out_data;
+reg out_is_active;
+
+wire_hz #(.DATA_WIDTH(DATA_WIDTH)) dut
+(
+    .in_data(in_data),
+    .out_is_active(out_is_active),
+    .out_data(out_data)
+);
+
+initial begin
+
+    $dumpfile("wire_hz_testbench.vcd");
+    $dumpvars;
+
+    {in_data, out_is_active} = 0;
+    #10 in_data = 5;
+    #20 out_is_active = 1;
+    #20 in_data = 10;
+    #20 out_is_active = 0;
+    #20
+	$stop;
+    $finish;
+end
+
+endmodule
