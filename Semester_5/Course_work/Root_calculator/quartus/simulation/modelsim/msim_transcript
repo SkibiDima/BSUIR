@@ -1,0 +1,80 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 linux_x86_64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Root_calculator_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying /home/dimuki_ken/Quartus/Installed_21.1/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic {/home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 15:43:07 on Nov 13,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic" /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v 
+# -- Compiling module RS232_transmitter
+# 
+# Top level modules:
+# 	RS232_transmitter
+# End time: 15:43:07 on Nov 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches {/home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 15:43:07 on Nov 13,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches" /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v 
+# -- Compiling module RS232_transmitter
+# -- Compiling module RS232_transmitter_testbench
+# 
+# Top level modules:
+# 	RS232_transmitter_testbench
+# End time: 15:43:07 on Nov 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  RS232_transmitter_testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" RS232_transmitter_testbench 
+# Start time: 15:43:07 on Nov 13,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "RS232_transmitter(fast)".
+# Loading work.RS232_transmitter_testbench(fast)
+# Loading work.RS232_transmitter(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v(44)
+#    Time: 1000210 ns  Iteration: 0  Instance: /RS232_transmitter_testbench
+# Break in Module RS232_transmitter_testbench at /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v line 44
+add wave -position end  sim:/RS232_transmitter_testbench/dut/cur_state
+add wave -position end  sim:/RS232_transmitter_testbench/dut/bit_count
+add wave -position end  sim:/RS232_transmitter_testbench/dut/tick_count
+restart -f
+# Closing VCD file "RS232_transmitter_testbench.vcd"
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.RS232_transmitter_testbench(fast)
+# Loading work.RS232_transmitter(fast)
+step -out
+run -all
+# ** Note: $stop    : /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v(44)
+#    Time: 1000210 ns  Iteration: 0  Instance: /RS232_transmitter_testbench
+# Break in Module RS232_transmitter_testbench at /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/../src/src_testbenches/RS232_transmitter_testbench.v line 44
+# End time: 15:47:56 on Nov 13,2022, Elapsed time: 0:04:49
+# Errors: 0, Warnings: 0

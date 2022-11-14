@@ -1,0 +1,132 @@
+Flow report for Root_calculator
+Sun Nov 13 15:43:00 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Sun Nov 13 15:43:00 2022       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                      ; Root_calculator                             ;
+; Top-level Entity Name              ; RS232_transmitter                           ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE6E22C8                                 ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 49                                          ;
+;     Total combinational functions  ; 49                                          ;
+;     Dedicated logic registers      ; 26                                          ;
+; Total registers                    ; 26                                          ;
+; Total pins                         ; 12                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/13/2022 15:42:51 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Root_calculator     ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                      ;
++--------------------------------------+------------------------------------------------------+-----------------+-------------------+-----------------------------------+
+; Assignment Name                      ; Value                                                ; Default Value   ; Entity Name       ; Section Id                        ;
++--------------------------------------+------------------------------------------------------+-----------------+-------------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 35315517123178.166834337103674                       ; --              ; --                ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                   ; --              ; --                ; RS232_transmitter_testbench       ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                  ; --              ; --                ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                  ; --              ; --                ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                  ; --              ; --                ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                                  ; --              ; --                ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RS232_transmitter_testbench                          ; --              ; --                ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                          ; --              ; --                ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)                          ; <None>          ; --                ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                      ; --              ; --                ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../src/src_testbenches/RS232_transmitter_testbench.v ; --              ; --                ; RS232_transmitter_testbench       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RS232_transmitter_testbench                          ; --              ; --                ; RS232_transmitter_testbench       ;
+; EDA_TEST_BENCH_NAME                  ; RS232_transmitter_testbench                          ; --              ; --                ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                                 ; --              ; --                ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                   ; --              ; --                ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                    ; --              ; --                ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                                 ; --              ; --                ; --                                ;
+; NUM_PARALLEL_PROCESSORS              ; All                                                  ; --              ; --                ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)               ; --              ; RS232_transmitter ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)               ; --              ; RS232_transmitter ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)               ; --              ; RS232_transmitter ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                  ; --              ; --                ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                ; --              ; --                ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                         ; --              ; --                ; --                                ;
+; TOP_LEVEL_ENTITY                     ; RS232_transmitter                                    ; Root_calculator ; --                ; --                                ;
++--------------------------------------+------------------------------------------------------+-----------------+-------------------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 477 MB              ; 00:00:23                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:23                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------+---------------+---------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
++----------------------+------------------+---------------+---------------+----------------+
+; Analysis & Synthesis ; zcxasusus        ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
++----------------------+------------------+---------------+---------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Root_calculator -c Root_calculator
+
+
+

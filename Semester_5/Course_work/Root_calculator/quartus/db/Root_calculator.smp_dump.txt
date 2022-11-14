@@ -1,0 +1,7 @@
+
+State Machine - |RS232_transmitter|cur_state
+Name cur_state.Stop_st cur_state.Data_st cur_state.Start_st cur_state.Wait_st 
+cur_state.Wait_st 0 0 0 0 
+cur_state.Start_st 0 0 1 1 
+cur_state.Data_st 0 1 0 1 
+cur_state.Stop_st 1 0 0 1 

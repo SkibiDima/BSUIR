@@ -1,0 +1,41 @@
+|RS232_transmitter
+clk => bit_count[0].CLK
+clk => bit_count[1].CLK
+clk => bit_count[2].CLK
+clk => bit_count[3].CLK
+clk => tick_count[0].CLK
+clk => tick_count[1].CLK
+clk => tick_count[2].CLK
+clk => tick_count[3].CLK
+clk => tick_count[4].CLK
+clk => tick_count[5].CLK
+clk => tick_count[6].CLK
+clk => tick_count[7].CLK
+clk => tick_count[8].CLK
+clk => tick_count[9].CLK
+clk => tick_count[10].CLK
+clk => tick_count[11].CLK
+clk => tick_count[12].CLK
+clk => tick_count[13].CLK
+clk => tick_count[14].CLK
+clk => tick_count[15].CLK
+clk => rts~reg0.CLK
+clk => tx~reg0.CLK
+clk => cur_state~5.DATAIN
+data[0] => Mux0.IN7
+data[1] => Mux0.IN6
+data[2] => Mux0.IN5
+data[3] => Mux0.IN4
+data[4] => Mux0.IN3
+data[5] => Mux0.IN2
+data[6] => Mux0.IN1
+data[7] => Mux0.IN0
+data_ready => cur_state.OUTPUTSELECT
+data_ready => cur_state.OUTPUTSELECT
+data_ready => cur_state.OUTPUTSELECT
+data_ready => cur_state.OUTPUTSELECT
+data_ready => Selector5.IN1
+tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rts <= rts~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
