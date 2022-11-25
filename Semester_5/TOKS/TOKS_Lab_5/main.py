@@ -15,8 +15,8 @@ BLUE_COLOR = "\x1b[0;36m"
 # 1: wr tnt0 rd tnt5
 # 2: wr tnt2 rd tnt1
 # 3: wr tnt4 rd tnt3
-# PPP_T_RRR_DA_SA_D8
-# priorbit_token_resbit_addrDst_addrSour_Data_
+# PPP_T_RRR_DA_SA_D8_A_C
+# priorbit_token_resbit_addrDst_addrSour_Data_A_C
 
 
 def main():
@@ -58,11 +58,12 @@ def main():
         # GENERATE OWN MESSAGE
         if random.randint(0, 3) == 0:  # 25% to generate
             station_message = randomize_data(3) + "1" + randomize_data(3) + \
-                              randomize_address(station_address) + station_address + randomize_data(data_length)
-            print(GREEN_COLOR + "Generated message: "
+                              randomize_address(station_address) + station_address + randomize_data(data_length) + "00"
+            print(GREEN_COLOR + "Generated message:  "
                   + YELLOW_COLOR + f"{station_message[0:7]}"
                   + BLUE_COLOR + f"{station_message[7:11]}"
-                  + WHITE_COLOR + f"{station_message[11:20]}")
+                  + WHITE_COLOR + f"{station_message[11:19]}"
+                  + RED_COLOR + f"{station_message[19:21]}")
 
             station_message_queue.append(station_message)
         if len(station_message_queue) != 0:
@@ -79,17 +80,19 @@ def main():
         if have_token:
             if len(station_message_queue) != 0:
                 if read_data == "":
-                    sending_message = station_message_queue[0][0:4] + "000" + station_message_queue[0][7:20]
+                    sending_message = station_message_queue[0][0:5] + "000" + station_message_queue[0][7:21]
                     station_message_queue.remove(station_message_queue[0])
                     ser_wr.write(sending_message.encode("windows-1251"))
-                    print(WHITE_COLOR + f"Send own message:  {sending_message}")
+                    print(YELLOW_COLOR + "Send own message:   "
+                          + WHITE_COLOR + f"{sending_message}")
                 elif int(current_priority, 2) > int(read_data[0:3], 2):
-                    sending_message = station_message_queue[0][0:4] + \
+                    sending_message = station_message_queue[0][0:5] + \
                                       format(max(int(current_priority, 2), int(read_data[4:7], 2)), "b") + \
-                                      station_message_queue[0][7:20]
+                                      station_message_queue[0][7:23]
                     station_message_queue.remove(station_message_queue[0])
                     ser_wr.write(sending_message.encode("windows-1251"))
-                    print(WHITE_COLOR + f"Send own message:  {sending_message}")
+                    print(YELLOW_COLOR + "Send own message:   "
+                          + WHITE_COLOR + f"{sending_message}")
             else:
                 print(RED_COLOR + "Must send token")
                 if read_data == "":
@@ -100,8 +103,9 @@ def main():
                 have_token = False
         elif read_data != "":
             sending_message = read_data[0:4] + format(max(int(current_priority, 2), int(read_data[4:7], 2)), "b") + \
-                              read_data[7:20]
+                              read_data[7:21]
             ser_wr.write(sending_message.encode("windows-1251"))
+            print(WHITE_COLOR + f"Send message:       {sending_message}")
 
         # READ MESSAGE
         read_data = ""
@@ -111,7 +115,16 @@ def main():
             if read_data[3] == "0":
                 print(GREEN_COLOR + "Got token")
             else:
-                print(WHITE_COLOR + f"Got message: {read_data}")
+                if read_data[7:9] == station_address:
+                    print(YELLOW_COLOR + "Got message for me: "
+                          + WHITE_COLOR + f"{read_data}")
+                    read_data = read_data[0:19] + "11"
+                elif read_data[9:11] == station_address:
+                    print(YELLOW_COLOR + "Got my old message: "
+                          + WHITE_COLOR + f"{read_data}")
+                    read_data = ""
+                else:
+                    print(WHITE_COLOR + f"Got message:        {read_data}")
         time.sleep(2)
 
 
@@ -125,7 +138,7 @@ def randomize_data(data_length):
 
 def randomize_address(station_address):
     address = station_address
-    while address == station_address:
+    while address == station_address or address == "11":
         address = randomize_data(2)
     return address
 
