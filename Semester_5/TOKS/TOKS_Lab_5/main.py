@@ -88,7 +88,7 @@ def main():
                 elif int(current_priority, 2) > int(read_data[0:3], 2):
                     sending_message = station_message_queue[0][0:5] + \
                                       format(max(int(current_priority, 2), int(read_data[4:7], 2)), "b") + \
-                                      station_message_queue[0][7:23]
+                                      station_message_queue[0][7:21]
                     station_message_queue.remove(station_message_queue[0])
                     ser_wr.write(sending_message.encode("windows-1251"))
                     print(YELLOW_COLOR + "Send own message:   "
