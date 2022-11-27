@@ -72,7 +72,7 @@ def main():
             current_priority = "000"
 
         # TOKEN CHECK
-        if not read_data == "":
+        if read_data != "":
             if read_data[3] == "0":
                 have_token = True
 
