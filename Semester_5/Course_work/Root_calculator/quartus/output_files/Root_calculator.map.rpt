@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Root_calculator
-Sun Nov 13 15:43:00 2022
+Fri Dec 16 14:44:18 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,15 +13,31 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |RS232_transmitter|cur_state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |RS232_transmitter
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |root_main|RS232_transmitter:rs_transmitter|cur_state
+ 11. State Machine - |root_main|RS232_reciever:rs_reciever|next_state
+ 12. State Machine - |root_main|RS232_reciever:rs_reciever|cur_state
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Registers Packed Into Inferred Megafunctions
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2
+ 18. Parameter Settings for User Entity Instance: RS232_reciever:rs_reciever
+ 19. Parameter Settings for User Entity Instance: RS232_transmitter:rs_transmitter
+ 20. Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0
+ 22. Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0
+ 23. Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1
+ 24. Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0
+ 25. altshift_taps Parameter Settings by Entity Instance
+ 26. lpm_mult Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "all_arithm:root_calculator|rough_estimate:sqrt_estimate"
+ 28. Port Connectivity Checks: "RS232_reciever:rs_reciever"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,19 +64,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 13 15:43:00 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 16 14:44:18 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Root_calculator                             ;
-; Top-level Entity Name              ; RS232_transmitter                           ;
+; Top-level Entity Name              ; root_main                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 49                                          ;
-;     Total combinational functions  ; 49                                          ;
-;     Dedicated logic registers      ; 26                                          ;
-; Total registers                    ; 26                                          ;
-; Total pins                         ; 12                                          ;
+; Total logic elements               ; 687                                         ;
+;     Total combinational functions  ; 499                                         ;
+;     Dedicated logic registers      ; 353                                         ;
+; Total registers                    ; 353                                         ;
+; Total pins                         ; 3                                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total memory bits                  ; 18                                          ;
+; Embedded Multiplier 9-bit elements ; 28                                          ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
@@ -71,7 +87,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; RS232_transmitter  ; Root_calculator    ;
+; Top-level entity name                                            ; root_main          ; Root_calculator    ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation              ; All                ;                    ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -160,22 +176,54 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+--------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
-+--------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; ../src/src_logic/RS232_transmitter.v ; yes             ; User Verilog HDL File  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v ;         ;
-+--------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; ../src/src_logic/root_main.v           ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v               ;         ;
+; ../src/src_logic/RS232_reciever.v      ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_reciever.v          ;         ;
+; ../src/src_logic/rough_estimate.v      ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/rough_estimate.v          ;         ;
+; ../src/src_logic/recip_second_stage.v  ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v      ;         ;
+; ../src/src_logic/recip_first_stage.v   ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_first_stage.v       ;         ;
+; ../src/src_logic/newthon_vavilon_s_x.v ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/newthon_vavilon_s_x.v     ;         ;
+; ../src/src_logic/data_reciever.v       ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_reciever.v           ;         ;
+; ../src/src_logic/RS232_transmitter.v   ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v       ;         ;
+; ../src/src_logic/all_arithm.v          ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v              ;         ;
+; ../src/src_logic/data_transmitter.v    ; yes             ; User Verilog HDL File        ; /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_transmitter.v        ;         ;
+; altshift_taps.tdf                      ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/altshift_taps.tdf ;         ;
+; altdpram.inc                           ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/altdpram.inc      ;         ;
+; lpm_counter.inc                        ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/lpm_counter.inc   ;         ;
+; lpm_compare.inc                        ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/lpm_compare.inc   ;         ;
+; lpm_constant.inc                       ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/lpm_constant.inc  ;         ;
+; db/shift_taps_v4m.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/shift_taps_v4m.tdf           ;         ;
+; db/altsyncram_2b81.tdf                 ; yes             ; Auto-Generated Megafunction  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/altsyncram_2b81.tdf          ;         ;
+; db/cntr_4pf.tdf                        ; yes             ; Auto-Generated Megafunction  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/cntr_4pf.tdf                 ;         ;
+; lpm_mult.tdf                           ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/lpm_mult.tdf      ;         ;
+; aglobal211.inc                         ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/aglobal211.inc    ;         ;
+; lpm_add_sub.inc                        ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/lpm_add_sub.inc   ;         ;
+; multcore.inc                           ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/multcore.inc      ;         ;
+; bypassff.inc                           ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/bypassff.inc      ;         ;
+; altshift.inc                           ; yes             ; Megafunction                 ; /home/dimuki_ken/Quartus/Installed_21.1/quartus/libraries/megafunctions/altshift.inc      ;         ;
+; db/mult_bdt.tdf                        ; yes             ; Auto-Generated Megafunction  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/mult_bdt.tdf                 ;         ;
+; db/mult_vgt.tdf                        ; yes             ; Auto-Generated Megafunction  ; /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/mult_vgt.tdf                 ;         ;
++----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -183,46 +231,95 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 49        ;
+; Estimated Total logic elements              ; 687       ;
 ;                                             ;           ;
-; Total combinational functions               ; 49        ;
+; Total combinational functions               ; 499       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 21        ;
-;     -- 3 input functions                    ; 3         ;
-;     -- <=2 input functions                  ; 25        ;
+;     -- 4 input functions                    ; 133       ;
+;     -- 3 input functions                    ; 246       ;
+;     -- <=2 input functions                  ; 120       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 34        ;
-;     -- arithmetic mode                      ; 15        ;
+;     -- normal mode                          ; 188       ;
+;     -- arithmetic mode                      ; 311       ;
 ;                                             ;           ;
-; Total registers                             ; 26        ;
-;     -- Dedicated logic registers            ; 26        ;
+; Total registers                             ; 353       ;
+;     -- Dedicated logic registers            ; 353       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 12        ;
+; I/O pins                                    ; 3         ;
+; Total memory bits                           ; 18        ;
 ;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
+; Embedded Multiplier 9-bit elements          ; 28        ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 26        ;
-; Total fan-out                               ; 224       ;
-; Average fan-out                             ; 2.26      ;
+; Maximum fan-out                             ; 362       ;
+; Total fan-out                               ; 2674      ;
+; Average fan-out                             ; 2.97      ;
 +---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name       ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
-; |RS232_transmitter         ; 49 (49)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |RS232_transmitter  ; RS232_transmitter ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                       ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                        ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |root_main                                   ; 499 (0)             ; 353 (4)                   ; 18          ; 28           ; 4       ; 12        ; 3    ; 0            ; |root_main                                                                                                                                                 ; root_main           ; work         ;
+;    |RS232_reciever:rs_reciever|              ; 84 (84)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|RS232_reciever:rs_reciever                                                                                                                      ; RS232_reciever      ; work         ;
+;    |RS232_transmitter:rs_transmitter|        ; 48 (48)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|RS232_transmitter:rs_transmitter                                                                                                                ; RS232_transmitter   ; work         ;
+;    |all_arithm:root_calculator|              ; 342 (0)             ; 208 (115)                 ; 18          ; 28           ; 4       ; 12        ; 0    ; 0            ; |root_main|all_arithm:root_calculator                                                                                                                      ; all_arithm          ; work         ;
+;       |newthon_vavilon_s_x:vavilon|          ; 79 (24)             ; 23 (23)                   ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|newthon_vavilon_s_x:vavilon                                                                                          ; newthon_vavilon_s_x ; work         ;
+;          |lpm_mult:Mult0|                    ; 55 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0                                                                           ; lpm_mult            ; work         ;
+;             |mult_bdt:auto_generated|        ; 55 (55)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0|mult_bdt:auto_generated                                                   ; mult_bdt            ; work         ;
+;       |recip_first_stage:first_recip|        ; 78 (23)             ; 23 (23)                   ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_first_stage:first_recip                                                                                        ; recip_first_stage   ; work         ;
+;          |lpm_mult:Mult0|                    ; 55 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0                                                                         ; lpm_mult            ; work         ;
+;             |mult_vgt:auto_generated|        ; 55 (55)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0|mult_vgt:auto_generated                                                 ; mult_vgt            ; work         ;
+;       |recip_second_stage:second_recip|      ; 131 (51)            ; 23 (23)                   ; 0           ; 14           ; 2       ; 6         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_second_stage:second_recip                                                                                      ; recip_second_stage  ; work         ;
+;          |lpm_mult:Mult0|                    ; 55 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0                                                                       ; lpm_mult            ; work         ;
+;             |mult_bdt:auto_generated|        ; 55 (55)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0|mult_bdt:auto_generated                                               ; mult_bdt            ; work         ;
+;          |lpm_mult:Mult1|                    ; 25 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1                                                                       ; lpm_mult            ; work         ;
+;             |mult_bdt:auto_generated|        ; 25 (25)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1|mult_bdt:auto_generated                                               ; mult_bdt            ; work         ;
+;       |rough_estimate:sqrt_estimate|         ; 54 (53)             ; 24 (23)                   ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate                                                                                         ; rough_estimate      ; work         ;
+;          |altshift_taps:sqrt_sign_rtl_0|     ; 1 (0)               ; 1 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0                                                           ; altshift_taps       ; work         ;
+;             |shift_taps_v4m:auto_generated|  ; 1 (0)               ; 1 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated                             ; shift_taps_v4m      ; work         ;
+;                |altsyncram_2b81:altsyncram2| ; 0 (0)               ; 0 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2 ; altsyncram_2b81     ; work         ;
+;                |cntr_4pf:cntr1|              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated|cntr_4pf:cntr1              ; cntr_4pf            ; work         ;
+;    |data_reciever:data_reciev|               ; 6 (6)               ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|data_reciever:data_reciev                                                                                                                       ; data_reciever       ; work         ;
+;    |data_transmitter:data_trans|             ; 19 (19)             ; 43 (43)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |root_main|data_transmitter:data_trans                                                                                                                     ; data_transmitter    ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                               ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 2            ; 9            ; 2            ; 9            ; 18   ; None ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 4           ;
+; Simple Multipliers (18-bit)           ; 12          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 28          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 16          ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------+
-; State Machine - |RS232_transmitter|cur_state                                                        ;
+; State Machine - |root_main|RS232_transmitter:rs_transmitter|cur_state                               ;
 +--------------------+-------------------+-------------------+--------------------+-------------------+
 ; Name               ; cur_state.Stop_st ; cur_state.Data_st ; cur_state.Start_st ; cur_state.Wait_st ;
 +--------------------+-------------------+-------------------+--------------------+-------------------+
@@ -233,15 +330,70 @@ Encoding Type:  One-Hot
 +--------------------+-------------------+-------------------+--------------------+-------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; cur_state~6                           ; Lost fanout        ;
-; cur_state~7                           ; Lost fanout        ;
-; Total Number of Removed Registers = 2 ;                    ;
-+---------------------------------------+--------------------+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |root_main|RS232_reciever:rs_reciever|next_state                                         ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; Name                ; next_state.Stop_st ; next_state.Data_st ; next_state.Start_st ; next_state.Wait_st ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; next_state.Wait_st  ; 0                  ; 0                  ; 0                   ; 0                  ;
+; next_state.Start_st ; 0                  ; 0                  ; 1                   ; 1                  ;
+; next_state.Data_st  ; 0                  ; 1                  ; 0                   ; 1                  ;
+; next_state.Stop_st  ; 1                  ; 0                  ; 0                   ; 1                  ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |root_main|RS232_reciever:rs_reciever|cur_state                                     ;
++--------------------+-------------------+-------------------+--------------------+-------------------+
+; Name               ; cur_state.Stop_st ; cur_state.Data_st ; cur_state.Start_st ; cur_state.Wait_st ;
++--------------------+-------------------+-------------------+--------------------+-------------------+
+; cur_state.Wait_st  ; 0                 ; 0                 ; 0                  ; 0                 ;
+; cur_state.Start_st ; 0                 ; 0                 ; 1                  ; 1                 ;
+; cur_state.Data_st  ; 0                 ; 1                 ; 0                  ; 1                 ;
+; cur_state.Stop_st  ; 1                 ; 0                 ; 0                  ; 1                 ;
++--------------------+-------------------+-------------------+--------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                        ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------+
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_x_mantissa[0]  ; Stuck at VCC due to stuck port data_in                    ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[23] ; Stuck at VCC due to stuck port data_in                    ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[0]  ; Merged with all_arithm:root_calculator|rough_shift[0][0]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[1]  ; Merged with all_arithm:root_calculator|rough_shift[0][1]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[2]  ; Merged with all_arithm:root_calculator|rough_shift[0][2]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[3]  ; Merged with all_arithm:root_calculator|rough_shift[0][3]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[4]  ; Merged with all_arithm:root_calculator|rough_shift[0][4]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[5]  ; Merged with all_arithm:root_calculator|rough_shift[0][5]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[6]  ; Merged with all_arithm:root_calculator|rough_shift[0][6]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[7]  ; Merged with all_arithm:root_calculator|rough_shift[0][7]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[8]  ; Merged with all_arithm:root_calculator|rough_shift[0][8]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[9]  ; Merged with all_arithm:root_calculator|rough_shift[0][9]  ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[10] ; Merged with all_arithm:root_calculator|rough_shift[0][10] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[11] ; Merged with all_arithm:root_calculator|rough_shift[0][11] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[12] ; Merged with all_arithm:root_calculator|rough_shift[0][12] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[13] ; Merged with all_arithm:root_calculator|rough_shift[0][13] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[14] ; Merged with all_arithm:root_calculator|rough_shift[0][14] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[15] ; Merged with all_arithm:root_calculator|rough_shift[0][15] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[16] ; Merged with all_arithm:root_calculator|rough_shift[0][16] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[17] ; Merged with all_arithm:root_calculator|rough_shift[0][17] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[18] ; Merged with all_arithm:root_calculator|rough_shift[0][18] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[19] ; Merged with all_arithm:root_calculator|rough_shift[0][19] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[20] ; Merged with all_arithm:root_calculator|rough_shift[0][20] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[21] ; Merged with all_arithm:root_calculator|rough_shift[0][21] ;
+; all_arithm:root_calculator|recip_first_stage:first_recip|out_D_mantissa[22] ; Merged with all_arithm:root_calculator|rough_shift[0][22] ;
+; RS232_transmitter:rs_transmitter|cur_state~6                                ; Lost fanout                                               ;
+; RS232_transmitter:rs_transmitter|cur_state~7                                ; Lost fanout                                               ;
+; RS232_reciever:rs_reciever|next_state~6                                     ; Lost fanout                                               ;
+; RS232_reciever:rs_reciever|next_state~7                                     ; Lost fanout                                               ;
+; RS232_reciever:rs_reciever|cur_state~2                                      ; Lost fanout                                               ;
+; RS232_reciever:rs_reciever|cur_state~3                                      ; Lost fanout                                               ;
+; Total Number of Removed Registers = 31                                      ;                                                           ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -249,46 +401,312 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 26    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 353   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 91    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; rts~reg0                               ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                       ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+------------+
+; Register Name                                                               ; Megafunction                                                            ; Type       ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+------------+
+; all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|sqrt[23..31]         ; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign_rtl_0 ; SHIFT_TAPS ;
+; all_arithm:root_calculator|rough_shift[0,1][23..31]                         ; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign_rtl_0 ; SHIFT_TAPS ;
+; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign           ; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign_rtl_0 ; SHIFT_TAPS ;
+; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_exponent[0..7] ; all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign_rtl_0 ; SHIFT_TAPS ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RS232_transmitter|tick_count[4] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RS232_transmitter|bit_count[3]  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |RS232_transmitter|Selector4     ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |RS232_transmitter|Selector3     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |root_main|RS232_transmitter:rs_transmitter|tick_count[0]                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |root_main|RS232_transmitter:rs_transmitter|bit_count[2]                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |root_main|data_transmitter:data_trans|out_data[3]                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |root_main|RS232_reciever:rs_reciever|tick_count[7]                                  ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; Yes        ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_mantissa[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |root_main|RS232_reciever:rs_reciever|bit_count                                      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |root_main|all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_exponent     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |root_main|RS232_transmitter:rs_transmitter|Selector4                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |root_main|RS232_transmitter:rs_transmitter|Selector3                                ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |root_main|RS232_reciever:rs_reciever|Selector31                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |RS232_transmitter ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; CLK_DIVIDER    ; 5208  ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                       ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                        ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RS232_reciever:rs_reciever ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; CLK_DIVIDER    ; 3125  ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RS232_transmitter:rs_transmitter ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; CLK_DIVIDER    ; 3125  ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0 ;
++----------------+----------------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                 ;
++----------------+----------------+------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                              ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                              ;
+; TAP_DISTANCE   ; 4              ; Untyped                                                                                              ;
+; WIDTH          ; 9              ; Untyped                                                                                              ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                              ;
+; CBXI_PARAMETER ; shift_taps_v4m ; Untyped                                                                                              ;
++----------------+----------------+------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+--------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                   ;
++------------------------------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTHA                                     ; 24           ; Untyped                                                ;
+; LPM_WIDTHB                                     ; 24           ; Untyped                                                ;
+; LPM_WIDTHP                                     ; 48           ; Untyped                                                ;
+; LPM_WIDTHR                                     ; 48           ; Untyped                                                ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                ;
+; LATENCY                                        ; 0            ; Untyped                                                ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                ;
+; USE_EAB                                        ; OFF          ; Untyped                                                ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                ;
+; CBXI_PARAMETER                                 ; mult_bdt     ; Untyped                                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                ;
++------------------------------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                       ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTHA                                     ; 24           ; Untyped                                                    ;
+; LPM_WIDTHB                                     ; 24           ; Untyped                                                    ;
+; LPM_WIDTHP                                     ; 48           ; Untyped                                                    ;
+; LPM_WIDTHR                                     ; 48           ; Untyped                                                    ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                    ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                    ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                    ;
+; LATENCY                                        ; 0            ; Untyped                                                    ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                    ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                    ;
+; USE_EAB                                        ; OFF          ; Untyped                                                    ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                    ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                    ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                    ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                        ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                    ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                    ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER                                 ; mult_bdt     ; Untyped                                                    ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                    ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                    ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                    ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                       ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTHA                                     ; 24           ; Untyped                                                    ;
+; LPM_WIDTHB                                     ; 24           ; Untyped                                                    ;
+; LPM_WIDTHP                                     ; 48           ; Untyped                                                    ;
+; LPM_WIDTHR                                     ; 48           ; Untyped                                                    ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                    ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                    ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                    ;
+; LATENCY                                        ; 0            ; Untyped                                                    ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                    ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                    ;
+; USE_EAB                                        ; OFF          ; Untyped                                                    ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                    ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                    ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                    ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                        ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                    ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                    ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER                                 ; mult_bdt     ; Untyped                                                    ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                    ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                    ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                    ;
++------------------------------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+----------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                     ;
++------------------------------------------------+--------------+----------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                           ;
+; LPM_WIDTHA                                     ; 24           ; Untyped                                                  ;
+; LPM_WIDTHB                                     ; 24           ; Untyped                                                  ;
+; LPM_WIDTHP                                     ; 48           ; Untyped                                                  ;
+; LPM_WIDTHR                                     ; 48           ; Untyped                                                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                  ;
+; LATENCY                                        ; 0            ; Untyped                                                  ;
+; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped                                                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                  ;
+; USE_EAB                                        ; OFF          ; Untyped                                                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                  ;
+; CBXI_PARAMETER                                 ; mult_vgt     ; Untyped                                                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                  ;
++------------------------------------------------+--------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                                                                ;
++----------------------------+---------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                 ;
++----------------------------+---------------------------------------------------------------------------------------+
+; Number of entity instances ; 1                                                                                     ;
+; Entity Instance            ; all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                     ;
+;     -- TAP_DISTANCE        ; 4                                                                                     ;
+;     -- WIDTH               ; 9                                                                                     ;
++----------------------------+---------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                                    ;
++---------------------------------------+---------------------------------------------------------------------------+
+; Name                                  ; Value                                                                     ;
++---------------------------------------+---------------------------------------------------------------------------+
+; Number of entity instances            ; 4                                                                         ;
+; Entity Instance                       ; all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0     ;
+;     -- LPM_WIDTHA                     ; 24                                                                        ;
+;     -- LPM_WIDTHB                     ; 24                                                                        ;
+;     -- LPM_WIDTHP                     ; 48                                                                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                        ;
+;     -- USE_EAB                        ; OFF                                                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                        ;
+; Entity Instance                       ; all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 24                                                                        ;
+;     -- LPM_WIDTHB                     ; 24                                                                        ;
+;     -- LPM_WIDTHP                     ; 48                                                                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                        ;
+;     -- USE_EAB                        ; OFF                                                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                        ;
+; Entity Instance                       ; all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 24                                                                        ;
+;     -- LPM_WIDTHB                     ; 24                                                                        ;
+;     -- LPM_WIDTHP                     ; 48                                                                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                        ;
+;     -- USE_EAB                        ; OFF                                                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                        ;
+; Entity Instance                       ; all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0   ;
+;     -- LPM_WIDTHA                     ; 24                                                                        ;
+;     -- LPM_WIDTHB                     ; 24                                                                        ;
+;     -- LPM_WIDTHP                     ; 48                                                                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; YES                                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                        ;
+;     -- USE_EAB                        ; OFF                                                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                        ;
++---------------------------------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "all_arithm:root_calculator|rough_estimate:sqrt_estimate"                                 ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; incorrect ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RS232_reciever:rs_reciever"                                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -296,21 +714,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
-; cycloneiii_ff         ; 26                          ;
-;     ENA               ; 16                          ;
-;     plain             ; 10                          ;
-; cycloneiii_lcell_comb ; 50                          ;
-;     arith             ; 15                          ;
-;         2 data inputs ; 15                          ;
-;     normal            ; 35                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 21                          ;
+; boundary_port         ; 3                           ;
+; cycloneiii_ff         ; 353                         ;
+;     ENA               ; 91                          ;
+;     SCLR              ; 16                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 245                         ;
+; cycloneiii_lcell_comb ; 499                         ;
+;     arith             ; 311                         ;
+;         2 data inputs ; 87                          ;
+;         3 data inputs ; 224                         ;
+;     normal            ; 188                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 133                         ;
+; cycloneiii_mac_mult   ; 16                          ;
+; cycloneiii_mac_out    ; 16                          ;
+; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.24                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.04                        ;
 +-----------------------+-----------------------------+
 
 
@@ -319,7 +744,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -329,31 +754,122 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sun Nov 13 15:42:51 2022
+    Info: Processing started: Fri Dec 16 14:44:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Root_calculator -c Root_calculator
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 2 entities, in source file /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/adder_param.v
-    Info (12023): Found entity 1: adder File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/adder_param.v Line: 1
-    Info (12023): Found entity 2: adder_param File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/adder_param.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/rough_estimate.v
-    Info (12023): Found entity 1: rough_estimate File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/rough_estimate.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_reciever.v
+Info (12021): Found 10 design units, including 10 entities, in source file /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v
     Info (12023): Found entity 1: RS232_reciever File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_reciever.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v
-    Info (12023): Found entity 1: RS232_transmitter File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v Line: 1
-Info (12127): Elaborating entity "RS232_transmitter" for the top level hierarchy
+    Info (12023): Found entity 2: RS232_transmitter File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/RS232_transmitter.v Line: 1
+    Info (12023): Found entity 3: data_reciever File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_reciever.v Line: 1
+    Info (12023): Found entity 4: data_transmitter File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_transmitter.v Line: 1
+    Info (12023): Found entity 5: rough_estimate File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/rough_estimate.v Line: 1
+    Info (12023): Found entity 6: recip_first_stage File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_first_stage.v Line: 1
+    Info (12023): Found entity 7: recip_second_stage File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 1
+    Info (12023): Found entity 8: newthon_vavilon_s_x File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/newthon_vavilon_s_x.v Line: 1
+    Info (12023): Found entity 9: all_arithm File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v Line: 6
+    Info (12023): Found entity 10: root_main File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 7
+Info (12127): Elaborating entity "root_main" for the top level hierarchy
+Info (12128): Elaborating entity "RS232_reciever" for hierarchy "RS232_reciever:rs_reciever" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 23
+Info (12128): Elaborating entity "data_reciever" for hierarchy "data_reciever:data_reciev" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 34
+Info (12128): Elaborating entity "all_arithm" for hierarchy "all_arithm:root_calculator" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 50
+Info (12128): Elaborating entity "rough_estimate" for hierarchy "all_arithm:root_calculator|rough_estimate:sqrt_estimate" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v Line: 30
+Info (12128): Elaborating entity "recip_first_stage" for hierarchy "all_arithm:root_calculator|recip_first_stage:first_recip" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v Line: 39
+Info (12128): Elaborating entity "recip_second_stage" for hierarchy "all_arithm:root_calculator|recip_second_stage:second_recip" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v Line: 48
+Info (12128): Elaborating entity "newthon_vavilon_s_x" for hierarchy "all_arithm:root_calculator|newthon_vavilon_s_x:vavilon" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/all_arithm.v Line: 56
+Info (12128): Elaborating entity "data_transmitter" for hierarchy "data_transmitter:data_trans" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 63
+Info (12128): Elaborating entity "RS232_transmitter" for hierarchy "RS232_transmitter:rs_transmitter" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/root_main.v Line: 72
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "all_arithm:root_calculator|rough_estimate:sqrt_estimate|sqrt_sign_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 4
+        Info (286033): Parameter WIDTH set to 9
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/newthon_vavilon_s_x.v Line: 22
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "all_arithm:root_calculator|recip_second_stage:second_recip|Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 20
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "all_arithm:root_calculator|recip_second_stage:second_recip|Mult1" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "all_arithm:root_calculator|recip_first_stage:first_recip|Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_first_stage.v Line: 28
+Info (12130): Elaborated megafunction instantiation "all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0"
+Info (12133): Instantiated megafunction "all_arithm:root_calculator|rough_estimate:sqrt_estimate|altshift_taps:sqrt_sign_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "4"
+    Info (12134): Parameter "WIDTH" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_v4m.tdf
+    Info (12023): Found entity 1: shift_taps_v4m File: /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/shift_taps_v4m.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2b81.tdf
+    Info (12023): Found entity 1: altsyncram_2b81 File: /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/altsyncram_2b81.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_4pf.tdf
+    Info (12023): Found entity 1: cntr_4pf File: /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/cntr_4pf.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/newthon_vavilon_s_x.v Line: 22
+Info (12133): Instantiated megafunction "all_arithm:root_calculator|newthon_vavilon_s_x:vavilon|lpm_mult:Mult0" with the following parameter: File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/newthon_vavilon_s_x.v Line: 22
+    Info (12134): Parameter "LPM_WIDTHA" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "24"
+    Info (12134): Parameter "LPM_WIDTHP" = "48"
+    Info (12134): Parameter "LPM_WIDTHR" = "48"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_bdt.tdf
+    Info (12023): Found entity 1: mult_bdt File: /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/mult_bdt.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 20
+Info (12133): Instantiated megafunction "all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult0" with the following parameter: File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 20
+    Info (12134): Parameter "LPM_WIDTHA" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "24"
+    Info (12134): Parameter "LPM_WIDTHP" = "48"
+    Info (12134): Parameter "LPM_WIDTHR" = "48"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 24
+Info (12133): Instantiated megafunction "all_arithm:root_calculator|recip_second_stage:second_recip|lpm_mult:Mult1" with the following parameter: File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_second_stage.v Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "24"
+    Info (12134): Parameter "LPM_WIDTHP" = "48"
+    Info (12134): Parameter "LPM_WIDTHR" = "48"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0" File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_first_stage.v Line: 28
+Info (12133): Instantiated megafunction "all_arithm:root_calculator|recip_first_stage:first_recip|lpm_mult:Mult0" with the following parameter: File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/recip_first_stage.v Line: 28
+    Info (12134): Parameter "LPM_WIDTHA" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "24"
+    Info (12134): Parameter "LPM_WIDTHP" = "48"
+    Info (12134): Parameter "LPM_WIDTHR" = "48"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_vgt.tdf
+    Info (12023): Found entity 1: mult_vgt File: /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/db/mult_vgt.tdf Line: 31
+Info (13014): Ignored 579 buffer(s)
+    Info (13019): Ignored 579 SOFT buffer(s)
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/output_files/Root_calculator.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 49 logic cells
+Info (21057): Implemented 728 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 688 logic cells
+    Info (21064): Implemented 9 RAM segments
+    Info (21062): Implemented 28 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 477 megabytes
-    Info: Processing ended: Sun Nov 13 15:43:00 2022
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 485 megabytes
+    Info: Processing ended: Fri Dec 16 14:44:18 2022
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/dimuki_ken/Quartus/Projects/Root_calculator/quartus/output_files/Root_calculator.map.smsg.
 
 

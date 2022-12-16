@@ -1,0 +1,285 @@
+$date
+	Fri Dec 16 10:52:10 2022
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module data_reciever_testbench $end
+$var reg 1 ! clk $end
+$var reg 8 " in_data [7:0] $end
+$var reg 1 # in_data_ready $end
+$var wire 1 $ out_data [31] $end
+$var wire 1 % out_data [30] $end
+$var wire 1 & out_data [29] $end
+$var wire 1 ' out_data [28] $end
+$var wire 1 ( out_data [27] $end
+$var wire 1 ) out_data [26] $end
+$var wire 1 * out_data [25] $end
+$var wire 1 + out_data [24] $end
+$var wire 1 , out_data [23] $end
+$var wire 1 - out_data [22] $end
+$var wire 1 . out_data [21] $end
+$var wire 1 / out_data [20] $end
+$var wire 1 0 out_data [19] $end
+$var wire 1 1 out_data [18] $end
+$var wire 1 2 out_data [17] $end
+$var wire 1 3 out_data [16] $end
+$var wire 1 4 out_data [15] $end
+$var wire 1 5 out_data [14] $end
+$var wire 1 6 out_data [13] $end
+$var wire 1 7 out_data [12] $end
+$var wire 1 8 out_data [11] $end
+$var wire 1 9 out_data [10] $end
+$var wire 1 : out_data [9] $end
+$var wire 1 ; out_data [8] $end
+$var wire 1 < out_data [7] $end
+$var wire 1 = out_data [6] $end
+$var wire 1 > out_data [5] $end
+$var wire 1 ? out_data [4] $end
+$var wire 1 @ out_data [3] $end
+$var wire 1 A out_data [2] $end
+$var wire 1 B out_data [1] $end
+$var wire 1 C out_data [0] $end
+$var wire 1 D out_data_ready $end
+
+$scope module dut $end
+$var wire 1 E clk $end
+$var wire 1 F in_data [7] $end
+$var wire 1 G in_data [6] $end
+$var wire 1 H in_data [5] $end
+$var wire 1 I in_data [4] $end
+$var wire 1 J in_data [3] $end
+$var wire 1 K in_data [2] $end
+$var wire 1 L in_data [1] $end
+$var wire 1 M in_data [0] $end
+$var wire 1 N in_data_ready $end
+$var reg 32 O out_data [31:0] $end
+$var reg 1 P out_data_ready $end
+$var reg 2 Q byte_counter [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b0 "
+0#
+b0 O
+0P
+b0 Q
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0D
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+$end
+#5000
+1!
+1E
+#10000
+0!
+0E
+#15000
+1!
+1E
+#20000
+b1010 "
+1#
+0!
+1L
+1J
+1N
+0E
+#25000
+1!
+1E
+b1 Q
+b1010000000000000000000000000 O
+1*
+1(
+#30000
+0#
+0!
+0N
+0E
+#35000
+1!
+1E
+#40000
+0!
+0E
+#45000
+1!
+1E
+#50000
+b10100 "
+1#
+0!
+0L
+1K
+0J
+1I
+1N
+0E
+#55000
+1!
+1E
+b10 Q
+b1010000101000000000000000000 O
+11
+1/
+#60000
+0#
+0!
+0N
+0E
+#65000
+1!
+1E
+#70000
+0!
+0E
+#75000
+1!
+1E
+#80000
+b1011000 "
+1#
+0!
+0K
+1J
+1G
+1N
+0E
+#85000
+1!
+1E
+b11 Q
+b1010000101000101100000000000 O
+18
+17
+15
+#90000
+0#
+0!
+0N
+0E
+#95000
+1!
+1E
+#100000
+0!
+0E
+#105000
+1!
+1E
+#110000
+b110110 "
+1#
+0!
+1L
+1K
+0J
+1H
+0G
+1N
+0E
+#115000
+1!
+1E
+b0 Q
+b1010000101000101100000110110 O
+1P
+1B
+1A
+1?
+1>
+1D
+#120000
+0#
+0!
+0N
+0E
+#125000
+1!
+1E
+0P
+0D
+#130000
+0!
+0E
+#135000
+1!
+1E
+#140000
+b1100100 "
+1#
+0!
+0L
+0I
+1G
+1N
+0E
+#145000
+1!
+1E
+b1 Q
+b1100100000101000101100000110110 O
+0*
+1)
+0(
+1&
+1%
+#150000
+0!
+0E
+#155000
+1!
+1E
+b10 Q
+b1100100011001000101100000110110 O
+0/
+1.
+1-

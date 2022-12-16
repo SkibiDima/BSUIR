@@ -6,31 +6,16 @@ module rough_estimate_testbench;
 
 	reg clk;
 	
-	wire in_sign;
-	wire [7:0] in_exponent;
-	wire [22:0] in_mantissa;
-	
-	wire out_sign;
-	wire [7:0] out_exponent;
-	wire [22:0] out_mantissa;
 	wire incorrect;
 	
 	wire [31:0] out;
 	reg [31:0] in;
 	
-	assign out = {out_sign, out_exponent, out_mantissa};
-	assign in_sign = in[31];
-	assign in_exponent = in[30:23];
-	assign in_mantissa = in[22:00];
 	
 	rough_estimate dut(
 		.clk(clk),
-		.in_sign(in_sign),
-		.in_exponent(in_exponent),
-		.in_mantissa(in_mantissa),
-		.out_sign(out_sign),
-		.out_exponent(out_exponent),
-		.out_mantissa(out_mantissa),
+		.in(in),
+		.out(out),
 		.incorrect(incorrect)
 	);
 
@@ -71,6 +56,14 @@ module rough_estimate_testbench;
 	#10
 	
 	in = 32'h3D80_0000; // 0.0625 
+	
+	#10
+	
+	in = 32'h00800000; // 1.1754943e-38 minimum
+	
+	#10
+	
+	in = 32'h7F7FFFFF; // 3.4028234e+38 maximum
 	
 	#10
 	

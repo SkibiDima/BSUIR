@@ -1,5 +1,19 @@
 
-State Machine - |RS232_transmitter|cur_state
+State Machine - |root_main|RS232_transmitter:rs_transmitter|cur_state
+Name cur_state.Stop_st cur_state.Data_st cur_state.Start_st cur_state.Wait_st 
+cur_state.Wait_st 0 0 0 0 
+cur_state.Start_st 0 0 1 1 
+cur_state.Data_st 0 1 0 1 
+cur_state.Stop_st 1 0 0 1 
+
+State Machine - |root_main|RS232_reciever:rs_reciever|next_state
+Name next_state.Stop_st next_state.Data_st next_state.Start_st next_state.Wait_st 
+next_state.Wait_st 0 0 0 0 
+next_state.Start_st 0 0 1 1 
+next_state.Data_st 0 1 0 1 
+next_state.Stop_st 1 0 0 1 
+
+State Machine - |root_main|RS232_reciever:rs_reciever|cur_state
 Name cur_state.Stop_st cur_state.Data_st cur_state.Start_st cur_state.Wait_st 
 cur_state.Wait_st 0 0 0 0 
 cur_state.Start_st 0 0 1 1 

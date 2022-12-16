@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Nov 13 15:43:00 2022
+Analysis & Synthesis Status : Successful - Fri Dec 16 14:44:18 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : Root_calculator
-Top-level Entity Name : RS232_transmitter
+Top-level Entity Name : root_main
 Family : Cyclone IV E
-Total logic elements : 49
-    Total combinational functions : 49
-    Dedicated logic registers : 26
-Total registers : 26
-Total pins : 12
+Total logic elements : 687
+    Total combinational functions : 499
+    Dedicated logic registers : 353
+Total registers : 353
+Total pins : 3
 Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
+Total memory bits : 18
+Embedded Multiplier 9-bit elements : 28
 Total PLLs : 0

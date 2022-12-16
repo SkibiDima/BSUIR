@@ -1,11 +1,13 @@
 module RS232_transmitter #(
-    parameter CLK_DIVIDER = 5208 // 9600 baud
+//   parameter CLK_DIVIDER = 5208 // 9600 baud 50MHz
+//	  parameter CLK_DIVIDER = 1042 // 9600 baud 10MHZ
+	  parameter CLK_DIVIDER = 3125 // 9600 baud 30MHZ
 )(
     input clk,
     input [7:0] data,
     input data_ready,
     output reg tx,
-    output reg rts
+	 output reg rts
 );
 
     localparam Wait_st = 2'b00;
@@ -19,9 +21,10 @@ module RS232_transmitter #(
 
     initial begin
         cur_state = Wait_st;
-        rts = 1'b1;
         bit_count = 4'b0000;
         tick_count = 16'h0000;
+		  rts = 0;
+		  tx = 0;
     end
 
     always @(posedge clk) begin
@@ -31,9 +34,9 @@ module RS232_transmitter #(
                 tx <= 1'b1;
                 if(data_ready == 1'b1) begin
                     cur_state <= Start_st;
-                    rts <= 1'b0;
+						  rts <= 1'b0;
                 end
-                else rts <= 1'b1;
+					 else rts <= 1'b1;
             end
             Start_st: begin
                 tx <= 1'b0;
@@ -60,11 +63,11 @@ module RS232_transmitter #(
             end
             Stop_st: begin
                 tx <= 1'b1;
-                rts <= 1'b1;
                 tick_count <= tick_count + 1'b1;
                 if(tick_count == 5208) begin
                     tick_count <= 0;
                     cur_state <= Wait_st;
+						  rts <= 1'b1;
                 end
             end
             default: cur_state <= Wait_st;

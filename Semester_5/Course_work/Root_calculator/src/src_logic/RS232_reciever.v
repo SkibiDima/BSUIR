@@ -1,5 +1,7 @@
 module RS232_reciever #(
-    parameter CLK_DIVIDER = 5208 // 9600 baud
+//   parameter CLK_DIVIDER = 5208 // 9600 baud 50MHz
+//	  parameter CLK_DIVIDER = 1042 // 9600 baud 10MHZ
+	  parameter CLK_DIVIDER = 3125 // 9600 baud 30MHZ
 )(
     input clk,
     input rx,
@@ -49,16 +51,16 @@ module RS232_reciever #(
                     else begin
                         error <= 1'b0;
                     end
-                    if(tick_count == CLK_DIVIDER) begin
-                        tick_count <= 16'h0000;
-                        next_state <= Data_st;
-                    end
+                end
+                if(tick_count == CLK_DIVIDER) begin
+                    tick_count <= 16'h0000;
+                    next_state <= Data_st;
                 end
             end
             Data_st: begin
                 tick_count <= tick_count + 1'b1;
                 if(tick_count == CLK_DIVIDER/2) begin
-                    data <= rx;
+                    data[bit_count] <= rx;
                     bit_count <= bit_count + 1'b1;
                 end 
                 else begin

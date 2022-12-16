@@ -7,15 +7,15 @@ reg clk;
 reg data_ready;
 reg [7:0] data;
 
-wire rts;
 wire tx;
+wire rts;
 
 RS232_transmitter dut (
     .clk(clk),
     .data_ready(data_ready),
     .data(data),
-    .rts(rts),
-    .tx(tx)
+    .tx(tx),
+	 .rts(rts)
 );
 
 always #5 clk = ~clk;
@@ -39,8 +39,17 @@ initial begin
 
     data_ready = 1'b0;
 
-	#1000000;
+	#600000
+
+    data = 8'b11001100;
+    data_ready = 1'b1;
 	 
+    #10
+
+    data_ready = 1'b0;
+    
+    #600000
+
     $stop;
     $finish;
 end

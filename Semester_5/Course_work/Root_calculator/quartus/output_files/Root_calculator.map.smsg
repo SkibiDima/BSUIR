@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at data_reciever.v(17): always construct contains both blocking and non-blocking assignments File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_reciever.v Line: 17
+Warning (10268): Verilog HDL information at data_transmitter.v(19): always construct contains both blocking and non-blocking assignments File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/data_transmitter.v Line: 19
+Warning (10268): Verilog HDL information at rough_estimate.v(29): always construct contains both blocking and non-blocking assignments File: /home/dimuki_ken/Quartus/Projects/Root_calculator/src/src_logic/rough_estimate.v Line: 29
