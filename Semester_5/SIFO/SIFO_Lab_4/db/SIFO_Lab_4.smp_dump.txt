@@ -1,0 +1,7 @@
+
+State Machine - |processor|cur_state
+Name cur_state.Write2_st cur_state.Write1_st cur_state.Command_st cur_state.Calm_st 
+cur_state.Calm_st 0 0 0 0 
+cur_state.Command_st 0 0 1 1 
+cur_state.Write1_st 0 1 0 1 
+cur_state.Write2_st 1 0 0 1 

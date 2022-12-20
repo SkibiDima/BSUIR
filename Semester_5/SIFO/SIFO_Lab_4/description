@@ -1,0 +1,19 @@
+
+//Memory address width 10
+//Data bus width 8
+//Register file 16 
+
+
+//         operation||------operands------
+//mov M->R 0000|0001||AAAA|AAAA||AA00|RRRR      TODO
+//mov R->R 0000|0101||0000|0000||RRRR|RRRR w|r  mov ax, bx -> R(ax)|R(bx)
+//mov R->M 0000|1001||AAAA|AAAA||AA00|RRRR 
+//jmp      0000|0000||AAAA|AAAA||AA00|0000      
+//js       0000|0100||DDDD|DDDD||DD00|0000      TODO  IP+DATA      
+
+
+//         operation||operands
+//mov M->R 00AA|AAAA||AAAA|RRRR      TODO      
+//js       01DD|DDDD||DDDD|0000      TODO  IP+DATA    
+//sub_cnst 10RR|RR00||DDDD|DDDD      TODO
+//xor      11RR|RR00||RRRR|0000      TODO

@@ -1,0 +1,2333 @@
+$date
+	Tue Dec 20 18:52:50 2022
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module processor_testbench $end
+$var parameter 32 ! ADDRESS_WIDTH $end
+$var parameter 32 " DATA_WIDTH $end
+$var reg 1 # clk $end
+$var integer 32 $ i $end
+$var integer 32 % fd_mem $end
+$var integer 32 & fd_monitor $end
+
+$scope begin main $end
+$upscope $end
+
+$scope module boje $end
+$var parameter 32 ' ADDRESS_WIDTH $end
+$var parameter 32 ( ADDRESS_REGISTERS $end
+$var parameter 32 ) DATA_WIDTH $end
+$var parameter 2 * Calm_st $end
+$var parameter 2 + Command_st $end
+$var parameter 2 , Write1_st $end
+$var parameter 2 - Write2_st $end
+$var wire 1 . clk $end
+$var reg 4 / ip_reg [3:0] $end
+$var reg 16 0 ir_reg [15:0] $end
+$var reg 8 1 flags_reg [7:0] $end
+$var wire 1 2 in_data_ram [7] $end
+$var wire 1 3 in_data_ram [6] $end
+$var wire 1 4 in_data_ram [5] $end
+$var wire 1 5 in_data_ram [4] $end
+$var wire 1 6 in_data_ram [3] $end
+$var wire 1 7 in_data_ram [2] $end
+$var wire 1 8 in_data_ram [1] $end
+$var wire 1 9 in_data_ram [0] $end
+$var wire 1 : out_data_ram [7] $end
+$var wire 1 ; out_data_ram [6] $end
+$var wire 1 < out_data_ram [5] $end
+$var wire 1 = out_data_ram [4] $end
+$var wire 1 > out_data_ram [3] $end
+$var wire 1 ? out_data_ram [2] $end
+$var wire 1 @ out_data_ram [1] $end
+$var wire 1 A out_data_ram [0] $end
+$var wire 1 B in_data_reg [7] $end
+$var wire 1 C in_data_reg [6] $end
+$var wire 1 D in_data_reg [5] $end
+$var wire 1 E in_data_reg [4] $end
+$var wire 1 F in_data_reg [3] $end
+$var wire 1 G in_data_reg [2] $end
+$var wire 1 H in_data_reg [1] $end
+$var wire 1 I in_data_reg [0] $end
+$var wire 1 J out_data_reg [7] $end
+$var wire 1 K out_data_reg [6] $end
+$var wire 1 L out_data_reg [5] $end
+$var wire 1 M out_data_reg [4] $end
+$var wire 1 N out_data_reg [3] $end
+$var wire 1 O out_data_reg [2] $end
+$var wire 1 P out_data_reg [1] $end
+$var wire 1 Q out_data_reg [0] $end
+$var wire 1 R in_addr_ram [3] $end
+$var wire 1 S in_addr_ram [2] $end
+$var wire 1 T in_addr_ram [1] $end
+$var wire 1 U in_addr_ram [0] $end
+$var wire 1 V in_addr_reg [3] $end
+$var wire 1 W in_addr_reg [2] $end
+$var wire 1 X in_addr_reg [1] $end
+$var wire 1 Y in_addr_reg [0] $end
+$var wire 1 Z out_ir [15] $end
+$var wire 1 [ out_ir [14] $end
+$var wire 1 \ out_ir [13] $end
+$var wire 1 ] out_ir [12] $end
+$var wire 1 ^ out_ir [11] $end
+$var wire 1 _ out_ir [10] $end
+$var wire 1 ` out_ir [9] $end
+$var wire 1 a out_ir [8] $end
+$var wire 1 b out_ir [7] $end
+$var wire 1 c out_ir [6] $end
+$var wire 1 d out_ir [5] $end
+$var wire 1 e out_ir [4] $end
+$var wire 1 f out_ir [3] $end
+$var wire 1 g out_ir [2] $end
+$var wire 1 h out_ir [1] $end
+$var wire 1 i out_ir [0] $end
+$var wire 1 j out_rom [7] $end
+$var wire 1 k out_rom [6] $end
+$var wire 1 l out_rom [5] $end
+$var wire 1 m out_rom [4] $end
+$var wire 1 n out_rom [3] $end
+$var wire 1 o out_rom [2] $end
+$var wire 1 p out_rom [1] $end
+$var wire 1 q out_rom [0] $end
+$var tri 1 r general_data_bus [7] $end
+$var tri 1 s general_data_bus [6] $end
+$var tri 1 t general_data_bus [5] $end
+$var tri 1 u general_data_bus [4] $end
+$var tri 1 v general_data_bus [3] $end
+$var tri 1 w general_data_bus [2] $end
+$var tri 1 x general_data_bus [1] $end
+$var tri 1 y general_data_bus [0] $end
+$var tri 1 z general_addr_bus [3] $end
+$var tri 1 { general_addr_bus [2] $end
+$var tri 1 | general_addr_bus [1] $end
+$var tri 1 } general_addr_bus [0] $end
+$var reg 2 ~ mux_data_in [1:0] $end
+$var reg 2 !! mux_data_out [1:0] $end
+$var reg 2 "! mux_addr_in [1:0] $end
+$var reg 2 #! mux_addr_out [1:0] $end
+$var reg 2 $! cur_state [1:0] $end
+$var reg 1 %! command_part $end
+$var reg 8 &! tempreg [7:0] $end
+
+$scope module proc_rom $end
+$var parameter 32 '! ADDRESS_WIDTH $end
+$var parameter 32 (! DATA_WIDTH $end
+$var parameter 32 )! DATA_DEPTH $end
+$var wire 1 . clk $end
+$var wire 1 *! address [3] $end
+$var wire 1 +! address [2] $end
+$var wire 1 ,! address [1] $end
+$var wire 1 -! address [0] $end
+$var wire 1 j out_data [7] $end
+$var wire 1 k out_data [6] $end
+$var wire 1 l out_data [5] $end
+$var wire 1 m out_data [4] $end
+$var wire 1 n out_data [3] $end
+$var wire 1 o out_data [2] $end
+$var wire 1 p out_data [1] $end
+$var wire 1 q out_data [0] $end
+$var integer 32 .! i $end
+$upscope $end
+
+$scope module proc_ram $end
+$var parameter 32 /! ADDRESS_WIDTH $end
+$var parameter 32 0! DATA_WIDTH $end
+$var parameter 32 1! DATA_DEPTH $end
+$var wire 1 . clk $end
+$var wire 1 R address [3] $end
+$var wire 1 S address [2] $end
+$var wire 1 T address [1] $end
+$var wire 1 U address [0] $end
+$var wire 1 2 in_data [7] $end
+$var wire 1 3 in_data [6] $end
+$var wire 1 4 in_data [5] $end
+$var wire 1 5 in_data [4] $end
+$var wire 1 6 in_data [3] $end
+$var wire 1 7 in_data [2] $end
+$var wire 1 8 in_data [1] $end
+$var wire 1 9 in_data [0] $end
+$var wire 1 : out_data [7] $end
+$var wire 1 ; out_data [6] $end
+$var wire 1 < out_data [5] $end
+$var wire 1 = out_data [4] $end
+$var wire 1 > out_data [3] $end
+$var wire 1 ? out_data [2] $end
+$var wire 1 @ out_data [1] $end
+$var wire 1 A out_data [0] $end
+$var wire 1 2! write_enable $end
+$var integer 32 3! i $end
+$upscope $end
+
+$scope module registers_file $end
+$var parameter 32 4! ADDRESS_WIDTH $end
+$var parameter 32 5! DATA_WIDTH $end
+$var parameter 32 6! DATA_DEPTH $end
+$var wire 1 . clk $end
+$var wire 1 V address [3] $end
+$var wire 1 W address [2] $end
+$var wire 1 X address [1] $end
+$var wire 1 Y address [0] $end
+$var wire 1 B in_data [7] $end
+$var wire 1 C in_data [6] $end
+$var wire 1 D in_data [5] $end
+$var wire 1 E in_data [4] $end
+$var wire 1 F in_data [3] $end
+$var wire 1 G in_data [2] $end
+$var wire 1 H in_data [1] $end
+$var wire 1 I in_data [0] $end
+$var wire 1 J out_data [7] $end
+$var wire 1 K out_data [6] $end
+$var wire 1 L out_data [5] $end
+$var wire 1 M out_data [4] $end
+$var wire 1 N out_data [3] $end
+$var wire 1 O out_data [2] $end
+$var wire 1 P out_data [1] $end
+$var wire 1 Q out_data [0] $end
+$var wire 1 7! write_enable $end
+$var integer 32 8! i $end
+$upscope $end
+
+$scope module hz_data_out_tempreg $end
+$var parameter 32 9! DATA_WIDTH $end
+$var wire 1 :! in_data [7] $end
+$var wire 1 ;! in_data [6] $end
+$var wire 1 <! in_data [5] $end
+$var wire 1 =! in_data [4] $end
+$var wire 1 >! in_data [3] $end
+$var wire 1 ?! in_data [2] $end
+$var wire 1 @! in_data [1] $end
+$var wire 1 A! in_data [0] $end
+$var wire 1 B! out_is_active $end
+$var tri 1 r out_data [7] $end
+$var tri 1 s out_data [6] $end
+$var tri 1 t out_data [5] $end
+$var tri 1 u out_data [4] $end
+$var tri 1 v out_data [3] $end
+$var tri 1 w out_data [2] $end
+$var tri 1 x out_data [1] $end
+$var tri 1 y out_data [0] $end
+$var tri 1 C! temp_out [7] $end
+$var tri 1 D! temp_out [6] $end
+$var tri 1 E! temp_out [5] $end
+$var tri 1 F! temp_out [4] $end
+$var tri 1 G! temp_out [3] $end
+$var tri 1 H! temp_out [2] $end
+$var tri 1 I! temp_out [1] $end
+$var tri 1 J! temp_out [0] $end
+$upscope $end
+
+$scope module hz_data_out_ram $end
+$var parameter 32 K! DATA_WIDTH $end
+$var wire 1 : in_data [7] $end
+$var wire 1 ; in_data [6] $end
+$var wire 1 < in_data [5] $end
+$var wire 1 = in_data [4] $end
+$var wire 1 > in_data [3] $end
+$var wire 1 ? in_data [2] $end
+$var wire 1 @ in_data [1] $end
+$var wire 1 A in_data [0] $end
+$var wire 1 L! out_is_active $end
+$var tri 1 r out_data [7] $end
+$var tri 1 s out_data [6] $end
+$var tri 1 t out_data [5] $end
+$var tri 1 u out_data [4] $end
+$var tri 1 v out_data [3] $end
+$var tri 1 w out_data [2] $end
+$var tri 1 x out_data [1] $end
+$var tri 1 y out_data [0] $end
+$var tri 1 M! temp_out [7] $end
+$var tri 1 N! temp_out [6] $end
+$var tri 1 O! temp_out [5] $end
+$var tri 1 P! temp_out [4] $end
+$var tri 1 Q! temp_out [3] $end
+$var tri 1 R! temp_out [2] $end
+$var tri 1 S! temp_out [1] $end
+$var tri 1 T! temp_out [0] $end
+$upscope $end
+
+$scope module hz_data_out_reg $end
+$var parameter 32 U! DATA_WIDTH $end
+$var wire 1 J in_data [7] $end
+$var wire 1 K in_data [6] $end
+$var wire 1 L in_data [5] $end
+$var wire 1 M in_data [4] $end
+$var wire 1 N in_data [3] $end
+$var wire 1 O in_data [2] $end
+$var wire 1 P in_data [1] $end
+$var wire 1 Q in_data [0] $end
+$var wire 1 V! out_is_active $end
+$var tri 1 r out_data [7] $end
+$var tri 1 s out_data [6] $end
+$var tri 1 t out_data [5] $end
+$var tri 1 u out_data [4] $end
+$var tri 1 v out_data [3] $end
+$var tri 1 w out_data [2] $end
+$var tri 1 x out_data [1] $end
+$var tri 1 y out_data [0] $end
+$var tri 1 W! temp_out [7] $end
+$var tri 1 X! temp_out [6] $end
+$var tri 1 Y! temp_out [5] $end
+$var tri 1 Z! temp_out [4] $end
+$var tri 1 [! temp_out [3] $end
+$var tri 1 \! temp_out [2] $end
+$var tri 1 ]! temp_out [1] $end
+$var tri 1 ^! temp_out [0] $end
+$upscope $end
+
+$scope module hz_data_out_ir $end
+$var parameter 32 _! DATA_WIDTH $end
+$var wire 1 b in_data [7] $end
+$var wire 1 c in_data [6] $end
+$var wire 1 d in_data [5] $end
+$var wire 1 e in_data [4] $end
+$var wire 1 f in_data [3] $end
+$var wire 1 g in_data [2] $end
+$var wire 1 h in_data [1] $end
+$var wire 1 i in_data [0] $end
+$var wire 1 `! out_is_active $end
+$var tri 1 r out_data [7] $end
+$var tri 1 s out_data [6] $end
+$var tri 1 t out_data [5] $end
+$var tri 1 u out_data [4] $end
+$var tri 1 v out_data [3] $end
+$var tri 1 w out_data [2] $end
+$var tri 1 x out_data [1] $end
+$var tri 1 y out_data [0] $end
+$var tri 1 a! temp_out [7] $end
+$var tri 1 b! temp_out [6] $end
+$var tri 1 c! temp_out [5] $end
+$var tri 1 d! temp_out [4] $end
+$var tri 1 e! temp_out [3] $end
+$var tri 1 f! temp_out [2] $end
+$var tri 1 g! temp_out [1] $end
+$var tri 1 h! temp_out [0] $end
+$upscope $end
+
+$scope module hz_data_in_ram $end
+$var parameter 32 i! DATA_WIDTH $end
+$var wire 1 r in_data [7] $end
+$var wire 1 s in_data [6] $end
+$var wire 1 t in_data [5] $end
+$var wire 1 u in_data [4] $end
+$var wire 1 v in_data [3] $end
+$var wire 1 w in_data [2] $end
+$var wire 1 x in_data [1] $end
+$var wire 1 y in_data [0] $end
+$var wire 1 j! out_is_active $end
+$var tri 1 2 out_data [7] $end
+$var tri 1 3 out_data [6] $end
+$var tri 1 4 out_data [5] $end
+$var tri 1 5 out_data [4] $end
+$var tri 1 6 out_data [3] $end
+$var tri 1 7 out_data [2] $end
+$var tri 1 8 out_data [1] $end
+$var tri 1 9 out_data [0] $end
+$var tri 1 k! temp_out [7] $end
+$var tri 1 l! temp_out [6] $end
+$var tri 1 m! temp_out [5] $end
+$var tri 1 n! temp_out [4] $end
+$var tri 1 o! temp_out [3] $end
+$var tri 1 p! temp_out [2] $end
+$var tri 1 q! temp_out [1] $end
+$var tri 1 r! temp_out [0] $end
+$upscope $end
+
+$scope module hz_data_in_reg $end
+$var parameter 32 s! DATA_WIDTH $end
+$var wire 1 r in_data [7] $end
+$var wire 1 s in_data [6] $end
+$var wire 1 t in_data [5] $end
+$var wire 1 u in_data [4] $end
+$var wire 1 v in_data [3] $end
+$var wire 1 w in_data [2] $end
+$var wire 1 x in_data [1] $end
+$var wire 1 y in_data [0] $end
+$var wire 1 t! out_is_active $end
+$var tri 1 B out_data [7] $end
+$var tri 1 C out_data [6] $end
+$var tri 1 D out_data [5] $end
+$var tri 1 E out_data [4] $end
+$var tri 1 F out_data [3] $end
+$var tri 1 G out_data [2] $end
+$var tri 1 H out_data [1] $end
+$var tri 1 I out_data [0] $end
+$var tri 1 u! temp_out [7] $end
+$var tri 1 v! temp_out [6] $end
+$var tri 1 w! temp_out [5] $end
+$var tri 1 x! temp_out [4] $end
+$var tri 1 y! temp_out [3] $end
+$var tri 1 z! temp_out [2] $end
+$var tri 1 {! temp_out [1] $end
+$var tri 1 |! temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_out_ir_1310 $end
+$var parameter 32 }! DATA_WIDTH $end
+$var wire 1 ~! in_data [9] $end
+$var wire 1 !" in_data [8] $end
+$var wire 1 "" in_data [7] $end
+$var wire 1 #" in_data [6] $end
+$var wire 1 $" in_data [5] $end
+$var wire 1 %" in_data [4] $end
+$var wire 1 \ in_data [3] $end
+$var wire 1 ] in_data [2] $end
+$var wire 1 ^ in_data [1] $end
+$var wire 1 _ in_data [0] $end
+$var wire 1 &" out_is_active $end
+$var tri 1 '" out_data [9] $end
+$var tri 1 (" out_data [8] $end
+$var tri 1 )" out_data [7] $end
+$var tri 1 *" out_data [6] $end
+$var tri 1 +" out_data [5] $end
+$var tri 1 ," out_data [4] $end
+$var tri 1 z out_data [3] $end
+$var tri 1 { out_data [2] $end
+$var tri 1 | out_data [1] $end
+$var tri 1 } out_data [0] $end
+$var tri 1 -" temp_out [9] $end
+$var tri 1 ." temp_out [8] $end
+$var tri 1 /" temp_out [7] $end
+$var tri 1 0" temp_out [6] $end
+$var tri 1 1" temp_out [5] $end
+$var tri 1 2" temp_out [4] $end
+$var tri 1 3" temp_out [3] $end
+$var tri 1 4" temp_out [2] $end
+$var tri 1 5" temp_out [1] $end
+$var tri 1 6" temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_out_ram $end
+$var parameter 32 7" DATA_WIDTH $end
+$var wire 1 : in_data [7] $end
+$var wire 1 ; in_data [6] $end
+$var wire 1 < in_data [5] $end
+$var wire 1 = in_data [4] $end
+$var wire 1 > in_data [3] $end
+$var wire 1 ? in_data [2] $end
+$var wire 1 @ in_data [1] $end
+$var wire 1 A in_data [0] $end
+$var wire 1 8" out_is_active $end
+$var tri 1 9" out_data [7] $end
+$var tri 1 :" out_data [6] $end
+$var tri 1 ;" out_data [5] $end
+$var tri 1 <" out_data [4] $end
+$var tri 1 z out_data [3] $end
+$var tri 1 { out_data [2] $end
+$var tri 1 | out_data [1] $end
+$var tri 1 } out_data [0] $end
+$var tri 1 =" temp_out [7] $end
+$var tri 1 >" temp_out [6] $end
+$var tri 1 ?" temp_out [5] $end
+$var tri 1 @" temp_out [4] $end
+$var tri 1 A" temp_out [3] $end
+$var tri 1 B" temp_out [2] $end
+$var tri 1 C" temp_out [1] $end
+$var tri 1 D" temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_out_reg $end
+$var parameter 32 E" DATA_WIDTH $end
+$var wire 1 J in_data [7] $end
+$var wire 1 K in_data [6] $end
+$var wire 1 L in_data [5] $end
+$var wire 1 M in_data [4] $end
+$var wire 1 N in_data [3] $end
+$var wire 1 O in_data [2] $end
+$var wire 1 P in_data [1] $end
+$var wire 1 Q in_data [0] $end
+$var wire 1 F" out_is_active $end
+$var tri 1 G" out_data [7] $end
+$var tri 1 H" out_data [6] $end
+$var tri 1 I" out_data [5] $end
+$var tri 1 J" out_data [4] $end
+$var tri 1 z out_data [3] $end
+$var tri 1 { out_data [2] $end
+$var tri 1 | out_data [1] $end
+$var tri 1 } out_data [0] $end
+$var tri 1 K" temp_out [7] $end
+$var tri 1 L" temp_out [6] $end
+$var tri 1 M" temp_out [5] $end
+$var tri 1 N" temp_out [4] $end
+$var tri 1 O" temp_out [3] $end
+$var tri 1 P" temp_out [2] $end
+$var tri 1 Q" temp_out [1] $end
+$var tri 1 R" temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_out_ir_90 $end
+$var parameter 32 S" DATA_WIDTH $end
+$var wire 1 ` in_data [9] $end
+$var wire 1 a in_data [8] $end
+$var wire 1 b in_data [7] $end
+$var wire 1 c in_data [6] $end
+$var wire 1 d in_data [5] $end
+$var wire 1 e in_data [4] $end
+$var wire 1 f in_data [3] $end
+$var wire 1 g in_data [2] $end
+$var wire 1 h in_data [1] $end
+$var wire 1 i in_data [0] $end
+$var wire 1 T" out_is_active $end
+$var tri 1 U" out_data [9] $end
+$var tri 1 V" out_data [8] $end
+$var tri 1 W" out_data [7] $end
+$var tri 1 X" out_data [6] $end
+$var tri 1 Y" out_data [5] $end
+$var tri 1 Z" out_data [4] $end
+$var tri 1 z out_data [3] $end
+$var tri 1 { out_data [2] $end
+$var tri 1 | out_data [1] $end
+$var tri 1 } out_data [0] $end
+$var tri 1 [" temp_out [9] $end
+$var tri 1 \" temp_out [8] $end
+$var tri 1 ]" temp_out [7] $end
+$var tri 1 ^" temp_out [6] $end
+$var tri 1 _" temp_out [5] $end
+$var tri 1 `" temp_out [4] $end
+$var tri 1 a" temp_out [3] $end
+$var tri 1 b" temp_out [2] $end
+$var tri 1 c" temp_out [1] $end
+$var tri 1 d" temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_in_ram $end
+$var parameter 32 e" DATA_WIDTH $end
+$var wire 1 f" in_data [7] $end
+$var wire 1 g" in_data [6] $end
+$var wire 1 h" in_data [5] $end
+$var wire 1 i" in_data [4] $end
+$var wire 1 z in_data [3] $end
+$var wire 1 { in_data [2] $end
+$var wire 1 | in_data [1] $end
+$var wire 1 } in_data [0] $end
+$var wire 1 j" out_is_active $end
+$var tri 1 k" out_data [7] $end
+$var tri 1 l" out_data [6] $end
+$var tri 1 m" out_data [5] $end
+$var tri 1 n" out_data [4] $end
+$var tri 1 R out_data [3] $end
+$var tri 1 S out_data [2] $end
+$var tri 1 T out_data [1] $end
+$var tri 1 U out_data [0] $end
+$var tri 1 o" temp_out [7] $end
+$var tri 1 p" temp_out [6] $end
+$var tri 1 q" temp_out [5] $end
+$var tri 1 r" temp_out [4] $end
+$var tri 1 s" temp_out [3] $end
+$var tri 1 t" temp_out [2] $end
+$var tri 1 u" temp_out [1] $end
+$var tri 1 v" temp_out [0] $end
+$upscope $end
+
+$scope module hz_addr_in_reg $end
+$var parameter 32 w" DATA_WIDTH $end
+$var wire 1 x" in_data [7] $end
+$var wire 1 y" in_data [6] $end
+$var wire 1 z" in_data [5] $end
+$var wire 1 {" in_data [4] $end
+$var wire 1 z in_data [3] $end
+$var wire 1 { in_data [2] $end
+$var wire 1 | in_data [1] $end
+$var wire 1 } in_data [0] $end
+$var wire 1 |" out_is_active $end
+$var tri 1 }" out_data [7] $end
+$var tri 1 ~" out_data [6] $end
+$var tri 1 !# out_data [5] $end
+$var tri 1 "# out_data [4] $end
+$var tri 1 V out_data [3] $end
+$var tri 1 W out_data [2] $end
+$var tri 1 X out_data [1] $end
+$var tri 1 Y out_data [0] $end
+$var tri 1 ## temp_out [7] $end
+$var tri 1 $# temp_out [6] $end
+$var tri 1 %# temp_out [5] $end
+$var tri 1 &# temp_out [4] $end
+$var tri 1 '# temp_out [3] $end
+$var tri 1 (# temp_out [2] $end
+$var tri 1 )# temp_out [1] $end
+$var tri 1 *# temp_out [0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+b0 /
+bx 0
+b11 1
+b0 ~
+b0 !!
+b0 "!
+b0 #!
+b0 $!
+0%!
+b0 &!
+b100 !
+b1000 "
+b100 '
+b100 (
+b1000 )
+b0 *
+b1 +
+b10 ,
+b11 -
+b100 '!
+b1000 (!
+b10000 )!
+b100 /!
+b1000 0!
+b10000 1!
+b100 4!
+b1000 5!
+b10000 6!
+b1000 9!
+b1000 K!
+b1000 U!
+b1000 _!
+b1000 i!
+b1000 s!
+b1010 }!
+b1000 7"
+b1000 E"
+b1010 S"
+b1000 e"
+b1000 w"
+bx $
+b10000 .!
+b10000 3!
+b10000 8!
+b10000000000000000000000000000011 %
+b10000000000000000000000000000100 &
+z9
+z8
+z7
+z6
+z5
+z4
+z3
+z2
+xA
+x@
+x?
+x>
+x=
+x<
+x;
+x:
+zI
+zH
+zG
+zF
+zE
+zD
+zC
+zB
+xQ
+xP
+xO
+xN
+xM
+xL
+xK
+xJ
+zU
+zT
+zS
+zR
+zY
+zX
+zW
+zV
+xi
+xh
+xg
+xf
+xe
+xd
+xc
+xb
+xa
+x`
+x_
+x^
+x]
+x\
+x[
+xZ
+0q
+0p
+1o
+1n
+0m
+0l
+0k
+0j
+0y
+0x
+0w
+0v
+0u
+0t
+0s
+0r
+x}
+x|
+x{
+xz
+0J!
+0I!
+0H!
+0G!
+0F!
+0E!
+0D!
+0C!
+zT!
+zS!
+zR!
+zQ!
+zP!
+zO!
+zN!
+zM!
+z^!
+z]!
+z\!
+z[!
+zZ!
+zY!
+zX!
+zW!
+zh!
+zg!
+zf!
+ze!
+zd!
+zc!
+zb!
+za!
+zr!
+zq!
+zp!
+zo!
+zn!
+zm!
+zl!
+zk!
+z|!
+z{!
+zz!
+zy!
+zx!
+zw!
+zv!
+zu!
+x6"
+x5"
+x4"
+x3"
+02"
+01"
+00"
+0/"
+0."
+0-"
+zD"
+zC"
+zB"
+zA"
+z@"
+z?"
+z>"
+z="
+zR"
+zQ"
+zP"
+zO"
+zN"
+zM"
+zL"
+zK"
+zd"
+zc"
+zb"
+za"
+z`"
+z_"
+z^"
+z]"
+z\"
+z["
+zv"
+zu"
+zt"
+zs"
+zr"
+zq"
+zp"
+zo"
+z*#
+z)#
+z(#
+z'#
+z&#
+z%#
+z$#
+z##
+0.
+0|"
+0j"
+0T"
+0F"
+08"
+1&"
+0%"
+0$"
+0#"
+0""
+0!"
+0~!
+0t!
+0j!
+0`!
+0V!
+0L!
+1B!
+0A!
+0@!
+0?!
+0>!
+0=!
+0<!
+0;!
+0:!
+07!
+02!
+0-!
+0,!
+0+!
+0*!
+0,"
+0+"
+0*"
+0)"
+0("
+0'"
+z<"
+z;"
+z:"
+z9"
+zJ"
+zI"
+zH"
+zG"
+zZ"
+zY"
+zX"
+zW"
+zV"
+zU"
+zi"
+zh"
+zg"
+zf"
+zn"
+zm"
+zl"
+zk"
+z{"
+zz"
+zy"
+zx"
+z"#
+z!#
+z~"
+z}"
+$end
+#5000
+1#
+1.
+bz "!
+bz #!
+bz ~
+bz !!
+b1 /
+b1100xxxxxxxx 0
+1%!
+xt!
+x7!
+xj!
+x`!
+xV!
+xL!
+xB!
+x|"
+xj"
+xT"
+xF"
+x8"
+x&"
+x2"
+x1"
+x0"
+x/"
+x."
+x-"
+xD"
+xC"
+xB"
+xA"
+x@"
+x?"
+x>"
+x="
+xR"
+xQ"
+xP"
+xO"
+xN"
+xM"
+xL"
+xK"
+xd"
+xc"
+xb"
+xa"
+x`"
+x_"
+x^"
+x]"
+x\"
+x["
+xv"
+xu"
+xt"
+xs"
+xr"
+xq"
+xp"
+xo"
+x*#
+x)#
+x(#
+x'#
+x&#
+x%#
+x$#
+x##
+xJ!
+xI!
+xH!
+xG!
+xF!
+xE!
+xD!
+xC!
+xT!
+xS!
+xR!
+xQ!
+xP!
+xO!
+xN!
+xM!
+x^!
+x]!
+x\!
+x[!
+xZ!
+xY!
+xX!
+xW!
+xh!
+xg!
+xf!
+xe!
+xd!
+xc!
+xb!
+xa!
+xr!
+xq!
+xp!
+xo!
+xn!
+xm!
+xl!
+xk!
+x|!
+x{!
+xz!
+xy!
+xx!
+xw!
+xv!
+xu!
+0a
+0`
+1_
+1^
+0]
+0\
+0[
+0Z
+1-!
+0n
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+xY
+xX
+xW
+xV
+x"#
+x!#
+x~"
+x}"
+xU
+xT
+xS
+xR
+xn"
+xm"
+xl"
+xk"
+xZ"
+xY"
+xX"
+xW"
+xV"
+xU"
+xJ"
+xI"
+xH"
+xG"
+x<"
+x;"
+x:"
+x9"
+x,"
+x+"
+x*"
+x)"
+x("
+x'"
+#10000
+0#
+0.
+#15000
+1#
+1.
+bx &!
+b10 /
+b110000000100 0
+0%!
+b1 $!
+0i
+0h
+1g
+0f
+0e
+0d
+0c
+0b
+0-!
+1,!
+xA!
+x@!
+x?!
+x>!
+x=!
+x<!
+x;!
+x:!
+0o
+1k
+#20000
+0#
+0.
+#25000
+1#
+1.
+b11 "!
+b1 #!
+b1 ~
+b10 !!
+b10 $!
+1t!
+17!
+0j!
+0`!
+1L!
+0V!
+0B!
+1j"
+0|"
+1T"
+08"
+0F"
+0&"
+z6"
+z5"
+z4"
+z3"
+z2"
+z1"
+z0"
+z/"
+z."
+z-"
+zR"
+zQ"
+zP"
+zO"
+zN"
+zM"
+zL"
+zK"
+zD"
+zC"
+zB"
+zA"
+z@"
+z?"
+z>"
+z="
+0d"
+0c"
+1b"
+0a"
+0`"
+0_"
+0^"
+0]"
+0\"
+0["
+z*#
+z)#
+z(#
+z'#
+z&#
+z%#
+z$#
+z##
+zr"
+zq"
+zp"
+zo"
+zJ!
+zI!
+zH!
+zG!
+zF!
+zE!
+zD!
+zC!
+z^!
+z]!
+z\!
+z[!
+zZ!
+zY!
+zX!
+zW!
+zh!
+zg!
+zf!
+ze!
+zd!
+zc!
+zb!
+za!
+zr!
+zq!
+zp!
+zo!
+zn!
+zm!
+zl!
+zk!
+z9
+z8
+z7
+z6
+z5
+z4
+z3
+z2
+zn"
+zm"
+zl"
+zk"
+zY
+zX
+zW
+zV
+z"#
+z!#
+z~"
+z}"
+0}
+0|
+1{
+0z
+0Z"
+0Y"
+0X"
+0W"
+0V"
+0U"
+z<"
+z;"
+z:"
+z9"
+zJ"
+zI"
+zH"
+zG"
+z,"
+z+"
+z*"
+z)"
+z("
+z'"
+0v"
+0u"
+1t"
+0s"
+0U
+0T
+1S
+0R
+0A
+1@
+1?
+0>
+0=
+0<
+0;
+0:
+0T!
+1S!
+1R!
+0Q!
+0P!
+0O!
+0N!
+0M!
+0y
+1x
+1w
+0v
+0u
+0t
+0s
+0r
+0|!
+1{!
+1z!
+0y!
+0x!
+0w!
+0v!
+0u!
+0I
+1H
+1G
+0F
+0E
+0D
+0C
+0B
+#30000
+0#
+0.
+#35000
+1#
+1.
+b110 &!
+b0 "!
+b0 ~
+b10 #!
+b0 $!
+1|"
+0j"
+0L!
+1B!
+1&"
+0T"
+zd"
+zc"
+zb"
+za"
+z`"
+z_"
+z^"
+z]"
+z\"
+z["
+16"
+15"
+04"
+03"
+02"
+01"
+00"
+0/"
+0."
+0-"
+xJ!
+xI!
+xH!
+xG!
+xF!
+xE!
+xD!
+xC!
+zT!
+zS!
+zR!
+zQ!
+zP!
+zO!
+zN!
+zM!
+zv"
+zu"
+zt"
+zs"
+0*#
+0)#
+1(#
+0'#
+0A!
+1@!
+1?!
+0>!
+0=!
+0<!
+0;!
+0:!
+0J!
+1I!
+1H!
+0G!
+0F!
+0E!
+0D!
+0C!
+0Y
+0X
+1W
+0V
+zU
+zT
+zS
+zR
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+1}
+1|
+0{
+0,"
+0+"
+0*"
+0)"
+0("
+0'"
+zZ"
+zY"
+zX"
+zW"
+zV"
+zU"
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+xA
+x@
+x?
+x>
+x=
+x<
+x;
+x:
+1*#
+1)#
+0(#
+x|!
+x{!
+xz!
+xy!
+xx!
+xw!
+xv!
+xu!
+0y
+1x
+1w
+0v
+0u
+0t
+0s
+0r
+0|!
+1{!
+1z!
+0y!
+0x!
+0w!
+0v!
+0u!
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+1Y
+1X
+0W
+0I
+1H
+1G
+0F
+0E
+0D
+0C
+0B
+#40000
+0#
+0.
+#45000
+1#
+1.
+bz "!
+bz #!
+bz ~
+bz !!
+b11 /
+b100000000000100 0
+1%!
+xj!
+xt!
+x7!
+x`!
+xV!
+xL!
+xB!
+xj"
+x|"
+xT"
+xF"
+x8"
+x&"
+x6"
+x5"
+x4"
+x3"
+x2"
+x1"
+x0"
+x/"
+x."
+x-"
+xD"
+xC"
+xB"
+xA"
+x@"
+x?"
+x>"
+x="
+xR"
+xQ"
+xP"
+xO"
+xN"
+xM"
+xL"
+xK"
+xd"
+xc"
+xb"
+xa"
+x`"
+x_"
+x^"
+x]"
+x\"
+x["
+x*#
+x)#
+x(#
+x'#
+x&#
+x%#
+x$#
+x##
+xv"
+xu"
+xt"
+xs"
+xr"
+xq"
+xp"
+xo"
+xJ!
+xI!
+xH!
+xG!
+xF!
+xE!
+xD!
+xC!
+xT!
+xS!
+xR!
+xQ!
+xP!
+xO!
+xN!
+xM!
+x^!
+x]!
+x\!
+x[!
+xZ!
+xY!
+xX!
+xW!
+xh!
+xg!
+xf!
+xe!
+xd!
+xc!
+xb!
+xa!
+x|!
+x{!
+xz!
+xy!
+xx!
+xw!
+xv!
+xu!
+xr!
+xq!
+xp!
+xo!
+xn!
+xm!
+xl!
+xk!
+0_
+0^
+1[
+1-!
+1P
+1O
+1q
+1o
+0k
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+xU
+xT
+xS
+xR
+xn"
+xm"
+xl"
+xk"
+xY
+xX
+xW
+xV
+x"#
+x!#
+x~"
+x}"
+x}
+x|
+x{
+xz
+xZ"
+xY"
+xX"
+xW"
+xV"
+xU"
+xJ"
+xI"
+xH"
+xG"
+x<"
+x;"
+x:"
+x9"
+x,"
+x+"
+x*"
+x)"
+x("
+x'"
+xQ
+xP
+xO
+xN
+xM
+xL
+xK
+xJ
+#50000
+0#
+0.
+#55000
+1#
+1.
+bx &!
+b100 /
+b100000000000101 0
+0%!
+b1 $!
+1i
+0-!
+0,!
+1+!
+xA!
+x@!
+x?!
+x>!
+x=!
+x<!
+x;!
+x:!
+0q
+0o
+#60000
+0#
+0.
+#65000
+1#
+1.
+b1001 /
+b0 $!
+1-!
+0+!
+1*!
+1k
+#70000
+b0 1
+0#
+0.
+#75000
+1#
+1.
+b1010 /
+1%!
+0-!
+1,!
+1q
+1p
+1o
+0k
+#80000
+0#
+0.
+#85000
+1#
+1.
+b1011 /
+b100000000000111 0
+0%!
+b1 $!
+1h
+1-!
+0q
+0p
+0o
+1n
+#90000
+0#
+0.
+#95000
+1#
+1.
+b0 $!
+#100000
+0#
+0.
+#105000
+1#
+1.
+b1100 /
+b100000000111 0
+1%!
+1^
+0[
+0-!
+0,!
+1+!
+1p
+0n
+#110000
+0#
+0.
+#115000
+1#
+1.
+b1101 /
+b100000000010 0
+0%!
+b1 $!
+0i
+0g
+1-!
+0p
+#120000
+0#
+0.
+#125000
+1#
+1.
+b11 "!
+b1 #!
+b1 ~
+b10 !!
+b10 $!
+1t!
+17!
+0j!
+0`!
+1L!
+0V!
+0B!
+1j"
+0|"
+1T"
+08"
+0F"
+0&"
+z6"
+z5"
+z4"
+z3"
+z2"
+z1"
+z0"
+z/"
+z."
+z-"
+zR"
+zQ"
+zP"
+zO"
+zN"
+zM"
+zL"
+zK"
+zD"
+zC"
+zB"
+zA"
+z@"
+z?"
+z>"
+z="
+0d"
+1c"
+0b"
+0a"
+0`"
+0_"
+0^"
+0]"
+0\"
+0["
+z*#
+z)#
+z(#
+z'#
+z&#
+z%#
+z$#
+z##
+zr"
+zq"
+zp"
+zo"
+zJ!
+zI!
+zH!
+zG!
+zF!
+zE!
+zD!
+zC!
+z^!
+z]!
+z\!
+z[!
+zZ!
+zY!
+zX!
+zW!
+zh!
+zg!
+zf!
+ze!
+zd!
+zc!
+zb!
+za!
+zr!
+zq!
+zp!
+zo!
+zn!
+zm!
+zl!
+zk!
+z9
+z8
+z7
+z6
+z5
+z4
+z3
+z2
+zn"
+zm"
+zl"
+zk"
+zY
+zX
+zW
+zV
+z"#
+z!#
+z~"
+z}"
+0}
+1|
+0{
+0z
+0Z"
+0Y"
+0X"
+0W"
+0V"
+0U"
+z<"
+z;"
+z:"
+z9"
+zJ"
+zI"
+zH"
+zG"
+z,"
+z+"
+z*"
+z)"
+z("
+z'"
+0v"
+1u"
+0t"
+0s"
+0U
+1T
+0S
+0R
+0A
+1@
+1?
+1>
+1=
+0<
+0;
+0:
+0T!
+1S!
+1R!
+1Q!
+1P!
+0O!
+0N!
+0M!
+0y
+1x
+1w
+1v
+1u
+0t
+0s
+0r
+0|!
+1{!
+1z!
+1y!
+1x!
+0w!
+0v!
+0u!
+0I
+1H
+1G
+1F
+1E
+0D
+0C
+0B
+#130000
+0#
+0.
+#135000
+1#
+1.
+b11110 &!
+b0 "!
+b0 ~
+b10 #!
+b0 $!
+1|"
+0j"
+0L!
+1B!
+1&"
+0T"
+zd"
+zc"
+zb"
+za"
+z`"
+z_"
+z^"
+z]"
+z\"
+z["
+06"
+15"
+04"
+03"
+02"
+01"
+00"
+0/"
+0."
+0-"
+xJ!
+xI!
+xH!
+xG!
+xF!
+xE!
+xD!
+xC!
+zT!
+zS!
+zR!
+zQ!
+zP!
+zO!
+zN!
+zM!
+zv"
+zu"
+zt"
+zs"
+0*#
+1)#
+0(#
+0'#
+0A!
+1@!
+1?!
+1>!
+1=!
+0<!
+0;!
+0:!
+0J!
+1I!
+1H!
+1G!
+1F!
+0E!
+0D!
+0C!
+0Y
+1X
+0W
+0V
+zU
+zT
+zS
+zR
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+0,"
+0+"
+0*"
+0)"
+0("
+0'"
+zZ"
+zY"
+zX"
+zW"
+zV"
+zU"
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+xA
+x@
+x?
+x>
+x=
+x<
+x;
+x:
+x|!
+x{!
+xz!
+xy!
+xx!
+xw!
+xv!
+xu!
+0y
+1x
+1w
+1v
+1u
+0t
+0s
+0r
+0|!
+1{!
+1z!
+1y!
+1x!
+0w!
+0v!
+0u!
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+0I
+1H
+1G
+1F
+1E
+0D
+0C
+0B
+#140000
+0#
+0.
+#145000
+1#
+1.
+bz "!
+bz #!
+bz ~
+bz !!
+b1110 /
+b10 0
+1%!
+xj!
+xt!
+x7!
+x`!
+xV!
+xL!
+xB!
+xj"
+x|"
+xT"
+xF"
+x8"
+x&"
+x6"
+x5"
+x4"
+x3"
+x2"
+x1"
+x0"
+x/"
+x."
+x-"
+xD"
+xC"
+xB"
+xA"
+x@"
+x?"
+x>"
+x="
+xR"
+xQ"
+xP"
+xO"
+xN"
+xM"
+xL"
+xK"
+xd"
+xc"
+xb"
+xa"
+x`"
+x_"
+x^"
+x]"
+x\"
+x["
+x*#
+x)#
+x(#
+x'#
+x&#
+x%#
+x$#
+x##
+xv"
+xu"
+xt"
+xs"
+xr"
+xq"
+xp"
+xo"
+xJ!
+xI!
+xH!
+xG!
+xF!
+xE!
+xD!
+xC!
+xT!
+xS!
+xR!
+xQ!
+xP!
+xO!
+xN!
+xM!
+x^!
+x]!
+x\!
+x[!
+xZ!
+xY!
+xX!
+xW!
+xh!
+xg!
+xf!
+xe!
+xd!
+xc!
+xb!
+xa!
+x|!
+x{!
+xz!
+xy!
+xx!
+xw!
+xv!
+xu!
+xr!
+xq!
+xp!
+xo!
+xn!
+xm!
+xl!
+xk!
+0^
+0-!
+1,!
+1P
+1O
+1N
+1M
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+xU
+xT
+xS
+xR
+xn"
+xm"
+xl"
+xk"
+xY
+xX
+xW
+xV
+x"#
+x!#
+x~"
+x}"
+x}
+x|
+x{
+xz
+xZ"
+xY"
+xX"
+xW"
+xV"
+xU"
+xJ"
+xI"
+xH"
+xG"
+x<"
+x;"
+x:"
+x9"
+x,"
+x+"
+x*"
+x)"
+x("
+x'"
+xQ
+xP
+xO
+xN
+xM
+xL
+xK
+xJ
+#150000
+0#
+0.
+#155000
+1#
+1.
+bx &!
+b1111 /
+b0 0
+0%!
+b1 $!
+0h
+1-!
+xA!
+x@!
+x?!
+x>!
+x=!
+x<!
+x;!
+x:!

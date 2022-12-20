@@ -1,0 +1,496 @@
+|processor
+clk => clk.IN3
+
+
+|processor|ROM:proc_rom
+clk => ~NO_FANOUT~
+address[0] => memory.RADDR
+address[1] => memory.RADDR1
+address[2] => memory.RADDR2
+address[3] => memory.RADDR3
+address[4] => memory.RADDR4
+address[5] => memory.RADDR5
+address[6] => memory.RADDR6
+address[7] => memory.RADDR7
+address[8] => memory.RADDR8
+address[9] => memory.RADDR9
+out_data[0] <= memory.DATAOUT
+out_data[1] <= memory.DATAOUT1
+out_data[2] <= memory.DATAOUT2
+out_data[3] <= memory.DATAOUT3
+out_data[4] <= memory.DATAOUT4
+out_data[5] <= memory.DATAOUT5
+out_data[6] <= memory.DATAOUT6
+out_data[7] <= memory.DATAOUT7
+
+
+|processor|RAM:proc_ram
+clk => memory.we_a.CLK
+clk => memory.waddr_a[9].CLK
+clk => memory.waddr_a[8].CLK
+clk => memory.waddr_a[7].CLK
+clk => memory.waddr_a[6].CLK
+clk => memory.waddr_a[5].CLK
+clk => memory.waddr_a[4].CLK
+clk => memory.waddr_a[3].CLK
+clk => memory.waddr_a[2].CLK
+clk => memory.waddr_a[1].CLK
+clk => memory.waddr_a[0].CLK
+clk => memory.data_a[7].CLK
+clk => memory.data_a[6].CLK
+clk => memory.data_a[5].CLK
+clk => memory.data_a[4].CLK
+clk => memory.data_a[3].CLK
+clk => memory.data_a[2].CLK
+clk => memory.data_a[1].CLK
+clk => memory.data_a[0].CLK
+clk => memory.CLK0
+address[0] => memory.waddr_a[0].DATAIN
+address[0] => memory.WADDR
+address[0] => memory.RADDR
+address[1] => memory.waddr_a[1].DATAIN
+address[1] => memory.WADDR1
+address[1] => memory.RADDR1
+address[2] => memory.waddr_a[2].DATAIN
+address[2] => memory.WADDR2
+address[2] => memory.RADDR2
+address[3] => memory.waddr_a[3].DATAIN
+address[3] => memory.WADDR3
+address[3] => memory.RADDR3
+address[4] => memory.waddr_a[4].DATAIN
+address[4] => memory.WADDR4
+address[4] => memory.RADDR4
+address[5] => memory.waddr_a[5].DATAIN
+address[5] => memory.WADDR5
+address[5] => memory.RADDR5
+address[6] => memory.waddr_a[6].DATAIN
+address[6] => memory.WADDR6
+address[6] => memory.RADDR6
+address[7] => memory.waddr_a[7].DATAIN
+address[7] => memory.WADDR7
+address[7] => memory.RADDR7
+address[8] => memory.waddr_a[8].DATAIN
+address[8] => memory.WADDR8
+address[8] => memory.RADDR8
+address[9] => memory.waddr_a[9].DATAIN
+address[9] => memory.WADDR9
+address[9] => memory.RADDR9
+in_data[0] => memory.data_a[0].DATAIN
+in_data[0] => memory.DATAIN
+in_data[1] => memory.data_a[1].DATAIN
+in_data[1] => memory.DATAIN1
+in_data[2] => memory.data_a[2].DATAIN
+in_data[2] => memory.DATAIN2
+in_data[3] => memory.data_a[3].DATAIN
+in_data[3] => memory.DATAIN3
+in_data[4] => memory.data_a[4].DATAIN
+in_data[4] => memory.DATAIN4
+in_data[5] => memory.data_a[5].DATAIN
+in_data[5] => memory.DATAIN5
+in_data[6] => memory.data_a[6].DATAIN
+in_data[6] => memory.DATAIN6
+in_data[7] => memory.data_a[7].DATAIN
+in_data[7] => memory.DATAIN7
+out_data[0] <= memory.DATAOUT
+out_data[1] <= memory.DATAOUT1
+out_data[2] <= memory.DATAOUT2
+out_data[3] <= memory.DATAOUT3
+out_data[4] <= memory.DATAOUT4
+out_data[5] <= memory.DATAOUT5
+out_data[6] <= memory.DATAOUT6
+out_data[7] <= memory.DATAOUT7
+write_enable => memory.we_a.DATAIN
+write_enable => memory.WE
+
+
+|processor|RAM:registers_file
+clk => memory.we_a.CLK
+clk => memory.waddr_a[3].CLK
+clk => memory.waddr_a[2].CLK
+clk => memory.waddr_a[1].CLK
+clk => memory.waddr_a[0].CLK
+clk => memory.data_a[7].CLK
+clk => memory.data_a[6].CLK
+clk => memory.data_a[5].CLK
+clk => memory.data_a[4].CLK
+clk => memory.data_a[3].CLK
+clk => memory.data_a[2].CLK
+clk => memory.data_a[1].CLK
+clk => memory.data_a[0].CLK
+clk => memory.CLK0
+address[0] => memory.waddr_a[0].DATAIN
+address[0] => memory.WADDR
+address[0] => memory.RADDR
+address[1] => memory.waddr_a[1].DATAIN
+address[1] => memory.WADDR1
+address[1] => memory.RADDR1
+address[2] => memory.waddr_a[2].DATAIN
+address[2] => memory.WADDR2
+address[2] => memory.RADDR2
+address[3] => memory.waddr_a[3].DATAIN
+address[3] => memory.WADDR3
+address[3] => memory.RADDR3
+in_data[0] => memory.data_a[0].DATAIN
+in_data[0] => memory.DATAIN
+in_data[1] => memory.data_a[1].DATAIN
+in_data[1] => memory.DATAIN1
+in_data[2] => memory.data_a[2].DATAIN
+in_data[2] => memory.DATAIN2
+in_data[3] => memory.data_a[3].DATAIN
+in_data[3] => memory.DATAIN3
+in_data[4] => memory.data_a[4].DATAIN
+in_data[4] => memory.DATAIN4
+in_data[5] => memory.data_a[5].DATAIN
+in_data[5] => memory.DATAIN5
+in_data[6] => memory.data_a[6].DATAIN
+in_data[6] => memory.DATAIN6
+in_data[7] => memory.data_a[7].DATAIN
+in_data[7] => memory.DATAIN7
+out_data[0] <= memory.DATAOUT
+out_data[1] <= memory.DATAOUT1
+out_data[2] <= memory.DATAOUT2
+out_data[3] <= memory.DATAOUT3
+out_data[4] <= memory.DATAOUT4
+out_data[5] <= memory.DATAOUT5
+out_data[6] <= memory.DATAOUT6
+out_data[7] <= memory.DATAOUT7
+write_enable => memory.we_a.DATAIN
+write_enable => memory.WE
+
+
+|processor|wire_hz:hz_data_out_tempreg
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_data_out_ram
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_data_out_reg
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_data_out_ir
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_data_in_ram
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_data_in_reg
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_out_ir_1310
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+in_data[8] => temp_out[8].DATAIN
+in_data[9] => temp_out[9].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_is_active => temp_out[8].OE
+out_is_active => temp_out[9].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+out_data[8] <= temp_out[8].DB_MAX_OUTPUT_PORT_TYPE
+out_data[9] <= temp_out[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_out_ram
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_out_reg
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_out_ir_90
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+in_data[8] => temp_out[8].DATAIN
+in_data[9] => temp_out[9].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_is_active => temp_out[8].OE
+out_is_active => temp_out[9].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+out_data[8] <= temp_out[8].DB_MAX_OUTPUT_PORT_TYPE
+out_data[9] <= temp_out[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_in_ram
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor|wire_hz:hz_addr_in_reg
+in_data[0] => temp_out[0].DATAIN
+in_data[1] => temp_out[1].DATAIN
+in_data[2] => temp_out[2].DATAIN
+in_data[3] => temp_out[3].DATAIN
+in_data[4] => temp_out[4].DATAIN
+in_data[5] => temp_out[5].DATAIN
+in_data[6] => temp_out[6].DATAIN
+in_data[7] => temp_out[7].DATAIN
+out_is_active => temp_out[0].OE
+out_is_active => temp_out[1].OE
+out_is_active => temp_out[2].OE
+out_is_active => temp_out[3].OE
+out_is_active => temp_out[4].OE
+out_is_active => temp_out[5].OE
+out_is_active => temp_out[6].OE
+out_is_active => temp_out[7].OE
+out_data[0] <= temp_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= temp_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= temp_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= temp_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= temp_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= temp_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= temp_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= temp_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
