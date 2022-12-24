@@ -1,0 +1,129 @@
+Flow report for SIFO_Lab_5
+Thu Dec 22 15:38:58 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------+
+; Flow Summary                                                        ;
++-----------------------+---------------------------------------------+
+; Flow Status           ; Successful - Thu Dec 22 15:38:58 2022       ;
+; Quartus Prime Version ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name         ; SIFO_Lab_5                                  ;
+; Top-level Entity Name ; all_blocks                                  ;
+; Family                ; MAX II                                      ;
+; Total logic elements  ; 0                                           ;
+; Total pins            ; 1                                           ;
+; Total virtual pins    ; 0                                           ;
+; UFM blocks            ; 0 / 1 ( 0 % )                               ;
++-----------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 12/22/2022 15:38:50 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; SIFO_Lab_5          ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                           ;
++--------------------------------------+-----------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                      ; Value                             ; Default Value ; Entity Name ; Section Id                        ;
++--------------------------------------+-----------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 35315517123178.167171273003428    ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                ; --            ; --          ; master_tb                         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                ; --            ; --          ; slave_tb                          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                ; --            ; --          ; all_blocks_tb                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                ; --            ; --          ; arbiter_tb                        ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                               ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                               ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                               ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                               ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; all_blocks_tb                     ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                       ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)       ; <None>        ; --          ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                   ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; src/src_testbench/master_tb.v     ; --            ; --          ; master_tb                         ;
+; EDA_TEST_BENCH_FILE                  ; src/src_testbench/slave_tb.v      ; --            ; --          ; slave_tb                          ;
+; EDA_TEST_BENCH_FILE                  ; src/src_testbench/all_blocks_tb.v ; --            ; --          ; all_blocks_tb                     ;
+; EDA_TEST_BENCH_FILE                  ; src/src_testbench/arbiter_tb.v    ; --            ; --          ; arbiter_tb                        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; master_tb                         ; --            ; --          ; master_tb                         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; slave_tb                          ; --            ; --          ; slave_tb                          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; all_blocks_tb                     ; --            ; --          ; all_blocks_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; arbiter_tb                        ; --            ; --          ; arbiter_tb                        ;
+; EDA_TEST_BENCH_NAME                  ; slave_tb                          ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; master_tb                         ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; arbiter_tb                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; all_blocks_tb                     ; --            ; --          ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                              ; --            ; --          ; eda_simulation                    ;
+; NUM_PARALLEL_PROCESSORS              ; All                               ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                      ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; all_blocks                        ; SIFO_Lab_5    ; --          ; --                                ;
++--------------------------------------+-----------------------------------+---------------+-------------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 347 MB              ; 00:00:22                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:22                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------+---------------+---------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
++----------------------+------------------+---------------+---------------+----------------+
+; Analysis & Synthesis ; zcxasusus        ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
++----------------------+------------------+---------------+---------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off SIFO_Lab_5 -c SIFO_Lab_5
+
+
+

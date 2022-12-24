@@ -1,0 +1,194 @@
+|all_blocks
+clk => clk.IN5
+
+
+|all_blocks|master:master_4
+clk => chosen_slave[0].CLK
+clk => chosen_slave[1].CLK
+clk => own_request[0].CLK
+clk => own_request[1].CLK
+clk => own_request[2].CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => cur_state~3.DATAIN
+grant[0] => Equal2.IN2
+grant[0] => Equal4.IN2
+grant[1] => Equal2.IN1
+grant[1] => Equal4.IN1
+grant[2] => Equal2.IN0
+grant[2] => Equal4.IN0
+in_request[0] => LessThan0.IN3
+in_request[0] => out_request.DATAB
+in_request[1] => LessThan0.IN2
+in_request[1] => out_request.DATAB
+in_request[2] => LessThan0.IN1
+in_request[2] => out_request.DATAB
+out_request[0] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[1] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[2] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|master:master_3
+clk => chosen_slave[0].CLK
+clk => chosen_slave[1].CLK
+clk => own_request[0].CLK
+clk => own_request[1].CLK
+clk => own_request[2].CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => cur_state~3.DATAIN
+grant[0] => Equal2.IN2
+grant[0] => Equal4.IN2
+grant[1] => Equal2.IN1
+grant[1] => Equal4.IN1
+grant[2] => Equal2.IN0
+grant[2] => Equal4.IN0
+in_request[0] => LessThan0.IN3
+in_request[0] => out_request.DATAB
+in_request[1] => LessThan0.IN2
+in_request[1] => out_request.DATAB
+in_request[2] => LessThan0.IN1
+in_request[2] => out_request.DATAB
+out_request[0] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[1] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[2] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|master:master_2
+clk => chosen_slave[0].CLK
+clk => chosen_slave[1].CLK
+clk => own_request[0].CLK
+clk => own_request[1].CLK
+clk => own_request[2].CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => cur_state~3.DATAIN
+grant[0] => Equal2.IN1
+grant[0] => Equal4.IN2
+grant[1] => Equal2.IN2
+grant[1] => Equal4.IN1
+grant[2] => Equal2.IN0
+grant[2] => Equal4.IN0
+in_request[0] => LessThan0.IN3
+in_request[0] => out_request.DATAB
+in_request[1] => LessThan0.IN2
+in_request[1] => out_request.DATAB
+in_request[2] => LessThan0.IN1
+in_request[2] => out_request.DATAB
+out_request[0] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[1] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[2] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|master:master_1
+clk => chosen_slave[0].CLK
+clk => chosen_slave[1].CLK
+clk => own_request[0].CLK
+clk => own_request[1].CLK
+clk => own_request[2].CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => cur_state~3.DATAIN
+grant[0] => Equal2.IN2
+grant[0] => Equal4.IN2
+grant[1] => Equal2.IN1
+grant[1] => Equal4.IN1
+grant[2] => Equal2.IN0
+grant[2] => Equal4.IN0
+in_request[0] => LessThan0.IN3
+in_request[0] => out_request.DATAB
+in_request[1] => LessThan0.IN2
+in_request[1] => out_request.DATAB
+in_request[2] => LessThan0.IN1
+in_request[2] => out_request.DATAB
+out_request[0] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[1] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+out_request[2] <= out_request.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|arbiter:arbiter
+clk => master_number[0].CLK
+clk => master_number[1].CLK
+clk => master_number[2].CLK
+clk => cur_state.CLK
+clk => grant_counter[0].CLK
+clk => grant_counter[1].CLK
+in_request[0] => Equal0.IN2
+in_request[0] => master_number[0].DATAIN
+in_request[1] => Equal0.IN1
+in_request[1] => master_number[1].DATAIN
+in_request[2] => Equal0.IN0
+in_request[2] => master_number[2].DATAIN
+grant[0] <= master_number[0].DB_MAX_OUTPUT_PORT_TYPE
+grant[1] <= master_number[1].DB_MAX_OUTPUT_PORT_TYPE
+grant[2] <= master_number[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|slave:slave_generate[0].slave_
+data[0] => Equal0.IN1
+data[1] => Equal0.IN0
+data[2] => slave_data.DATAB
+data[3] => slave_data.DATAB
+data[4] => slave_data.DATAB
+slave_data[0] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[1] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[2] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|slave:slave_generate[1].slave_
+data[0] => Equal0.IN0
+data[1] => Equal0.IN1
+data[2] => slave_data.DATAB
+data[3] => slave_data.DATAB
+data[4] => slave_data.DATAB
+slave_data[0] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[1] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[2] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|slave:slave_generate[2].slave_
+data[0] => Equal0.IN1
+data[1] => Equal0.IN0
+data[2] => slave_data.DATAB
+data[3] => slave_data.DATAB
+data[4] => slave_data.DATAB
+slave_data[0] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[1] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[2] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all_blocks|slave:slave_generate[3].slave_
+data[0] => Equal0.IN1
+data[1] => Equal0.IN0
+data[2] => slave_data.DATAB
+data[3] => slave_data.DATAB
+data[4] => slave_data.DATAB
+slave_data[0] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[1] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+slave_data[2] <= slave_data.DB_MAX_OUTPUT_PORT_TYPE
+
+
