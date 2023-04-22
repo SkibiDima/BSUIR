@@ -153,7 +153,7 @@ Fblack = 5.5/64
 Fc = 20/64
 
 result_bandpass_blackman_window_filter = bandpass_blackman_window_filter(noise_sequence, M, N, Band, Fblack)
-result_unipolar_filter_noise = four_cascade_filter(noise_sequence, Fc)
+result_four_cascade_filter_noise = four_cascade_filter(noise_sequence, Fc)
 
 def main():
     gridsize = (22, 4)
@@ -202,12 +202,12 @@ def main():
     ax9 = plt.subplot2grid(gridsize, (17, 0), colspan=2, rowspan=2)
     ax9.set_title('Signal IIR filter', fontsize=20)
     ax9.grid()
-    ax9.plot(arguments, result_unipolar_filter_noise)
+    ax9.plot(arguments, result_four_cascade_filter_noise)
 
     ax10 = plt.subplot2grid(gridsize, (17, 2), colspan=2, rowspan=2)
     ax10.set_title('Signal IIR filter FFT', fontsize=20)
     ax10.grid()
-    ax10.plot(arguments, np.absolute(fft_dif(result_unipolar_filter_noise, 1)))
+    ax10.plot(arguments, np.absolute(fft_dif(result_four_cascade_filter_noise, 1)))
 
     plt.show()
 
