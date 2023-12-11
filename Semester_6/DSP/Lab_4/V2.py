@@ -4,11 +4,10 @@ import numpy as np
 
 def coagulate(y, h):
     result = np.array(y).copy()
-    for i in range(0, np.size(y)):#np.size(h), (np.size(y) // 2) + 1):
+    for i in range(0, np.size(y)):
         result[i] = 0
         for j in range(np.size(h)):
             result[i] = result[i] + y[i - j] * h[j]
-            #result[np.size(y) - i] = result[i]
 
     return result
 
@@ -78,7 +77,6 @@ def unipolar_filter(noise_sequence, Fc):
 
 def hamming_window(N, n):
     result = 0.54 + 0.46 * np.cos(2 * np.pi * n / N)
-    #print(n, ' ', '%.3f' % result, ' ', end='')
     return result
 
 
